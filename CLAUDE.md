@@ -7,7 +7,7 @@
 ## 🚀 DEPLOY AUTOMÁTICO EASYPANEL
 **Endpoint para redeploy automático:** 
 ```
-[PENDIENTE DE CONFIGURAR DESPUÉS DEL PUSH A GITHUB]
+http://38.242.207.133:3000/api/deploy/06adccd410cf5637e0af27e25b9187b7ce53e496204887ce
 ```
 - Claude puede usar este endpoint para hacer redeploy automático
 - No requiere acceso manual a EasyPanel

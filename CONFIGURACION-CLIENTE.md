@@ -28,6 +28,7 @@
 - **URL EasyPanel**: https://dashboard-unicef-brasil.tnrk2n.easypanel.host/
 - **Branch principal**: main
 - **Deploy automático**: Configurado via webhook GitHub
+- **Endpoint deploy**: http://38.242.207.133:3000/api/deploy/06adccd410cf5637e0af27e25b9187b7ce53e496204887ce
 
 ## 📋 PRÓXIMOS PASOS
 1. ✅ Actualizar información del cliente
