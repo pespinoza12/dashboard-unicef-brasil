@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Dashboard EnelX - Tester</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen py-8">
+    <div class="max-w-4xl mx-auto px-4">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">🚀 API Dashboard EnelX - Tester</h1>
+            <p class="text-gray-600 mb-6">Herramienta para probar los endpoints de la API del dashboard.</p>
+            
+            <!-- API Key Input -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-700 mb-2">API Key:</label>
+                <input type="text" id="apiKey" value="enelx_dashboard_key_2025" 
+                       class="w-full p-2 border border-gray-300 rounded-md" 
+                       placeholder="Ingresa tu API key">
+            </div>
+        </div>
+
+        <!-- Test Process Transcription -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">📝 Procesar Transcripción</h2>
+            <p class="text-gray-600 mb-4">POST /api/process-transcription</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Fecha de Reunión:</label>
+                    <input type="date" id="meetingDate" class="w-full p-2 border border-gray-300 rounded-md">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Participantes (separados por coma):</label>
+                    <input type="text" id="participants" value="Pedro Espinoza, Daniela Belmock, Carlos Junior" 
+                           class="w-full p-2 border border-gray-300 rounded-md">
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Transcripción:</label>
+                <textarea id="transcription" rows="4" 
+                          class="w-full p-2 border border-gray-300 rounded-md"
+                          placeholder="Transcripción de la reunión...">Reunión del proyecto EnelX B2C. Progreso del 85% en acessos SWS. Carlos confirmó que ya puede crear acessos. Próxima reunión presencial confirmada.</textarea>
+            </div>
+            
+            <button onclick="testProcessTranscription()" 
+                    class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                🚀 Procesar Transcripción
+            </button>
+            
+            <div id="transcriptionResult" class="mt-4"></div>
+        </div>
+
+        <!-- Test Update Dashboard -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">📊 Actualizar Dashboard</h2>
+            <p class="text-gray-600 mb-4">POST /api/update-dashboard</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Task ID:</label>
+                    <select id="taskId" class="w-full p-2 border border-gray-300 rounded-md">
+                        <option value="rh-acessos">rh-acessos</option>
+                        <option value="rh-contratos">rh-contratos</option>
+                        <option value="rh-treinamentos">rh-treinamentos</option>
+                        <option value="infra-whatsapp">infra-whatsapp</option>
+                        <option value="infra-relatorios">infra-relatorios</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Progreso (%):</label>
+                    <input type="number" id="progress" min="0" max="100" value="90" 
+                           class="w-full p-2 border border-gray-300 rounded-md">
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Comentario:</label>
+                <textarea id="comment" rows="2" 
+                          class="w-full p-2 border border-gray-300 rounded-md"
+                          placeholder="Nuevo comentario para la tarea...">✅ Progreso actualizado via API - prueba exitosa</textarea>
+            </div>
+            
+            <button onclick="testUpdateDashboard()" 
+                    class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">
+                📊 Actualizar Dashboard
+            </button>
+            
+            <div id="dashboardResult" class="mt-4"></div>
+        </div>
+
+        <!-- Test List Transcriptions -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">📋 Listar Transcripciones</h2>
+            <p class="text-gray-600 mb-4">GET /api/transcriptions</p>
+            
+            <button onclick="testListTranscriptions()" 
+                    class="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700">
+                📋 Listar Transcripciones
+            </button>
+            
+            <div id="listResult" class="mt-4"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = window.location.origin;
+
+        function getApiKey() {
+            return document.getElementById('apiKey').value;
+        }
+
+        function showResult(elementId, response, isSuccess = true) {
+            const element = document.getElementById(elementId);
+            element.innerHTML = `
+                <div class="p-4 rounded-md ${isSuccess ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}">
+                    <h4 class="font-medium ${isSuccess ? 'text-green-800' : 'text-red-800'} mb-2">
+                        ${isSuccess ? '✅ Éxito' : '❌ Error'}
+                    </h4>
+                    <pre class="text-sm text-gray-700 overflow-x-auto">${JSON.stringify(response, null, 2)}</pre>
+                </div>
+            `;
+        }
+
+        async function testProcessTranscription() {
+            const participants = document.getElementById('participants').value.split(',').map(p => p.trim());
+            const data = {
+                transcription: document.getElementById('transcription').value,
+                meetingDate: document.getElementById('meetingDate').value,
+                participants: participants,
+                metadata: {
+                    type: "api_test",
+                    priority: "medium"
+                }
+            };
+
+            try {
+                const response = await fetch(`${API_BASE}/api/process-transcription`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-API-Key': getApiKey()
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                showResult('transcriptionResult', result, response.ok);
+            } catch (error) {
+                showResult('transcriptionResult', { error: error.message }, false);
+            }
+        }
+
+        async function testUpdateDashboard() {
+            const taskId = document.getElementById('taskId').value;
+            const progress = parseInt(document.getElementById('progress').value);
+            const comment = document.getElementById('comment').value;
+
+            const data = {
+                tasks: {
+                    [taskId]: {
+                        progress: progress,
+                        completed: progress === 100
+                    }
+                },
+                comments: [{
+                    taskId: taskId,
+                    text: comment,
+                    author: "API Tester",
+                    timestamp: new Date().toLocaleDateString('pt-BR')
+                }]
+            };
+
+            try {
+                const response = await fetch(`${API_BASE}/api/update-dashboard`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-API-Key': getApiKey()
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                showResult('dashboardResult', result, response.ok);
+            } catch (error) {
+                showResult('dashboardResult', { error: error.message }, false);
+            }
+        }
+
+        async function testListTranscriptions() {
+            try {
+                const response = await fetch(`${API_BASE}/api/transcriptions`, {
+                    headers: {
+                        'X-API-Key': getApiKey()
+                    }
+                });
+
+                const result = await response.json();
+                showResult('listResult', result, response.ok);
+            } catch (error) {
+                showResult('listResult', { error: error.message }, false);
+            }
+        }
+
+        // Set today's date as default
+        document.getElementById('meetingDate').value = new Date().toISOString().split('T')[0];
+    </script>
+</body>
+</html>
