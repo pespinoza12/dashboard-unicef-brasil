@@ -5,92 +5,121 @@ const UnicefProgressDashboard = () => {
   const [tasks, setTasks] = useState({
     // Gestión de Donantes - OPERACIÓN PRINCIPAL
     'donantes-saving': { completed: false, comments: [
-      {text: "📊 Campañas de Saving identificadas para Q3 2025", timestamp: "17/07/2025", author: "Daisy Lenny Santos"},
-      {text: "🎯 Meta: 15% de donantes en riesgo de cancelación", timestamp: "17/07/2025", author: "Pedro Espinoza"},
-      {text: "📞 Equipo Brasilia preparado para campaña intensiva", timestamp: "17/07/2025", author: "Daisy Lenny Santos"}
-    ], startDate: '2025-08-01', endDate: '2025-08-31', progress: 60 },
+      {text: "🚫 CAMPAÑA PARALIZADA: Datos importados UNICEF con fechas erróneas", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "❌ Imposible analizar doadores - todas las facturas marcadas día 10", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "📧 E-mail enviado a UNICEF solicitando corrección urgente", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "⏸️ Mailing disponible pero campaña suspendida hasta resolución", timestamp: "17/07/2025", author: "Deisilany Santos"}
+    ], startDate: '2025-07-01', endDate: '2025-07-31', progress: 20 },
 
     'donantes-upgrade': { completed: false, comments: [
-      {text: "💰 Campaña de upgrade para donantes recurrentes", timestamp: "17/07/2025", author: "Daisy Lenny Santos"},
-      {text: "🚀 Estrategia implementada para aumento de valor", timestamp: "17/07/2025", author: "Pedro Espinoza"},
-      {text: "📈 Resultados positivos en primeras pruebas", timestamp: "17/07/2025", author: "Equipo Brasilia"}
-    ], startDate: '2025-07-20', endDate: '2025-09-30', progress: 75 },
+      {text: "🔄 Base de upgrade no llegó - problema segmentación UNICEF", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "⏳ Esperando base que será enviada posteriormente", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "👥 1 persona del equipo ayudando a cerrar demandas Infobip", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "📝 Equipo familiarizándose con nuevo sistema Parting", timestamp: "17/07/2025", author: "Deisilany Santos"}
+    ], startDate: '2025-07-20', endDate: '2025-09-30', progress: 40 },
 
     'donantes-legados': { completed: false, comments: [
-      {text: "🏛️ Campaña de legados en desarrollo", timestamp: "17/07/2025", author: "Daisy Lenny Santos"},
-      {text: "📋 Perfil de donantes VIP identificado", timestamp: "17/07/2025", author: "Pedro Espinoza"},
-      {text: "💝 Estrategia personalizada para grandes donadores", timestamp: "17/07/2025", author: "Daisy Lenny Santos"}
-    ], startDate: '2025-09-01', endDate: '2025-12-31', progress: 40 },
+      {text: "👩‍🏫 Carolina de Legados dará treinamento a 2 nuevas agentes", timestamp: "09/07/2025", author: "Deisilany Santos"},
+      {text: "🎯 Treinamento programado: 10h às 12h com equipe gestão", timestamp: "09/07/2025", author: "Deisilany Santos"},
+      {text: "🗣️ Novata con dificultad de dicção - trabajando para superar", timestamp: "09/07/2025", author: "Deisilany Santos"},
+      {text: "💝 Carolina muy querida por el equipo - almuerza con operadores", timestamp: "09/07/2025", author: "Deisilany Santos"}
+    ], startDate: '2025-07-01', endDate: '2025-12-31', progress: 70 },
 
-    'donantes-relacionamiento': { completed: true, comments: [
-      {text: "✅ Programa de relacionamento implementado", timestamp: "17/07/2025", author: "Daisy Lenny Santos"},
-      {text: "📱 WhatsApp y teléfono funcionando perfectamente", timestamp: "17/07/2025", author: "Equipo Técnico"},
-      {text: "🎉 45 personas trabajando en la operación", timestamp: "17/07/2025", author: "Pedro Espinoza"}
-    ], startDate: '2019-01-01', endDate: '2025-12-31', progress: 100 },
+    'donantes-relacionamiento': { completed: false, comments: [
+      {text: "📊 RECEPTIVO: 42.53% (resultado actual julio)", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "📱 DIGITAL: 39.06% (recuperándose después de migración)", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "👥 37 colaboradores activos (número correcto autorizado)", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "💪 Equipo mantiene resultados pese a desafíos migración", timestamp: "17/07/2025", author: "Deisilany Santos"}
+    ], startDate: '2019-01-01', endDate: '2025-12-31', progress: 85 },
 
     // Operaciones y Sistemas - FUNCIONAMIENTO DIARIO
-    'ops-telefonia': { completed: true, comments: [
-      {text: "✅ Sistema telefónico funcionando 100%", timestamp: "17/07/2025", author: "Equipo Técnico"},
-      {text: "📞 Atención de lunes a viernes operativa", timestamp: "17/07/2025", author: "Daisy Lenny Santos"},
-      {text: "📊 Métricas de llamadas dentro del objetivo", timestamp: "17/07/2025", author: "Daisy Lenny Santos"}
-    ], startDate: '2019-01-01', endDate: '2025-12-31', progress: 100 },
+    'ops-telefonia': { completed: false, comments: [
+      {text: "📞 RECEPTIVO: 43.12% (excelente resultado julio 9)", timestamp: "09/07/2025", author: "Deisilany Santos"},
+      {text: "📉 Bajó a 42.53% (julio 17) pero mantiene buen nivel", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "💪 Día migración: 50% reversión - equipo psicológicamente preparado", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "⚠️ Últimos 3-4 días no reflejan en Salesforce, solo DPO", timestamp: "17/07/2025", author: "Deisilany Santos"}
+    ], startDate: '2019-01-01', endDate: '2025-12-31', progress: 85 },
 
-    'ops-whatsapp': { completed: true, comments: [
-      {text: "✅ WhatsApp Business implementado", timestamp: "17/07/2025", author: "Equipo Técnico"},
-      {text: "🤖 Bot automatizado para respuestas rápidas", timestamp: "17/07/2025", author: "Pedro Espinoza"},
-      {text: "💬 Integración perfecta con CRM UNICEF", timestamp: "17/07/2025", author: "Daisy Lenny Santos"}
-    ], startDate: '2020-01-01', endDate: '2025-12-31', progress: 100 },
+    'ops-whatsapp': { completed: false, comments: [
+      {text: "📱 DIGITAL: 37.14% (julio 9) → 39.06% (julio 17) recuperándose", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "🚨 INFOBIP DESACTIVADO: 9:30am julio 17 - migración forzada", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "⚡ Un día zeró completamente - gran impacto negativo", timestamp: "09/07/2025", author: "Deisilany Santos"},
+      {text: "🔄 Migración a PARTING en curso - plataforma no 100% funcional", timestamp: "17/07/2025", author: "Deisilany Santos"}
+    ], startDate: '2020-01-01', endDate: '2025-12-31', progress: 75 },
 
     'ops-sistemas': { completed: false, comments: [
-      {text: "🔧 Optimización de sistemas digitales en curso", timestamp: "17/07/2025", author: "Pedro Espinoza"},
-      {text: "📊 Dashboard de monitoreo en desarrollo", timestamp: "17/07/2025", author: "Equipo Técnico"},
-      {text: "⚡ Integración con sistemas UNICEF mejorando", timestamp: "17/07/2025", author: "Daisy Lenny Santos"}
-    ], startDate: '2025-07-01', endDate: '2025-12-31', progress: 85 },
+      {text: "🚨 PROBLEMA CRÍTICO: Duplicación cadastros - consulta retorna solo 1", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "⚠️ Power BI sin actualizar 2 días - problema banco datos", timestamp: "09/07/2025", author: "Deisilany Santos"},
+      {text: "🌐 Campos PARTING en inglés - operación no es bilingüe", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "🔧 Nuevo BI en desarrollo - Giovanni lista próxima semana", timestamp: "17/07/2025", author: "Pedro Espinoza"}
+    ], startDate: '2025-07-01', endDate: '2025-12-31', progress: 60 },
 
     // Gestión de Equipo - RECURSOS HUMANOS
-    'equipo-brasilia': { completed: true, comments: [
-      {text: "✅ Equipo Brasilia 100% operativo", timestamp: "17/07/2025", author: "Daisy Lenny Santos"},
-      {text: "👥 45 personas trabajando activamente", timestamp: "17/07/2025", author: "Pedro Espinoza"},
-      {text: "🎯 Liderazgo de Daisy consolidado", timestamp: "17/07/2025", author: "Pedro Espinoza"}
-    ], startDate: '2019-01-01', endDate: '2025-12-31', progress: 100 },
+    'equipo-brasilia': { completed: false, comments: [
+      {text: "👥 EQUIPO ACTUAL: 37 colaboradores (número autorizado correcto)", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "📤 Mariana Ganda será desligada - retorno vacaciones", timestamp: "09/07/2025", author: "Daniela Cardoso Belmock"},
+      {text: "🆕 4 novatos muy buenos e interesados - aún no comenzaron atender", timestamp: "09/07/2025", author: "Deisilany Santos"},
+      {text: "🚫 Prohibido pedir demissão durante migración", timestamp: "17/07/2025", author: "Daniela Cardoso Belmock"}
+    ], startDate: '2019-01-01', endDate: '2025-12-31', progress: 90 },
 
     'equipo-capacitacion': { completed: false, comments: [
-      {text: "📚 Programas de capacitación continua", timestamp: "17/07/2025", author: "Daisy Lenny Santos"},
-      {text: "🎓 Entrenamiento en nuevas técnicas de fundraising", timestamp: "17/07/2025", author: "Pedro Espinoza"},
-      {text: "📈 Mejora continua en KPIs del equipo", timestamp: "17/07/2025", author: "Daisy Lenny Santos"}
-    ], startDate: '2025-06-01', endDate: '2025-12-31', progress: 70 },
+      {text: "🎯 Treinamento nueva interfaz realizado con toda equipe", timestamp: "09/07/2025", author: "Deisilany Santos"},
+      {text: "📋 Lista pendencias antes migración - ajustes continuos", timestamp: "09/07/2025", author: "Deisilany Santos"},
+      {text: "📝 Nuevas tabulações UNICEF - treinamento programado segunda", timestamp: "09/07/2025", author: "Deisilany Santos"},
+      {text: "🌍 Treinamento Parting Mil en inglés - Carolina hace traducción", timestamp: "09/07/2025", author: "Deisilany Santos"}
+    ], startDate: '2025-06-01', endDate: '2025-12-31', progress: 80 },
 
     'equipo-kpis': { completed: false, comments: [
-      {text: "📊 Definición de KPIs específicos UNICEF", timestamp: "17/07/2025", author: "Pedro Espinoza"},
-      {text: "🎯 Metas individuales y de equipo establecidas", timestamp: "17/07/2025", author: "Daisy Lenny Santos"},
-      {text: "📈 Sistema de monitoreo de performance activo", timestamp: "17/07/2025", author: "Pedro Espinoza"}
-    ], startDate: '2025-07-01', endDate: '2025-09-30', progress: 80 },
+      {text: "😔 Operadores se sienten culpables por cancelamentos de problemas UNICEF", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "💪 Trabajo psicológico constante para mantener motivación", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "📊 Giovanni subiu novo relatório - equipe já envia parciais", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "🎁 Gift cards distribuidos - Pablo muy animado con campañas", timestamp: "09/07/2025", author: "Deisilany Santos"}
+    ], startDate: '2025-07-01', endDate: '2025-09-30', progress: 75 },
 
     // Reuniones y Control - GESTIÓN DIRECTIVA
     'reuniones-semanales': { completed: false, comments: [
-      {text: "📅 Reuniones semanales Pedro-Daisy establecidas", timestamp: "17/07/2025", author: "Pedro Espinoza"},
-      {text: "🔄 Updates regulares sobre estado del proyecto", timestamp: "17/07/2025", author: "Daisy Lenny Santos"},
-      {text: "📊 Dashboard para mapear todas las conversaciones", timestamp: "17/07/2025", author: "Pedro Espinoza"}
-    ], startDate: '2025-07-01', endDate: '2025-12-31', progress: 90 },
+      {text: "📅 REUNIÓN 09/07: Catchup semanal - Power BI, migración, resultados", timestamp: "09/07/2025", author: "Deisilany Santos"},
+      {text: "📅 REUNIÓN 17/07: Status migración, problemas críticos, duplicação", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "😴 Deisilany trabajando 8:30-20:30 para acelerar soluciones", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "🧘 Calma de Giovanni fundamental para manejar crisis", timestamp: "17/07/2025", author: "Deisilany Santos"}
+    ], startDate: '2025-07-01', endDate: '2025-12-31', progress: 95 },
 
     'reuniones-priorizacion': { completed: false, comments: [
-      {text: "🎯 Sistema de priorización de tareas implementado", timestamp: "17/07/2025", author: "Pedro Espinoza"},
-      {text: "📋 Delegación de responsabilidades optimizada", timestamp: "17/07/2025", author: "Daisy Lenny Santos"},
-      {text: "⚡ Gestión visual del equipo en desarrollo", timestamp: "17/07/2025", author: "Pedro Espinoza"}
-    ], startDate: '2025-07-01', endDate: '2025-12-31', progress: 85 },
+      {text: "📅 Reunión Ana programada: 11h-12h (followup)", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "📅 Reunión Carolina: 14:30-15:30 (alineamiento backoffice)", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "📋 Revisión procedimientos manuales - 1 mes transición", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "❓ Cases desaparecidas en Parting - necesita localización urgente", timestamp: "17/07/2025", author: "Deisilany Santos"}
+    ], startDate: '2025-07-01', endDate: '2025-12-31', progress: 80 },
 
     // Optimización Base de Donantes - ESTRATÉGICO
     'base-optimizacion': { completed: false, comments: [
-      {text: "📈 Optimización de base 100,000+ donantes", timestamp: "17/07/2025", author: "Pedro Espinoza"},
-      {text: "🔍 Análisis detallado de patrones de donación", timestamp: "17/07/2025", author: "Daisy Lenny Santos"},
-      {text: "💡 Estrategias personalizadas por segmento", timestamp: "17/07/2025", author: "Pedro Espinoza"}
-    ], startDate: '2025-06-01', endDate: '2025-12-31', progress: 65 },
+      {text: "📊 Base 100,000+ donantes - migración en curso", timestamp: "17/07/2025", author: "Pedro Espinoza"},
+      {text: "⚠️ PROBLEMA: Duplicação masiva cadastros en Vind", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "🔍 Consulta frontal retorna solo 1 - múltiples activos escondidos", timestamp: "17/07/2025", author: "Deisilany Santos"},
+      {text: "🚨 Riesgo: Cobranzas indebidas y descontento donadores", timestamp: "17/07/2025", author: "Deisilany Santos"}
+    ], startDate: '2025-06-01', endDate: '2025-12-31', progress: 45 },
 
     'base-segmentacion': { completed: false, comments: [
-      {text: "📊 Segmentación avanzada de donantes", timestamp: "17/07/2025", author: "Daisy Lenny Santos"},
-      {text: "🎯 Perfiles de donantes definidos", timestamp: "17/07/2025", author: "Pedro Espinoza"},
-      {text: "📈 Estrategias diferenciadas por segmento", timestamp: "17/07/2025", author: "Daisy Lenny Santos"}
-    ], startDate: '2025-08-01', endDate: '2025-10-31', progress: 50 }
+      {text: "📈 Campanha elétricas: 6-7 sucessos desde día 3 (4 días operando)", timestamp: "09/07/2025", author: "Deisilany Santos"},
+      {text: "💳 Autorización boleto mejoró resultados significativamente", timestamp: "09/07/2025", author: "Deisilany Santos"},
+      {text: "🗣️ Mejor contactabilidad - menos gente fallecida que base anterior", timestamp: "09/07/2025", author: "Deisilany Santos"},
+      {text: "⚰️ Base anterior: 5 llamadas, 4 personas muertas - ahora gente viva", timestamp: "09/07/2025", author: "Deisilany Santos"}
+    ], startDate: '2025-07-03', endDate: '2025-10-31', progress: 65 },
+    
+    // Campañas Especiales - PROYECTOS ADICIONALES
+    'campanhas-eletricas': { completed: false, comments: [
+      {text: "🔌 UNICEF Reativação Elétrica - campanha ativa desde 03/07", timestamp: "09/07/2025", author: "Deisilany Santos"},
+      {text: "🎯 7 sucessos en 5 días operativos - tendencia positiva", timestamp: "09/07/2025", author: "Deisilany Santos"},
+      {text: "💳 Modalidad boleto autorizada - impacto positivo inmediato", timestamp: "09/07/2025", author: "Deisilany Santos"},
+      {text: "📈 Base upgrade elétrica mejor que inactivos - menos caixas postais", timestamp: "09/07/2025", author: "Deisilany Santos"}
+    ], startDate: '2025-07-03', endDate: '2025-09-30', progress: 75 },
+    
+    'campanhas-premio': { completed: false, comments: [
+      {text: "🎁 Campanha premiação julho SUSPENDIDA por migração", timestamp: "09/07/2025", author: "Deisilany Santos"},
+      {text: "⏳ Aguardando normalidad para campanha elaborada próximo mês", timestamp: "09/07/2025", author: "Deisilany Santos"},
+      {text: "🔄 Variação: gift cards, folgas, saídas antecipadas", timestamp: "09/07/2025", author: "Daniela Cardoso Belmock"},
+      {text: "💰 Orçamento UNICEF 2025 ultrapassado - campanhas anteriores contabilizadas", timestamp: "09/07/2025", author: "Daniela Cardoso Belmock"}
+    ], startDate: '2025-08-01', endDate: '2025-12-31', progress: 30 }
   });
 
   const [newComment, setNewComment] = useState<{[key: string]: string}>({});
@@ -210,11 +239,29 @@ const UnicefProgressDashboard = () => {
       status: 'in-progress'
     },
     'base-segmentacion': { 
-      title: 'Segmentación Avanzada de Donantes', 
-      responsible: 'Daisy Lenny Santos + Equipo Análisis', 
+      title: 'Campanha Elétricas - Resultados Reales', 
+      responsible: 'Deisilany Santos + Equipo Operaciones', 
       category: 'estrategia', 
-      priority: 'normal',
+      priority: 'high',
       section: 'Optimización Base de Donantes',
+      status: 'in-progress'
+    },
+
+    // Campañas Especiales
+    'campanhas-eletricas': { 
+      title: 'UNICEF Reativação Elétrica - 7 Sucessos', 
+      responsible: 'Deisilany Santos + Equipo Brasilia', 
+      category: 'campanhas', 
+      priority: 'high',
+      section: 'Campañas Especiales',
+      status: 'in-progress'
+    },
+    'campanhas-premio': { 
+      title: 'Campañas Premiação - Gestão Incentivos', 
+      responsible: 'Deisilany Santos + Daniela Belmock', 
+      category: 'campanhas', 
+      priority: 'normal',
+      section: 'Campañas Especiales',
       status: 'in-progress'
     }
   };
@@ -292,7 +339,8 @@ const UnicefProgressDashboard = () => {
     ops: { bg: 'bg-green-500', light: 'bg-green-100', text: 'text-green-800' },
     equipo: { bg: 'bg-purple-500', light: 'bg-purple-100', text: 'text-purple-800' },
     gestao: { bg: 'bg-indigo-500', light: 'bg-indigo-100', text: 'text-indigo-800' },
-    estrategia: { bg: 'bg-orange-500', light: 'bg-orange-100', text: 'text-orange-800' }
+    estrategia: { bg: 'bg-orange-500', light: 'bg-orange-100', text: 'text-orange-800' },
+    campanhas: { bg: 'bg-pink-500', light: 'bg-pink-100', text: 'text-pink-800' }
   };
 
   const statusColors = {
@@ -358,7 +406,7 @@ const UnicefProgressDashboard = () => {
               <div className="flex flex-wrap gap-4 text-sm">
                 <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 flex items-center">
                   <Users className="w-4 h-4 mr-2" />
-                  <span className="font-medium">Equipo Brasilia: 45 profesionales</span>
+                  <span className="font-medium">Equipo Brasilia: 37 profesionales</span>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 flex items-center">
                   <Heart className="w-4 h-4 mr-2" />
@@ -779,8 +827,8 @@ const UnicefProgressDashboard = () => {
             <img src="/images/wa-logo.png" alt="WA Contact Center" className="w-5 h-5 object-contain" />
             <p className="text-sm font-medium">Dashboard UNICEF Brasil - WA Contact Center</p>
           </div>
-          <p className="text-xs">💝 Base: 100,000+ donantes | 👥 Equipo: 45 personas | 📅 Operando desde 2019</p>
-          <p className="text-xs">🎯 CEO: Pedro Espinoza | 👩‍💼 Gerente: Daisy Lenny Santos | 🏢 Brasilia</p>
+          <p className="text-xs">💝 Base: 100,000+ donantes | 👥 Equipo: 37 personas | 📅 Operando desde 2019</p>
+          <p className="text-xs">🎯 CEO: Pedro Espinoza | 👩‍💼 Gerente: Deisilany Santos | 🏢 Brasilia</p>
           <p className="text-xs text-gray-400 mt-1">Atualizado: 17/07/2025 | Powered by Claude Code Agent</p>
         </div>
       </div>
