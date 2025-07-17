@@ -243,25 +243,20 @@ app.get('/api/transcriptions', authenticateAPI, (req, res) => {
   }
 });
 
-// Fallback para React Router (SPA) - usando middleware específico
-app.use((req, res, next) => {
-  // Si es una solicitud a la API, continúa
+// Middleware para manejar rutas SPA
+app.get('*', (req, res) => {
+  // Skip API routes
   if (req.path.startsWith('/api/')) {
-    return next();
+    return res.status(404).json({ error: 'API endpoint not found' });
   }
   
-  // Si es una solicitud de archivos estáticos (js, css, etc.), no hacer fallback
+  // Skip static asset routes - let them 404 naturally
   if (req.path.startsWith('/assets/') || 
-      req.path.endsWith('.js') || 
-      req.path.endsWith('.css') || 
-      req.path.endsWith('.svg') || 
-      req.path.endsWith('.png') || 
-      req.path.endsWith('.jpg') || 
-      req.path.endsWith('.ico')) {
-    return next();
+      req.path.match(/\.(js|css|svg|png|jpg|ico|woff|woff2|ttf|eot)$/)) {
+    return res.status(404).send('Asset not found');
   }
   
-  // Para todas las demás rutas, servir index.html
+  // For all other routes, serve index.html (SPA fallback)
   res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
 });
 
