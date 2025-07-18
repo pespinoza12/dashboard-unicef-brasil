@@ -1,11 +1,147 @@
-import { useState } from 'react';
-import { AlertTriangle, Clock, CheckCircle, Calendar, User, MessageSquare, Phone, Target, Settings, Plus, ChevronRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { AlertTriangle, Clock, CheckCircle, Calendar, User, MessageSquare, Phone, Target, Settings, Plus, ChevronRight, Edit2, Save, X, Trash2 } from 'lucide-react';
+
+// Componente para editar cards
+const EditCardForm = ({ cardId, kanbanData, onSave, onCancel }) => {
+  const [formData, setFormData] = useState(() => {
+    // Encontrar el card en cualquier columna
+    for (const column of Object.values(kanbanData)) {
+      const card = column.items.find(item => item.id === cardId);
+      if (card) return { ...card };
+    }
+    return {};
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSave(formData);
+  };
+
+  const priorities = [
+    { value: 'urgent', label: 'Urgente', color: 'bg-red-100 text-red-800' },
+    { value: 'blocked', label: 'Bloqueado', color: 'bg-orange-100 text-orange-800' },
+    { value: 'high', label: 'Alto', color: 'bg-blue-100 text-blue-800' },
+    { value: 'medium', label: 'Médio', color: 'bg-purple-100 text-purple-800' },
+    { value: 'low', label: 'Baixo', color: 'bg-green-100 text-green-800' }
+  ];
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">Título</label>
+        <input
+          type="text"
+          value={formData.title || ''}
+          onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value }))}
+          className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          required
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">Descrição</label>
+        <textarea
+          value={formData.description || ''}
+          onChange={(e) => setFormData(prev => ({ ...prev, description: e.target.value }))}
+          rows={3}
+          className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">Impacto</label>
+        <textarea
+          value={formData.impact || ''}
+          onChange={(e) => setFormData(prev => ({ ...prev, impact: e.target.value }))}
+          rows={2}
+          className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        />
+      </div>
+
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Responsável</label>
+          <input
+            type="text"
+            value={formData.responsible || ''}
+            onChange={(e) => setFormData(prev => ({ ...prev, responsible: e.target.value }))}
+            className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Prazo</label>
+          <input
+            type="text"
+            value={formData.deadline || ''}
+            onChange={(e) => setFormData(prev => ({ ...prev, deadline: e.target.value }))}
+            className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">Prioridade</label>
+        <select
+          value={formData.priority || 'medium'}
+          onChange={(e) => setFormData(prev => ({ ...prev, priority: e.target.value }))}
+          className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        >
+          {priorities.map(priority => (
+            <option key={priority.value} value={priority.value}>
+              {priority.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">Ação Requerida</label>
+        <textarea
+          value={formData.actionRequired || ''}
+          onChange={(e) => setFormData(prev => ({ ...prev, actionRequired: e.target.value }))}
+          rows={2}
+          className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">Atualização</label>
+        <textarea
+          value={formData.updateText || ''}
+          onChange={(e) => setFormData(prev => ({ ...prev, updateText: e.target.value }))}
+          rows={2}
+          className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        />
+      </div>
+
+      <div className="flex justify-end space-x-3 pt-4 border-t">
+        <button
+          type="button"
+          onClick={onCancel}
+          className="px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50"
+        >
+          Cancelar
+        </button>
+        <button
+          type="submit"
+          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center space-x-2"
+        >
+          <Save className="w-4 h-4" />
+          <span>Salvar</span>
+        </button>
+      </div>
+    </form>
+  );
+};
 
 const UnicefKanbanDashboard = () => {
   const [selectedCard, setSelectedCard] = useState(null);
+  const [editingCard, setEditingCard] = useState(null);
+  const [draggedCard, setDraggedCard] = useState(null);
 
-  // Dados reais das reuniões organizados em formato Kanban
-  const kanbanData = {
+  // Dados iniciais das reuniões organizados em formato Kanban
+  const initialKanbanData = {
     critico: {
       title: "🚨 CRÍTICO - Ação Imediata",
       color: "bg-red-50 border-red-200",
@@ -185,6 +321,119 @@ const UnicefKanbanDashboard = () => {
     }
   };
 
+  // Estado mutable del Kanban con localStorage
+  const [kanbanData, setKanbanData] = useState(() => {
+    const saved = localStorage.getItem('unicef-kanban-data');
+    return saved ? JSON.parse(saved) : initialKanbanData;
+  });
+
+  // Guardar en localStorage cuando cambien los datos
+  useEffect(() => {
+    localStorage.setItem('unicef-kanban-data', JSON.stringify(kanbanData));
+  }, [kanbanData]);
+
+  // Funciones para manejar drag & drop
+  const handleDragStart = (e, card, sourceColumn) => {
+    setDraggedCard({ card, sourceColumn });
+    e.dataTransfer.effectAllowed = 'move';
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+  };
+
+  const handleDrop = (e, targetColumn) => {
+    e.preventDefault();
+    if (!draggedCard) return;
+
+    const { card, sourceColumn } = draggedCard;
+    if (sourceColumn === targetColumn) return;
+
+    setKanbanData(prev => {
+      const newData = { ...prev };
+      
+      // Remover del origen
+      newData[sourceColumn] = {
+        ...newData[sourceColumn],
+        items: newData[sourceColumn].items.filter(item => item.id !== card.id)
+      };
+      
+      // Agregar al destino
+      newData[targetColumn] = {
+        ...newData[targetColumn],
+        items: [...newData[targetColumn].items, card]
+      };
+      
+      return newData;
+    });
+
+    setDraggedCard(null);
+  };
+
+  // Función para crear nuevo card
+  const createNewCard = (columnKey) => {
+    const newCard = {
+      id: Date.now(),
+      title: "Novo Item",
+      description: "Clique para editar a descrição",
+      impact: "Definir impacto",
+      responsible: "Responsável",
+      deadline: new Date().toLocaleDateString('pt-BR'),
+      priority: "medium",
+      lastUpdate: new Date().toLocaleDateString('pt-BR'),
+      author: "Usuário",
+      updateText: "Item criado",
+      actionRequired: "Definir ação necessária"
+    };
+
+    setKanbanData(prev => ({
+      ...prev,
+      [columnKey]: {
+        ...prev[columnKey],
+        items: [...prev[columnKey].items, newCard]
+      }
+    }));
+
+    setEditingCard(newCard.id);
+  };
+
+  // Função para editar card
+  const updateCard = (cardId, updatedCard) => {
+    setKanbanData(prev => {
+      const newData = { ...prev };
+      
+      Object.keys(newData).forEach(columnKey => {
+        const itemIndex = newData[columnKey].items.findIndex(item => item.id === cardId);
+        if (itemIndex !== -1) {
+          newData[columnKey].items[itemIndex] = {
+            ...newData[columnKey].items[itemIndex],
+            ...updatedCard,
+            lastUpdate: new Date().toLocaleDateString('pt-BR')
+          };
+        }
+      });
+      
+      return newData;
+    });
+  };
+
+  // Función para eliminar card
+  const deleteCard = (cardId) => {
+    setKanbanData(prev => {
+      const newData = { ...prev };
+      
+      Object.keys(newData).forEach(columnKey => {
+        newData[columnKey] = {
+          ...newData[columnKey],
+          items: newData[columnKey].items.filter(item => item.id !== cardId)
+        };
+      });
+      
+      return newData;
+    });
+  };
+
   const getPriorityColor = (priority) => {
     const colors = {
       urgent: "bg-red-100 text-red-800 border-red-300",
@@ -278,20 +527,62 @@ const UnicefKanbanDashboard = () => {
               </div>
 
               {/* Cards */}
-              <div className={`${column.color} p-4 min-h-[600px]`}>
+              <div 
+                className={`${column.color} p-4 min-h-[600px]`}
+                onDragOver={handleDragOver}
+                onDrop={(e) => handleDrop(e, columnKey)}
+              >
                 <div className="space-y-4">
                   {column.items.map((item) => (
                     <div
                       key={item.id}
-                      className="bg-white rounded-lg shadow-md border hover:shadow-lg transition-all duration-200 cursor-pointer hover:-translate-y-1"
-                      onClick={() => setSelectedCard(item)}
+                      draggable
+                      onDragStart={(e) => handleDragStart(e, item, columnKey)}
+                      className="bg-white rounded-lg shadow-md border hover:shadow-lg transition-all duration-200 cursor-move hover:-translate-y-1 group"
                     >
                       <div className="p-4">
                         {/* Card Header */}
                         <div className="flex items-start justify-between mb-3">
-                          <h4 className="font-bold text-gray-800 text-sm">{item.title}</h4>
-                          <div className={`px-2 py-1 rounded-full text-xs font-medium border ${getPriorityColor(item.priority)} flex items-center space-x-1`}>
-                            {getPriorityIcon(item.priority)}
+                          <h4 className="font-bold text-gray-800 text-sm flex-1">{item.title}</h4>
+                          <div className="flex items-center space-x-2">
+                            {/* Botones de edición */}
+                            <div className="opacity-0 group-hover:opacity-100 transition-opacity flex space-x-1">
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setEditingCard(item.id);
+                                }}
+                                className="p-1 text-blue-600 hover:bg-blue-100 rounded"
+                                title="Editar"
+                              >
+                                <Edit2 className="w-3 h-3" />
+                              </button>
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setSelectedCard(item);
+                                }}
+                                className="p-1 text-green-600 hover:bg-green-100 rounded"
+                                title="Ver detalhes"
+                              >
+                                <ChevronRight className="w-3 h-3" />
+                              </button>
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  if (confirm('Deseja realmente excluir este item?')) {
+                                    deleteCard(item.id);
+                                  }
+                                }}
+                                className="p-1 text-red-600 hover:bg-red-100 rounded"
+                                title="Excluir"
+                              >
+                                <Trash2 className="w-3 h-3" />
+                              </button>
+                            </div>
+                            <div className={`px-2 py-1 rounded-full text-xs font-medium border ${getPriorityColor(item.priority)} flex items-center space-x-1`}>
+                              {getPriorityIcon(item.priority)}
+                            </div>
                           </div>
                         </div>
 
@@ -334,7 +625,10 @@ const UnicefKanbanDashboard = () => {
                   ))}
 
                   {/* Add Card Button */}
-                  <button className="w-full bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-4 text-gray-500 hover:bg-gray-200 hover:border-gray-400 transition-colors duration-200 flex items-center justify-center space-x-2">
+                  <button 
+                    onClick={() => createNewCard(columnKey)}
+                    className="w-full bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-4 text-gray-500 hover:bg-gray-200 hover:border-gray-400 transition-colors duration-200 flex items-center justify-center space-x-2"
+                  >
                     <Plus className="w-5 h-5" />
                     <span className="text-sm">Adicionar item</span>
                   </button>
@@ -405,6 +699,35 @@ const UnicefKanbanDashboard = () => {
                   </div>
                 )}
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modal de edición */}
+      {editingCard && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex items-start justify-between mb-4">
+                <h3 className="text-xl font-bold text-gray-800">Editar Item</h3>
+                <button
+                  onClick={() => setEditingCard(null)}
+                  className="text-gray-500 hover:text-gray-700"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              
+              <EditCardForm 
+                cardId={editingCard}
+                kanbanData={kanbanData}
+                onSave={(updatedCard) => {
+                  updateCard(editingCard, updatedCard);
+                  setEditingCard(null);
+                }}
+                onCancel={() => setEditingCard(null)}
+              />
             </div>
           </div>
         </div>
