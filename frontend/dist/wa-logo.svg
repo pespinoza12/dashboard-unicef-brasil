@@ -1,0 +1,13 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Círculo superior -->
+  <circle cx="256" cy="120" r="60" fill="#E53935"/>
+  
+  <!-- Forma angular principal (como A o techo) -->
+  <path d="M80 500 L180 280 L332 280 L432 500 L320 500 L256 380 L192 500 Z" fill="#E53935"/>
+  
+  <!-- Triángulo blanco interior -->
+  <path d="M180 280 L256 380 L332 280 L256 320 Z" fill="#FFFFFF"/>
+  
+  <!-- Corazón en el centro -->
+  <path d="M256 340 C250 335, 240 335, 240 345 C240 355, 256 365, 256 365 C256 365, 272 355, 272 345 C272 335, 262 335, 256 340 Z" fill="#B71C1C"/>
+</svg>

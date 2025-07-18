@@ -5,9 +5,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # Build outputs
-frontend/dist/
 backend/dist/
 build/
+# frontend/dist/ - Commented out for EasyPanel deployment
 
 # Environment files
 .env
