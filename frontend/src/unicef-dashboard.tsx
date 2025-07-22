@@ -495,7 +495,7 @@ const UnicefProgressDashboard = () => {
                 </div>
                 <div>
                   <h1 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-                    DASHBOARD UNICEF BRASIL - WA CONTACT CENTER
+                    DASHBOARD UNICEF BRASIL - ACTUALIZADO 22/07/2025 🚨
                   </h1>
                   <p className="text-blue-100 text-lg font-medium">
                     Supporter Service | Proyecto desde 2019 | Status Julio 2025
@@ -935,7 +935,7 @@ const UnicefProgressDashboard = () => {
           </div>
           <p className="text-xs">💝 Base: 100,000+ donantes | 👥 Equipo: 37 personas | 📅 Operando desde 2019</p>
           <p className="text-xs">🎯 CEO: Pedro Espinoza | 👩‍💼 Gerente: Deisilany Santos | 🏢 Brasilia</p>
-          <p className="text-xs text-gray-400 mt-1">Atualizado: 17/07/2025 | Powered by Claude Code Agent</p>
+          <p className="text-xs text-gray-400 mt-1">🚨 ÚLTIMA ACTUALIZACIÓN: 22/07/2025 14:45 GMT-3 | Powered by Claude Code Agent</p>
         </div>
       </div>
     </div>
