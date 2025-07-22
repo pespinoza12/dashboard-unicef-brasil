@@ -3,20 +3,20 @@ import { CheckCircle, Clock, MessageSquare, Users, Server, Settings, TrendingUp,
 
 const UnicefProgressDashboard = () => {
   const [tasks, setTasks] = useState({
-    // Gestión de Donantes - OPERACIÓN PRINCIPAL
+    // Gestión de Donantes - OPERACIÓN PRINCIPAL  
     'donantes-saving': { completed: false, comments: [
-      {text: "🚫 CAMPAÑA PARALIZADA: Datos importados UNICEF con fechas erróneas", timestamp: "17/07/2025", author: "Deisilany Santos"},
-      {text: "❌ Imposible analizar doadores - todas las facturas marcadas día 10", timestamp: "17/07/2025", author: "Deisilany Santos"},
-      {text: "📧 E-mail enviado a UNICEF solicitando corrección urgente", timestamp: "17/07/2025", author: "Deisilany Santos"},
-      {text: "⏸️ Mailing disponible pero campaña suspendida hasta resolución", timestamp: "17/07/2025", author: "Deisilany Santos"}
-    ], startDate: '2025-07-01', endDate: '2025-07-31', progress: 20 },
+      {text: "✅ MIGRAÇÃO COMPLETADA: Sistema Partner funcionando com solução provisória", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "🔧 Giovanni implementou campos Vindi na fronte - campanha ativa novamente", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "📊 Taxa atual saving: 2,52% - funcionando com dados corretos Vindi", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "⚡ Middleware em desenvolvimento para correção definitiva dados Partner", timestamp: "22/07/2025", author: "Giovanni Desenvolvimento"}
+    ], startDate: '2025-07-01', endDate: '2025-07-31', progress: 75 },
 
     'donantes-upgrade': { completed: false, comments: [
-      {text: "🔄 Base de upgrade no llegó - problema segmentación UNICEF", timestamp: "17/07/2025", author: "Deisilany Santos"},
-      {text: "⏳ Esperando base que será enviada posteriormente", timestamp: "17/07/2025", author: "Deisilany Santos"},
-      {text: "👥 1 persona del equipo ayudando a cerrar demandas Infobip", timestamp: "17/07/2025", author: "Deisilany Santos"},
-      {text: "📝 Equipo familiarizándose con nuevo sistema Parting", timestamp: "17/07/2025", author: "Deisilany Santos"}
-    ], startDate: '2025-07-20', endDate: '2025-09-30', progress: 40 },
+      {text: "🔄 Base de upgrade ainda não chegou - problema segmentação UNICEF", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "⏳ Aguardando base que será enviada posteriormente", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "📋 Preparação cargas elétricas em layout SalesForce", timestamp: "22/07/2025", author: "Giovanni Desenvolvimento"},
+      {text: "🔄 Continuando base inativos no restante do mês", timestamp: "21/07/2025", author: "Deisilany Santos"}
+    ], startDate: '2025-07-20', endDate: '2025-09-30', progress: 50 },
 
     'donantes-legados': { completed: false, comments: [
       {text: "👩‍🏫 Carolina de Legados dará treinamento a 2 nuevas agentes", timestamp: "09/07/2025", author: "Deisilany Santos"},
@@ -26,10 +26,10 @@ const UnicefProgressDashboard = () => {
     ], startDate: '2025-07-01', endDate: '2025-12-31', progress: 70 },
 
     'donantes-relacionamiento': { completed: false, comments: [
-      {text: "📊 RECEPTIVO: 42.53% (resultado actual julio)", timestamp: "17/07/2025", author: "Deisilany Santos"},
-      {text: "📱 DIGITAL: 39.06% (recuperándose después de migración)", timestamp: "17/07/2025", author: "Deisilany Santos"},
-      {text: "👥 37 colaboradores activos (número correcto autorizado)", timestamp: "17/07/2025", author: "Deisilany Santos"},
-      {text: "💪 Equipo mantiene resultados pese a desafíos migración", timestamp: "17/07/2025", author: "Deisilany Santos"}
+      {text: "📊 RECEPTIVO: 40.31% - estável pós-migração sistema Partner", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "📱 WHATSAPP: 37.67% - recuperando após problemas migração", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "✉️ E-MAIL: 55.17% - excelente performance canal digital", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "👥 37 colaboradores ativos - equipe mantém alta performance", timestamp: "21/07/2025", author: "Deisilany Santos"}
     ], startDate: '2019-01-01', endDate: '2025-12-31', progress: 85 },
 
     // Operaciones y Sistemas - FUNCIONAMIENTO DIARIO
@@ -63,11 +63,11 @@ const UnicefProgressDashboard = () => {
     ], startDate: '2019-01-01', endDate: '2025-12-31', progress: 90 },
 
     'equipo-capacitacion': { completed: false, comments: [
-      {text: "🎯 Treinamento nueva interfaz realizado con toda equipe", timestamp: "09/07/2025", author: "Deisilany Santos"},
-      {text: "📋 Lista pendencias antes migración - ajustes continuos", timestamp: "09/07/2025", author: "Deisilany Santos"},
-      {text: "📝 Nuevas tabulações UNICEF - treinamento programado segunda", timestamp: "09/07/2025", author: "Deisilany Santos"},
-      {text: "🌍 Treinamento Parting Mil en inglés - Carolina hace traducción", timestamp: "09/07/2025", author: "Deisilany Santos"}
-    ], startDate: '2025-06-01', endDate: '2025-12-31', progress: 80 },
+      {text: "✅ Treinamento novas tabulações UNICEF - realizado online com sucesso", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "🔄 Pequenas modificações nomenclatura a pedido UNICEF implementadas", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "👥 2 de 4 novatos saving ainda em escuta - aprendendo sistema Partner", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "📞 Operadora receptivo inicia atendimento esta semana", timestamp: "21/07/2025", author: "Deisilany Santos"}
+    ], startDate: '2025-06-01', endDate: '2025-12-31', progress: 85 },
 
     'equipo-kpis': { completed: false, comments: [
       {text: "😔 Operadores se sienten culpables por cancelamentos de problemas UNICEF", timestamp: "17/07/2025", author: "Deisilany Santos"},
@@ -119,7 +119,50 @@ const UnicefProgressDashboard = () => {
       {text: "⏳ Aguardando normalidad para campanha elaborada próximo mês", timestamp: "09/07/2025", author: "Deisilany Santos"},
       {text: "🔄 Variação: gift cards, folgas, saídas antecipadas", timestamp: "09/07/2025", author: "Daniela Cardoso Belmock"},
       {text: "💰 Orçamento UNICEF 2025 ultrapassado - campanhas anteriores contabilizadas", timestamp: "09/07/2025", author: "Daniela Cardoso Belmock"}
-    ], startDate: '2025-08-01', endDate: '2025-12-31', progress: 30 }
+    ], startDate: '2025-08-01', endDate: '2025-12-31', progress: 30 },
+
+    // NOVAS TAREAS CRÍTICAS IDENTIFICADAS EM REUNIÕES
+    'critico-bot-whatsapp': { completed: false, comments: [
+      {text: "🚨 URGENTE: Bot WhatsApp irritando donadores - podem virar cancelamentos", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "❌ Equipe não consegue responder mensagens WhatsApp", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "⚠️ Plataforma digital falhas múltiplas - backoffices sobrecarregadas", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "📧 E-mail enviado UNICEF com prints e descrições detalhadas das falhas", timestamp: "21/07/2025", author: "Deisilany Santos"}
+    ], startDate: '2025-07-21', endDate: '2025-08-31', progress: 10 },
+
+    'critico-middleware-vindi': { completed: false, comments: [
+      {text: "🚨 CRÍTICO: Middleware Vindi-Salesforce para corrigir dados Partner", timestamp: "22/07/2025", author: "Giovanni Desenvolvimento"},
+      {text: "⚠️ Reversões cancelamento não refletindo Vindi - impacto resultados futuros", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "🔄 Comunicação dados Vindi-Salesforce deve começar funcionar em breve", timestamp: "21/07/2025", author: "Giovanni Desenvolvimento"},
+      {text: "📊 Alterando datas pagamento diretamente Vindi para evitar perdas", timestamp: "21/07/2025", author: "Giovanni Desenvolvimento"}
+    ], startDate: '2025-07-22', endDate: '2025-08-15', progress: 20 },
+
+    'critico-bi-historico': { completed: false, comments: [
+      {text: "📊 Ana UNICEF questionando ausência histórico anos anteriores no BI", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "🔧 Necessário manter histórico dados para comparações e análises", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "⚠️ Problema conexão BI mensal - atualizações pausadas", timestamp: "22/07/2025", author: "Giovanni Desenvolvimento"},
+      {text: "📈 BI mensal já batendo conversão - consolidados adaptados para UNICEF", timestamp: "21/07/2025", author: "Giovanni Desenvolvimento"}
+    ], startDate: '2025-07-22', endDate: '2025-08-30', progress: 30 },
+
+    'critico-plataforma-sftp': { completed: false, comments: [
+      {text: "🤝 Negociação plataforma SFTP comum UNICEF-Stilo-WA", timestamp: "22/07/2025", author: "Giovanni Desenvolvimento"},
+      {text: "📅 Data envío retorno UNICEF: todo dia 16, envío distribuidores até dia 20", timestamp: "22/07/2025", author: "Giovanni Desenvolvimento"},
+      {text: "🔄 Otimização fluxo transferência dados - evitar trimulação", timestamp: "22/07/2025", author: "Giovanni Desenvolvimento"},
+      {text: "🔧 20 atualizações sistema implementadas última semana", timestamp: "22/07/2025", author: "Giovanni Desenvolvimento"}
+    ], startDate: '2025-07-22', endDate: '2025-09-15', progress: 40 },
+
+    'critico-novatos-integracao': { completed: false, comments: [
+      {text: "👥 2 de 4 novatos saving ainda em escuta - aprendendo novo sistema", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "📞 Operadora receptivo começa atender esta semana", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "📋 Treinamento novas tabulações UNICEF - pequenas modificações nomenclatura", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "🎯 4 novatos muito bons e interessados - ainda não começaram atender", timestamp: "21/07/2025", author: "Deisilany Santos"}
+    ], startDate: '2025-07-21', endDate: '2025-08-31', progress: 60 },
+
+    'critico-backoffices-sobrecarga': { completed: false, comments: [
+      {text: "🚨 Backoffices sobrecarregadas com suporte sistema digital", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "🌐 Plataforma digital em inglês - dificulta correção manual dados", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "🔧 Equipe priorizando mapeamento falhas plataforma digital para correção", timestamp: "21/07/2025", author: "Deisilany Santos"},
+      {text: "💪 Deisilany trabalhando 8:30-20:30 para acelerar soluções", timestamp: "21/07/2025", author: "Pedro Espinoza"}
+    ], startDate: '2025-07-21', endDate: '2025-09-30', progress: 25 }
   });
 
   const [newComment, setNewComment] = useState<{[key: string]: string}>({});
@@ -200,7 +243,7 @@ const UnicefProgressDashboard = () => {
       category: 'equipo', 
       priority: 'normal',
       section: 'Gestión de Equipo',
-      status: 'in-progress'
+      status: 'completed'
     },
     'equipo-kpis': { 
       title: 'KPIs y Monitoreo de Performance', 
@@ -262,6 +305,56 @@ const UnicefProgressDashboard = () => {
       category: 'campanhas', 
       priority: 'normal',
       section: 'Campañas Especiales',
+      status: 'in-progress'
+    },
+
+    // NUEVAS TAREAS CRÍTICAS
+    'critico-bot-whatsapp': { 
+      title: '🚨 CRÍTICO: Bot WhatsApp Irritando Donadores', 
+      responsible: 'Deisilany Santos + Equipo Técnico', 
+      category: 'ops', 
+      priority: 'critical',
+      section: 'Problemas Críticos Post-Migração',
+      status: 'in-progress'
+    },
+    'critico-middleware-vindi': { 
+      title: '🚨 CRÍTICO: Middleware Vindi-Salesforce', 
+      responsible: 'Giovanni Desenvolvimento + Pedro Espinoza', 
+      category: 'ops', 
+      priority: 'critical',
+      section: 'Problemas Críticos Post-Migração',
+      status: 'in-progress'
+    },
+    'critico-bi-historico': { 
+      title: 'Recuperação Histórico BI Anos Anteriores', 
+      responsible: 'Giovanni Desenvolvimento + Ana UNICEF', 
+      category: 'ops', 
+      priority: 'high',
+      section: 'Problemas Críticos Post-Migração',
+      status: 'in-progress'
+    },
+    'critico-plataforma-sftp': { 
+      title: 'Negociação SFTP Comum UNICEF-Stilo', 
+      responsible: 'Giovanni Desenvolvimento + Pedro Espinoza', 
+      category: 'ops', 
+      priority: 'high',
+      section: 'Problemas Críticos Post-Migração',
+      status: 'in-progress'
+    },
+    'critico-novatos-integracao': { 
+      title: 'Integração Novatos - Sistema Partner', 
+      responsible: 'Deisilany Santos + Equipo Training', 
+      category: 'equipo', 
+      priority: 'high',
+      section: 'Problemas Críticos Post-Migração',
+      status: 'in-progress'
+    },
+    'critico-backoffices-sobrecarga': { 
+      title: '🚨 CRÍTICO: Backoffices Sobrecarregadas', 
+      responsible: 'Deisilany Santos + Equipo Operações', 
+      category: 'ops', 
+      priority: 'critical',
+      section: 'Problemas Críticos Post-Migração',
       status: 'in-progress'
     }
   };
@@ -347,6 +440,13 @@ const UnicefProgressDashboard = () => {
     completed: 'border-l-4 border-green-500 bg-green-50',
     'in-progress': 'border-l-4 border-yellow-500 bg-yellow-50',
     pending: 'border-l-4 border-gray-500 bg-gray-50'
+  };
+
+  const priorityColors = {
+    critical: 'border-l-4 border-red-600 bg-red-50 shadow-lg',
+    high: 'border-l-4 border-orange-500 bg-orange-50',
+    normal: 'border-l-4 border-blue-500 bg-blue-50',
+    low: 'border-l-4 border-gray-400 bg-gray-50'
   };
 
   const getOverallProgress = () => {
@@ -721,7 +821,9 @@ const UnicefProgressDashboard = () => {
                     return (
                       <div key={taskId} className="flex border-b hover:bg-gray-50">
                         {/* Task Info */}
-                        <div className={`w-80 p-3 border-r sticky left-0 z-10 bg-white ${statusColors[taskDef.status]}`}>
+                        <div className={`w-80 p-3 border-r sticky left-0 z-10 bg-white ${
+                          taskDef.priority === 'critical' ? priorityColors.critical : statusColors[taskDef.status]
+                        }`}>
                           <div className="flex items-center space-x-2 mb-2">
                             <button
                               onClick={() => toggleTask(taskId)}
@@ -738,8 +840,12 @@ const UnicefProgressDashboard = () => {
                           </div>
                           
                           <div className="flex items-center space-x-2 mb-2">
-                            <span className={`text-xs px-2 py-1 rounded ${categoryColor.light} ${categoryColor.text}`}>
-                              {taskDef.status === 'completed' ? '✅ CONCLUÍDA' : 
+                            <span className={`text-xs px-2 py-1 rounded ${
+                              taskDef.priority === 'critical' ? 'bg-red-100 text-red-800 font-bold' : 
+                              categoryColor.light + ' ' + categoryColor.text
+                            }`}>
+                              {taskDef.priority === 'critical' ? '🚨 CRÍTICO' :
+                               taskDef.status === 'completed' ? '✅ CONCLUÍDA' : 
                                taskDef.status === 'in-progress' ? '⚡ EM ANDAMENTO' : '⏳ PENDENTE'}
                             </span>
                             <span className={`text-xs font-bold ${getProgressColor(task.progress)}`}>
