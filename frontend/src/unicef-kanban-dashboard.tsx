@@ -321,9 +321,19 @@ const UnicefKanbanDashboard = () => {
     }
   };
 
-  // Estado mutable del Kanban con localStorage
+  // Estado mutable del Kanban con localStorage y version control
   const [kanbanData, setKanbanData] = useState(() => {
     const saved = localStorage.getItem('unicef-kanban-data');
+    const version = localStorage.getItem('unicef-kanban-version');
+    const currentVersion = '2025-07-22-v2'; // Version post-reuniones 21-22/07
+    
+    // Si no hay version guardada o es antigua, usar datos actualizados
+    if (!version || version !== currentVersion) {
+      localStorage.setItem('unicef-kanban-version', currentVersion);
+      localStorage.setItem('unicef-kanban-data', JSON.stringify(initialKanbanData));
+      return initialKanbanData;
+    }
+    
     return saved ? JSON.parse(saved) : initialKanbanData;
   });
 
@@ -482,7 +492,17 @@ const UnicefKanbanDashboard = () => {
                 </div>
               </div>
               
-              <div className="text-right">
+              <div className="text-right flex items-center space-x-4">
+                <button
+                  onClick={() => {
+                    localStorage.setItem('unicef-kanban-version', '2025-07-22-v2');
+                    localStorage.setItem('unicef-kanban-data', JSON.stringify(initialKanbanData));
+                    setKanbanData(initialKanbanData);
+                  }}
+                  className="bg-white/10 hover:bg-white/20 border border-white/30 rounded-lg px-3 py-2 text-white text-sm font-medium transition-all"
+                >
+                  🔄 Atualizar Dados
+                </button>
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/30">
                   <div className="text-3xl font-bold text-red-300">{getUrgentCount()}</div>
                   <div className="text-blue-200 text-sm">Itens Críticos</div>
