@@ -498,7 +498,7 @@ const UnicefProgressDashboard = () => {
                     DASHBOARD UNICEF BRASIL - ACTUALIZADO 22/07/2025 🚨
                   </h1>
                   <p className="text-blue-100 text-lg font-medium">
-                    Supporter Service | Proyecto desde 2019 | Status Julio 2025
+                    🚨 TEST DEPLOY 22/07/2025 14:50 - CÓDIGO FUNCIONANDO 🚨
                   </p>
                 </div>
               </div>
