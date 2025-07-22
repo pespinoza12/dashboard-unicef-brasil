@@ -149,42 +149,42 @@ const UnicefKanbanDashboard = () => {
       items: [
         {
           id: 1,
-          title: "Duplicação Cadastros no Vind",
-          description: "Consulta frontal mostra apenas 1, mas existem múltiplos ativos",
-          impact: "Risco cobrança indevida aos doadores",
-          responsible: "Deisilany + Giovanni",
-          deadline: "HOJE - 17/07/2025",
+          title: "Bot WhatsApp Irritando Donadores",
+          description: "Bot está incomodando donadores com mensagens excessivas ou inadequadas",
+          impact: "Podem virar cancelamentos - perda direta de receita",
+          responsible: "Deisilany + Equipe Digital",
+          deadline: "URGENTE - 22/07/2025",
           priority: "urgent",
-          lastUpdate: "17/07/2025",
+          lastUpdate: "22/07/2025",
           author: "Deisilany Santos",
-          updateText: "Problema crítico identificado na consulta. E-mail enviado para UNICEF.",
-          actionRequired: "Verificar se UNICEF já começou deduplicação"
+          updateText: "Problema crítico identificado na reunião. Necessário ajuste imediato no comportamento do bot.",
+          actionRequired: "Revisar configurações bot e implementar correções"
         },
         {
           id: 2,
-          title: "Power BI Parado - 2 Dias",
-          description: "Sistema não atualiza há 2 dias - problema banco de dados",
-          impact: "Impossível analisar resultados com precisão",
-          responsible: "Carlos + Giovanni",
-          deadline: "HOJE - 17/07/2025", 
+          title: "Middleware Vindi-Salesforce",
+          description: "Necessário para correção definitiva dos problemas de integração",
+          impact: "Sem isso, problemas de duplicação e sincronização continuam",
+          responsible: "Giovanni + Equipe TI",
+          deadline: "25/07/2025",
           priority: "urgent",
-          lastUpdate: "17/07/2025",
-          author: "Pedro Espinoza",
-          updateText: "Carlos vai revisar problema no banco de dados hoje",
-          actionRequired: "Cobrar status da revisão do Carlos"
+          lastUpdate: "22/07/2025",
+          author: "Giovanni",
+          updateText: "Middleware é solução definitiva para problemas de integração entre plataformas",
+          actionRequired: "Priorizar desenvolvimento do middleware"
         },
         {
           id: 3,
-          title: "Campanha Saving Paralisada",
-          description: "Dados UNICEF importados com datas erradas (tudo dia 10)",
-          impact: "Impossível fazer análise dos doadores",
-          responsible: "UNICEF + Deisilany",
-          deadline: "HOJE - 17/07/2025",
-          priority: "blocked",
-          lastUpdate: "17/07/2025",
-          author: "Deisilany Santos", 
-          updateText: "E-mail enviado para UNICEF solicitando correção das datas",
-          actionRequired: "Aguardar resposta UNICEF sobre correção"
+          title: "Backoffices Sobrecarregadas",
+          description: "Backoffices com sobrecarga devido à plataforma digital",
+          impact: "Operação manual comprometida, atrasos nos processamentos",
+          responsible: "Deisilany + Ana UNICEF",
+          deadline: "HOJE - 22/07/2025",
+          priority: "urgent",
+          lastUpdate: "22/07/2025",
+          author: "Ana UNICEF",
+          updateText: "Equipe de backoffice relatando sobrecarga operacional crítica",
+          actionRequired: "Redistribuir cargas de trabalho e otimizar processos"
         }
       ]
     },
@@ -195,55 +195,55 @@ const UnicefKanbanDashboard = () => {
       items: [
         {
           id: 4,
-          title: "Migração Infobip → Parting",
-          description: "Infobip desativado às 9:30h - Parting ainda não 100%",
-          impact: "WhatsApp Digital em transição crítica",
-          responsible: "Deisilany + Carolina",
-          deadline: "20/07/2025",
+          title: "Migração Partner COMPLETADA",
+          description: "Solução provisória de Giovanni implementada com sucesso",
+          impact: "Sistema Partner funcionando com solução temporária",
+          responsible: "Giovanni",
+          deadline: "COMPLETADO - 21/07/2025",
           priority: "high",
-          lastUpdate: "17/07/2025",
-          author: "Deisilany Santos",
-          updateText: "Campos em inglês dificultando operação. Cases desaparecidas no Parting.",
-          actionRequired: "Reunião com Carolina hoje 14:30-15:30 para resolver"
+          lastUpdate: "21/07/2025",
+          author: "Giovanni",
+          updateText: "Migração concluída com solução provisória. Sistema operacional.",
+          actionRequired: "Planejar implementação da solução definitiva"
         },
         {
           id: 5,
-          title: "Desligamento Mariana Ganda",
-          description: "Retorno de férias + desligamento programado",
-          impact: "Equipe fica com 37 colaboradores (número correto)",
-          responsible: "Daniela Belmock + RH",
-          deadline: "19/07/2025",
-          priority: "medium",
-          lastUpdate: "09/07/2025",
-          author: "Daniela Belmock",
-          updateText: "Indenização será feita pelo RH. Não colocamos no plano de saúde novo.",
-          actionRequired: "Confirmar que processo foi concluído"
+          title: "Campanha Saving REATIVADA",
+          description: "Reativada com dados Vindi - funcionando a 2,52%",
+          impact: "Retomada das operações de campanha saving",
+          responsible: "Deisilany + Equipe Vindi",
+          deadline: "25/07/2025",
+          priority: "high",
+          lastUpdate: "21/07/2025",
+          author: "Deisilany Santos",
+          updateText: "Campanha reativada com dados corrigidos do Vindi. Performance inicial de 2,52%.",
+          actionRequired: "Monitorar performance e otimizar conversões"
         },
         {
           id: 6,
-          title: "Resultados Operacionais",
-          description: "Receptivo: 42.53% | Digital: 39.06% (em recuperação)",
-          impact: "Manter resultados apesar dos desafios",
-          responsible: "Deisilany + Equipe",
-          deadline: "21/07/2025",
-          priority: "high",
-          lastUpdate: "17/07/2025",
-          author: "Deisilany Santos",
-          updateText: "Equipe conseguiu manter 50% reversão no dia da migração",
-          actionRequired: "Acompanhar evolução pós-migração Parting"
+          title: "Recuperação Histórico BI",
+          description: "Ana UNICEF pedindo recuperação de dados dos anos anteriores",
+          impact: "Necessário para análises históricas e comparativas",
+          responsible: "Giovanni + Ana UNICEF",
+          deadline: "30/07/2025",
+          priority: "medium",
+          lastUpdate: "22/07/2025",
+          author: "Ana UNICEF",
+          updateText: "Solicitação formal para recuperação de histórico BI anos anteriores",
+          actionRequired: "Avaliar viabilidade técnica e cronograma de recuperação"
         },
         {
           id: 7,
-          title: "Reuniões Ana + Carolina",
-          description: "Ana (11h-12h) + Carolina (14:30-15:30) hoje",
-          impact: "Definir procedimentos backoffice por 1 mês",
-          responsible: "Deisilany",
-          deadline: "17/07/2025 - HOJE",
-          priority: "high",
-          lastUpdate: "17/07/2025",
+          title: "Negociação SFTP UNICEF-Stilo-WA",
+          description: "Negociação para SFTP comum entre as três entidades",
+          impact: "Melhorar integração e fluxo de dados entre sistemas",
+          responsible: "Deisilany + Parceiros",
+          deadline: "31/07/2025",
+          priority: "medium",
+          lastUpdate: "22/07/2025",
           author: "Deisilany Santos",
-          updateText: "Reuniões agendadas para alinhamento procedimentos manuais",
-          actionRequired: "Participar das reuniões e definir continuidade"
+          updateText: "Iniciando negociações para estabelecer SFTP comum entre UNICEF-Stilo-WA",
+          actionRequired: "Coordenar reunião com todas as partes envolvidas"
         }
       ]
     },
@@ -254,68 +254,68 @@ const UnicefKanbanDashboard = () => {
       items: [
         {
           id: 8,
-          title: "Novo BI - Status Giovanni",
-          description: "Estrutura nova prometida para próxima semana",
-          impact: "Carregamento muito mais rápido - Ana para de reclamar",
-          responsible: "Giovanni + Pedro",
-          deadline: "24/07/2025",
-          priority: "medium",
-          lastUpdate: "17/07/2025",
-          author: "Pedro Espinoza",
-          updateText: "Terça ou quarta próxima semana deve estar pronto",
-          actionRequired: "Confirmar se Giovanni cumpriu prazo"
+          title: "Integração Novatos - Sistema Partner",
+          description: "Integração de novos colaboradores ao sistema Partner",
+          impact: "Necessário para que novatos possam operar efetivamente",
+          responsible: "Deisilany + Giovanni + RH",
+          deadline: "29/07/2025",
+          priority: "high",
+          lastUpdate: "22/07/2025",
+          author: "Deisilany Santos",
+          updateText: "Nova tarefa identificada para integração completa dos novatos ao Partner",
+          actionRequired: "Criar cronograma de integração e treinamento Partner"
         },
         {
           id: 9,
-          title: "Base Upgrade - Chegou?",
-          description: "UNICEF não gerou ainda por problema segmentação",
-          impact: "Equipe upgrade ajudando no Infobip",
-          responsible: "UNICEF + Deisilany",
-          deadline: "24/07/2025",
+          title: "Métricas Reais Atualizadas",
+          description: "Novos números: Receptivo 40,31%, WhatsApp 37,67%, E-mail 55,17%",
+          impact: "Dados reais para acompanhamento de performance",
+          responsible: "Deisilany + Equipe",
+          deadline: "29/07/2025",
           priority: "medium",
-          lastUpdate: "17/07/2025",
+          lastUpdate: "22/07/2025",
           author: "Deisilany Santos",
-          updateText: "Base será enviada posteriormente - aguardando",
-          actionRequired: "Perguntar se UNICEF já enviou a base"
+          updateText: "Métricas atualizadas com dados reais das operações",
+          actionRequired: "Verificar tendência e ações para melhoria"
         },
         {
           id: 10,
-          title: "Campanha Elétricas - Resultados",
-          description: "7 sucessos em 5 dias - tendência positiva",
-          impact: "Melhor contactabilidade que base anterior",
-          responsible: "Deisilany + Equipe",
-          deadline: "24/07/2025",
-          priority: "low",
-          lastUpdate: "09/07/2025",
-          author: "Deisilany Santos",
-          updateText: "Autorização boleto melhorou muito os resultados",
-          actionRequired: "Pedir números atualizados da campanha"
+          title: "Status Middleware Vindi-Salesforce",
+          description: "Acompanhar desenvolvimento da solução definitiva",
+          impact: "Solução definitiva para problemas de integração",
+          responsible: "Giovanni + Equipe TI",
+          deadline: "29/07/2025",
+          priority: "high",
+          lastUpdate: "22/07/2025",
+          author: "Giovanni",
+          updateText: "Acompanhar progresso do desenvolvimento do middleware",
+          actionRequired: "Verificar cronograma e possíveis bloqueios"
         },
         {
           id: 11,
-          title: "4 Novatos - Começaram Atender?",
-          description: "Equipe muito boa, ainda não começaram operação",
-          impact: "Reforço importante para a operação",
-          responsible: "Deisilany + Supervisores",
-          deadline: "24/07/2025",
-          priority: "medium",
-          lastUpdate: "09/07/2025",
-          author: "Deisilany Santos", 
-          updateText: "Muito empolgados e interessados no trabalho",
-          actionRequired: "Verificar quando vão começar a atender"
+          title: "Revisão Bot WhatsApp",
+          description: "Verificar se ajustes resolveram problema de irritação dos donadores",
+          impact: "Evitar cancelamentos por problemas no bot",
+          responsible: "Deisilany + Equipe Digital",
+          deadline: "29/07/2025",
+          priority: "high",
+          lastUpdate: "22/07/2025",
+          author: "Deisilany Santos",
+          updateText: "Verificar efetividade das correções implementadas no bot",
+          actionRequired: "Coletar feedback dos donadores e métricas de cancelamento"
         },
         {
           id: 12,
-          title: "Treinamento Novas Tabulações",
-          description: "UNICEF simplificou várias tabulações",
-          impact: "Equipe precisa se adaptar às mudanças",
-          responsible: "Deisilany",
-          deadline: "24/07/2025",
+          title: "Status Recuperação Histórico BI",
+          description: "Acompanhar progresso da recuperação solicitada pela Ana UNICEF",
+          impact: "Importante para análises históricas comparativas",
+          responsible: "Giovanni + Ana UNICEF",
+          deadline: "29/07/2025",
           priority: "medium",
-          lastUpdate: "09/07/2025",
-          author: "Deisilany Santos",
-          updateText: "Material preparado para aplicar na segunda-feira",
-          actionRequired: "Confirmar se treinamento foi aplicado"
+          lastUpdate: "22/07/2025",
+          author: "Ana UNICEF",
+          updateText: "Acompanhar viabilidade técnica e cronograma de recuperação",
+          actionRequired: "Definir escopo e prazo para recuperação do histórico"
         }
       ]
     }
@@ -493,19 +493,19 @@ const UnicefKanbanDashboard = () => {
             {/* Status Bar */}
             <div className="mt-6 grid grid-cols-1 md:grid-cols-4 gap-4">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-2xl font-bold text-white">37</div>
-                <div className="text-blue-200 text-sm">Colaboradores Ativos</div>
+                <div className="text-2xl font-bold text-white">40,31%</div>
+                <div className="text-blue-200 text-sm">Receptivo (22/07)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-2xl font-bold text-white">42.53%</div>
-                <div className="text-blue-200 text-sm">Receptivo (atual)</div>
+                <div className="text-2xl font-bold text-white">37,67%</div>
+                <div className="text-blue-200 text-sm">WhatsApp (22/07)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-2xl font-bold text-white">39.06%</div>
-                <div className="text-blue-200 text-sm">Digital (recuperando)</div>
+                <div className="text-2xl font-bold text-white">55,17%</div>
+                <div className="text-blue-200 text-sm">E-mail (22/07)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-lg font-bold text-white">24/07/2025</div>
+                <div className="text-lg font-bold text-white">29/07/2025</div>
                 <div className="text-blue-200 text-sm">Próxima Reunião</div>
               </div>
             </div>
@@ -645,7 +645,7 @@ const UnicefKanbanDashboard = () => {
             <p className="text-sm font-medium">Dashboard UNICEF Brasil - WA Contact Center</p>
           </div>
           <p className="text-xs">💝 Base: 100,000+ doadores | 👩‍💼 Gerente: Deisilany Santos | 🏢 Brasília</p>
-          <p className="text-xs text-gray-400 mt-1">Atualizado: 17/07/2025 | Powered by Claude Code Agent</p>
+          <p className="text-xs text-gray-400 mt-1">Atualizado: 22/07/2025 | Powered by Claude Code Agent</p>
         </div>
       </div>
 

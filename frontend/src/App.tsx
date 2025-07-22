@@ -1,8 +1,8 @@
-import UnicefProgressDashboard from './unicef-dashboard';
+import UnicefKanbanDashboard from './unicef-kanban-dashboard';
 
 function App() {
   return (
-    <UnicefProgressDashboard />
+    <UnicefKanbanDashboard />
   );
 }
 
