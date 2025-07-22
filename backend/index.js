@@ -29,8 +29,16 @@ const authenticateAPI = (req, res, next) => {
   next();
 };
 
-// Servir archivos estáticos del frontend build
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
+// Servir archivos estáticos del frontend build con headers anti-cache
+app.use(express.static(path.join(__dirname, '../frontend/dist'), {
+  setHeaders: (res, path, stat) => {
+    // Headers anti-cache para desarrollo
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+    console.log(`📁 Serving file: ${path}`);
+  }
+}));
 
 // Health check endpoints
 app.get('/api/health', (req, res) => {
