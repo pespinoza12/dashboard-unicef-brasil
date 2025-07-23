@@ -149,42 +149,68 @@ const UnicefKanbanDashboard = () => {
       items: [
         {
           id: 1,
-          title: "Bot WhatsApp Irritando Donadores",
-          description: "Bot está incomodando donadores com mensagens excessivas ou inadequadas",
-          impact: "Podem virar cancelamentos - perda direta de receita",
-          responsible: "Deisilany + Equipe Digital",
-          deadline: "URGENTE - 22/07/2025",
+          title: "Lista SMS WhatsApp Sem Cases",
+          description: "Lista 'Unread incoming SMS' com muitas mensagens sem cases criados automaticamente",
+          impact: "Donadores esperando resposta há dias sem atendimento - risco alto cancelamentos",
+          responsible: "Saurav + Luciana + Giovanni",
+          deadline: "URGENTE - 24/07/2025",
           priority: "urgent",
-          lastUpdate: "22/07/2025",
-          author: "Deisilany Santos",
-          updateText: "Problema crítico identificado na reunião. Necessário ajuste imediato no comportamento do bot.",
-          actionRequired: "Revisar configurações bot e implementar correções"
+          lastUpdate: "23/07/2025",
+          author: "Carol + Luciana",
+          updateText: "Identificado na reunião Partner Community - casos não sendo criados para mensagens WhatsApp",
+          actionRequired: "Corrigir API para criar cases automaticamente para retention e digital"
         },
         {
           id: 2,
-          title: "Middleware Vindi-Salesforce",
-          description: "Necessário para correção definitiva dos problemas de integração",
-          impact: "Sem isso, problemas de duplicação e sincronização continuam",
-          responsible: "Giovanni + Equipe TI",
-          deadline: "25/07/2025",
+          title: "Azure Integration User Bloqueando Cases",
+          description: "Cases escalados sendo assignados para Azure Integration User (não está em nenhuma fila)",
+          impact: "Equipe WA não consegue acessar casos escalados - bloqueio operacional total",
+          responsible: "Saurav + Giovanni",
+          deadline: "URGENTE - 24/07/2025",
           priority: "urgent",
-          lastUpdate: "22/07/2025",
-          author: "Giovanni",
-          updateText: "Middleware é solução definitiva para problemas de integração entre plataformas",
-          actionRequired: "Priorizar desenvolvimento do middleware"
+          lastUpdate: "23/07/2025",
+          author: "Luciana + Giovanni",
+          updateText: "API não tem campo owner, casos vão para user integração sem acesso equipes",
+          actionRequired: "Adicionar owner field na API + mapear queue IDs corretos"
         },
         {
           id: 3,
-          title: "Backoffices Sobrecarregadas",
-          description: "Backoffices com sobrecarga devido à plataforma digital",
-          impact: "Operação manual comprometida, atrasos nos processamentos",
-          responsible: "Deisilany + Ana UNICEF",
-          deadline: "HOJE - 22/07/2025",
+          title: "Templates WhatsApp Junho Sumidos",
+          description: "Templates de junho não aparecem no Partner Community - impossível responder conversas",
+          impact: "Operação WhatsApp parada - não consegue responder donadores dentro 24h",
+          responsible: "Saurav + Partner Community Team",
+          deadline: "URGENTE - 24/07/2025",
           priority: "urgent",
-          lastUpdate: "22/07/2025",
-          author: "Ana UNICEF",
-          updateText: "Equipe de backoffice relatando sobrecarga operacional crítica",
-          actionRequired: "Redistribuir cargas de trabalho e otimizar processos"
+          lastUpdate: "23/07/2025",
+          author: "Daisy + Carol",
+          updateText: "Templates sumiram após atualização - campo resposta desabilitado",
+          actionRequired: "Recuperar templates junho + verificar permissões Partner Community"
+        },
+        {
+          id: 4,
+          title: "Middleware Vindi-Salesforce",
+          description: "Necessário para correção definitiva dos problemas de integração + owner field API",
+          impact: "Sem isso, problemas de duplicação e sincronização continuam + casos perdidos",
+          responsible: "Giovanni + Equipe TI",
+          deadline: "25/07/2025",
+          priority: "urgent",
+          lastUpdate: "23/07/2025",
+          author: "Giovanni",
+          updateText: "Middleware é solução definitiva + necessário adicionar owner field para assignment",
+          actionRequired: "Priorizar desenvolvimento middleware + implementar owner field API"
+        },
+        {
+          id: 5,
+          title: "Backoffices Sobrecarregadas",
+          description: "Backoffices com sobrecarga crítica + problemas manuais duplicação donadores",
+          impact: "Operação manual comprometida + sistema duplicação não funciona",
+          responsible: "Deisilany + Ana UNICEF",
+          deadline: "HOJE - 23/07/2025",
+          priority: "urgent",
+          lastUpdate: "23/07/2025",
+          author: "Deisilany Santos",
+          updateText: "Backoffices fazendo duplicação manual na VIND - cancelamentos, reversões, aumentos",
+          actionRequired: "Implementar API VIND para ações massivas + redistribuir cargas"
         }
       ]
     },
@@ -194,33 +220,74 @@ const UnicefKanbanDashboard = () => {
       headerColor: "bg-yellow-600",
       items: [
         {
-          id: 4,
-          title: "Migração Partner COMPLETADA",
+          id: 6,
+          title: "✅ Migração Partner COMPLETADA",
           description: "Solução provisória de Giovanni implementada com sucesso",
           impact: "Sistema Partner funcionando com solução temporária",
           responsible: "Giovanni",
-          deadline: "COMPLETADO - 21/07/2025",
+          deadline: "✅ COMPLETADO - 21/07/2025",
           priority: "high",
           lastUpdate: "21/07/2025",
           author: "Giovanni",
-          updateText: "Migração concluída com solução provisória. Sistema operacional.",
-          actionRequired: "Planejar implementação da solução definitiva"
+          updateText: "✅ Migração concluída com solução provisória. Sistema operacional.",
+          actionRequired: "Planejar implementação da solução definitiva",
+          completed: true
         },
         {
-          id: 5,
-          title: "Campanha Saving REATIVADA",
-          description: "Reativada com dados Vindi - funcionando a 2,52%",
-          impact: "Retomada das operações de campanha saving",
+          id: 7,
+          title: "Solução Temporária Bot WhatsApp",
+          description: "Implementar mensagem automática direcionando donadores para 0800",
+          impact: "Reduzir irritação donadores + evitar cancelamentos por problemas bot",
+          responsible: "Saurav + Carol (conteúdo mensagem)",
+          deadline: "HOJE - 23/07/2025",
+          priority: "urgent",
+          lastUpdate: "23/07/2025",
+          author: "Pedro + Carol",
+          updateText: "Decisão reunião: bot com mensagem temporária direcionando para 0800 até correções",
+          actionRequired: "Carol criar conteúdo mensagem + Saurav implementar hoje"
+        },
+        {
+          id: 8,
+          title: "✅ Campanha Saving FUNCIONANDO",
+          description: "Reativada com dados Vindi - usando 3 últimos pagamentos como base",
+          impact: "Operação saving normalizada com dados corretos",
           responsible: "Deisilany + Equipe Vindi",
+          deadline: "✅ ATIVO - 23/07/2025",
+          priority: "high",
+          lastUpdate: "23/07/2025",
+          author: "Deisilany Santos",
+          updateText: "✅ Saving rodando bem, meninas conseguindo contato e batendo resultados com 3 últimos pagamentos VIND",
+          actionRequired: "Continuar monitoramento performance",
+          completed: true
+        },
+        {
+          id: 9,
+          title: "Problemas Receipt Generation/Envio",
+          description: "Múltiplos problemas: calendário não aparece para Daisy, não consegue enviar recibos",
+          impact: "Donadores não recebem recibos mesmo após pagamento - insatisfação",
+          responsible: "Saurav + Luciana",
           deadline: "25/07/2025",
           priority: "high",
-          lastUpdate: "21/07/2025",
-          author: "Deisilany Santos",
-          updateText: "Campanha reativada com dados corrigidos do Vindi. Performance inicial de 2,52%.",
-          actionRequired: "Monitorar performance e otimizar conversões"
+          lastUpdate: "23/07/2025",
+          author: "Daisy + Carol",
+          updateText: "Calendário sumiu para alguns usuários + botão envio email não aparece",
+          actionRequired: "Verificar permissões + corrigir interface geração recibos"
         },
         {
-          id: 6,
+          id: 10,
+          title: "Customer Mobile Number Format Issues",
+          description: "Campo mobile sem '+' causando falha na automação WhatsApp",
+          impact: "Mensagens WhatsApp não sendo enviadas por formato incorreto número",
+          responsible: "Saurav + Bruno (database update)",
+          deadline: "26/07/2025",
+          priority: "medium",
+          lastUpdate: "23/07/2025",
+          author: "Saurav",
+          updateText: "Fórmula backend não copia corretamente customer mobile number field",
+          actionRequired: "Bruno atualizar database + corrigir fórmula backend"
+        },
+        {
+          id: 11,
           title: "Recuperação Histórico BI",
           description: "Ana UNICEF pedindo recuperação de dados dos anos anteriores",
           impact: "Necessário para análises históricas e comparativas",
@@ -233,7 +300,7 @@ const UnicefKanbanDashboard = () => {
           actionRequired: "Avaliar viabilidade técnica e cronograma de recuperação"
         },
         {
-          id: 7,
+          id: 12,
           title: "Negociação SFTP UNICEF-Stilo-WA",
           description: "Negociação para SFTP comum entre as três entidades",
           impact: "Melhorar integração e fluxo de dados entre sistemas",
@@ -253,64 +320,104 @@ const UnicefKanbanDashboard = () => {
       headerColor: "bg-green-600",
       items: [
         {
-          id: 8,
-          title: "Integração Novatos - Sistema Partner",
-          description: "Integração de novos colaboradores ao sistema Partner",
-          impact: "Necessário para que novatos possam operar efetivamente",
+          id: 13,
+          title: "✅ Search Functionality RESOLVIDO",
+          description: "Busca por CPF/nome funcionando corretamente no sistema",
+          impact: "Equipe pode localizar donadores eficientemente",
+          responsible: "Saurav + Team",
+          deadline: "✅ RESOLVIDO - 23/07/2025",
+          priority: "high",
+          lastUpdate: "23/07/2025",
+          author: "Saurav",
+          updateText: "✅ Funcionalidade busca testada e funcionando durante reunião Partner Community",
+          actionRequired: "Monitorar funcionamento contínuo",
+          completed: true
+        },
+        {
+          id: 14,
+          title: "Status Cases Assignment Rules",
+          description: "Verificar se correção owner field API está funcionando para cases escalados",
+          impact: "Cases chegando nas filas corretas para atendimento",
+          responsible: "Saurav + Giovanni + Luciana",
+          deadline: "30/07/2025",
+          priority: "high",
+          lastUpdate: "23/07/2025",
+          author: "Luciana + Giovanni",
+          updateText: "Aguardando confirmação implementação owner field + teste assignment rules",
+          actionRequired: "Testar cases escalados chegando WA queue + não Azure Integration User"
+        },
+        {
+          id: 15,
+          title: "Relatório Bugs Organizados",
+          description: "Jenny + Yolima reunião com exemplos específicos de problemas WhatsApp",
+          impact: "Documentação completa para correções efetivas",
+          responsible: "Jenny + Yolima + Equipe",
+          deadline: "30/07/2025",
+          priority: "high",
+          lastUpdate: "23/07/2025",
+          author: "Carol + Jenny",
+          updateText: "Necessário organizar casos concretos donadores reais com CPF para identificação",
+          actionRequired: "Criar Excel com CPF, problema, situação para equipe global abordar"
+        },
+        {
+          id: 16,
+          title: "Status Solução Temporária Bot 0800",
+          description: "Verificar se mensagem temporária reduziu irritação donadores",
+          impact: "Evitar cancelamentos + melhorar experiência doador durante correções",
+          responsible: "Saurav + Carol + Deisilany",
+          deadline: "30/07/2025",
+          priority: "high",
+          lastUpdate: "23/07/2025",
+          author: "Pedro + Carol",
+          updateText: "Implementar mensagem direcionando para 0800 até bot funcionar 100%",
+          actionRequired: "Coletar feedback donadores + métricas cancelamento receptivo"
+        },
+        {
+          id: 17,
+          title: "Integração 4 Novatos - Sistema Partner",
+          description: "4 novatos muito bons ainda não começaram atender - integração urgente",
+          impact: "Reforço operacional necessário para demanda atual",
           responsible: "Deisilany + Giovanni + RH",
-          deadline: "29/07/2025",
+          deadline: "30/07/2025",
           priority: "high",
-          lastUpdate: "22/07/2025",
+          lastUpdate: "23/07/2025",
           author: "Deisilany Santos",
-          updateText: "Nova tarefa identificada para integração completa dos novatos ao Partner",
-          actionRequired: "Criar cronograma de integração e treinamento Partner"
+          updateText: "4 pessoas muito boas contratadas mas ainda não operando por integração pendente",
+          actionRequired: "Acelerar treinamento Partner + liberar para operação"
         },
         {
-          id: 9,
-          title: "Métricas Reais Atualizadas",
-          description: "Novos números: Receptivo 40,31%, WhatsApp 37,67%, E-mail 55,17%",
-          impact: "Dados reais para acompanhamento de performance",
-          responsible: "Deisilany + Equipe",
-          deadline: "29/07/2025",
+          id: 18,
+          title: "Status Upgrade Campaign Base",
+          description: "Verificar se chegou base dados para campanha upgrade - operadoras ociosas",
+          impact: "Operadoras upgrade sem trabalho - ociosidade operacional",
+          responsible: "Deisilany + UNICEF",
+          deadline: "30/07/2025",
           priority: "medium",
-          lastUpdate: "22/07/2025",
+          lastUpdate: "23/07/2025",
           author: "Deisilany Santos",
-          updateText: "Métricas atualizadas com dados reais das operações",
-          actionRequired: "Verificar tendência e ações para melhoria"
+          updateText: "Operadoras upgrade fazendo apenas treinamento reciclagem - sem base dados",
+          actionRequired: "Verificar status base upgrade ou realocar operadoras para saving/receptivo"
         },
         {
-          id: 10,
+          id: 19,
           title: "Status Middleware Vindi-Salesforce",
-          description: "Acompanhar desenvolvimento da solução definitiva",
-          impact: "Solução definitiva para problemas de integração",
+          description: "Acompanhar desenvolvimento da solução definitiva + owner field API",
+          impact: "Solução definitiva para problemas de integração + cases perdidos",
           responsible: "Giovanni + Equipe TI",
-          deadline: "29/07/2025",
+          deadline: "30/07/2025",
           priority: "high",
-          lastUpdate: "22/07/2025",
+          lastUpdate: "23/07/2025",
           author: "Giovanni",
-          updateText: "Acompanhar progresso do desenvolvimento do middleware",
-          actionRequired: "Verificar cronograma e possíveis bloqueios"
+          updateText: "Middleware + owner field são soluções definitivas para múltiplos problemas",
+          actionRequired: "Verificar cronograma desenvolvimento + possíveis bloqueios"
         },
         {
-          id: 11,
-          title: "Revisão Bot WhatsApp",
-          description: "Verificar se ajustes resolveram problema de irritação dos donadores",
-          impact: "Evitar cancelamentos por problemas no bot",
-          responsible: "Deisilany + Equipe Digital",
-          deadline: "29/07/2025",
-          priority: "high",
-          lastUpdate: "22/07/2025",
-          author: "Deisilany Santos",
-          updateText: "Verificar efetividade das correções implementadas no bot",
-          actionRequired: "Coletar feedback dos donadores e métricas de cancelamento"
-        },
-        {
-          id: 12,
+          id: 20,
           title: "Status Recuperação Histórico BI",
           description: "Acompanhar progresso da recuperação solicitada pela Ana UNICEF",
           impact: "Importante para análises históricas comparativas",
           responsible: "Giovanni + Ana UNICEF",
-          deadline: "29/07/2025",
+          deadline: "30/07/2025",
           priority: "medium",
           lastUpdate: "22/07/2025",
           author: "Ana UNICEF",
@@ -325,7 +432,7 @@ const UnicefKanbanDashboard = () => {
   const [kanbanData, setKanbanData] = useState(() => {
     const saved = localStorage.getItem('unicef-kanban-data');
     const version = localStorage.getItem('unicef-kanban-version');
-    const currentVersion = '2025-07-22-v2'; // Version post-reuniones 21-22/07
+    const currentVersion = '2025-07-23-v3'; // Version post-reuniones 23/07 (Deisilany + Partner Community)
     
     // Si no hay version guardada o es antigua, usar datos actualizados
     if (!version || version !== currentVersion) {
@@ -495,7 +602,7 @@ const UnicefKanbanDashboard = () => {
               <div className="text-right flex items-center space-x-4">
                 <button
                   onClick={() => {
-                    localStorage.setItem('unicef-kanban-version', '2025-07-22-v2');
+                    localStorage.setItem('unicef-kanban-version', '2025-07-23-v3');
                     localStorage.setItem('unicef-kanban-data', JSON.stringify(initialKanbanData));
                     setKanbanData(initialKanbanData);
                   }}
@@ -514,18 +621,18 @@ const UnicefKanbanDashboard = () => {
             <div className="mt-6 grid grid-cols-1 md:grid-cols-4 gap-4">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
                 <div className="text-2xl font-bold text-white">40,31%</div>
-                <div className="text-blue-200 text-sm">Receptivo (22/07)</div>
+                <div className="text-blue-200 text-sm">Receptivo (23/07)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
                 <div className="text-2xl font-bold text-white">37,67%</div>
-                <div className="text-blue-200 text-sm">WhatsApp (22/07)</div>
+                <div className="text-blue-200 text-sm">WhatsApp (23/07)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
                 <div className="text-2xl font-bold text-white">55,17%</div>
-                <div className="text-blue-200 text-sm">E-mail (22/07)</div>
+                <div className="text-blue-200 text-sm">E-mail (23/07)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-lg font-bold text-white">29/07/2025</div>
+                <div className="text-lg font-bold text-white">30/07/2025</div>
                 <div className="text-blue-200 text-sm">Próxima Reunião</div>
               </div>
             </div>
@@ -558,7 +665,7 @@ const UnicefKanbanDashboard = () => {
                       key={item.id}
                       draggable
                       onDragStart={(e) => handleDragStart(e, item, columnKey)}
-                      className="bg-white rounded-lg shadow-md border hover:shadow-lg transition-all duration-200 cursor-move hover:-translate-y-1 group"
+                      className={`${item.completed ? 'bg-green-50 border-green-200 opacity-75' : 'bg-white'} rounded-lg shadow-md border hover:shadow-lg transition-all duration-200 cursor-move hover:-translate-y-1 group`}
                     >
                       <div className="p-4">
                         {/* Card Header */}
@@ -665,7 +772,7 @@ const UnicefKanbanDashboard = () => {
             <p className="text-sm font-medium">Dashboard UNICEF Brasil - WA Contact Center</p>
           </div>
           <p className="text-xs">💝 Base: 100,000+ doadores | 👩‍💼 Gerente: Deisilany Santos | 🏢 Brasília</p>
-          <p className="text-xs text-gray-400 mt-1">Atualizado: 22/07/2025 | Powered by Claude Code Agent</p>
+          <p className="text-xs text-gray-400 mt-1">Atualizado: 23/07/2025 | Powered by Claude Code Agent</p>
         </div>
       </div>
 
