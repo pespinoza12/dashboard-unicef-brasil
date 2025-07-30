@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { AlertTriangle, Clock, CheckCircle, Calendar, User, MessageSquare, Phone, Target, Settings, Plus, ChevronRight, Edit2, Save, X, Trash2 } from 'lucide-react';
 
 // Cache buster: Build timestamp to force new JS bundle
-const BUILD_TIMESTAMP = '2025-07-30T13:53:00Z';
+const BUILD_TIMESTAMP = '2025-07-30T14:15:00Z-FORCE-EASYPANEL-RELOAD';
+const FORCE_RELOAD_VERSION = 'v8-easypanel-cache-killer';
 
 // Componente para editar cards
 const EditCardForm = ({ cardId, kanbanData, onSave, onCancel }) => {
@@ -433,12 +434,18 @@ const UnicefKanbanDashboard = () => {
 
   // Estado mutable del Kanban con localStorage y version control
   const [kanbanData, setKanbanData] = useState(() => {
-    const currentVersion = '2025-07-30-v7-force-cache-bust'; // Version post-reunión 30/07 + Force Cache Bust
+    const currentVersion = FORCE_RELOAD_VERSION + '-' + BUILD_TIMESTAMP; // Version ULTIMATE CACHE KILLER
     
     // SEMPRE usar dados atualizados - ignorar localStorage temporariamente
     localStorage.clear(); // Limpar todo localStorage
     localStorage.setItem('unicef-kanban-version', currentVersion);
     localStorage.setItem('unicef-kanban-data', JSON.stringify(initialKanbanData));
+    
+    // LOG VISIBLE PARA VERIFICAR VERSÃO CARREGADA
+    console.log('🚀 UNICEF DASHBOARD LOADED - VERSION:', currentVersion);
+    console.log('📅 BUILD TIMESTAMP:', BUILD_TIMESTAMP);
+    console.log('✅ DADOS DA REUNIÃO 30/07 CARREGADOS COM SUCESSO');
+    
     return initialKanbanData;
   });
 

@@ -29,17 +29,22 @@ const authenticateAPI = (req, res, next) => {
   next();
 };
 
+// FORCE CACHE INVALIDATION - Variable global para bust cache
+let CACHE_BUSTER = Date.now();
+
 // Servir archivos estáticos del frontend build - SIN CACHE + BUST CACHE AGRESIVO
 app.use(express.static(path.join(__dirname, '../frontend/dist'), {
   setHeaders: (res, path, stat) => {
     // Deshabilitar cache para todos los archivos
-    res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+    res.set('Cache-Control', 'no-cache, no-store, must-revalidate, max-age=0');
     res.set('Pragma', 'no-cache');
-    res.set('Expires', '0');
+    res.set('Expires', 'Thu, 01 Jan 1970 00:00:00 GMT');
     // Bust cache agresivo con timestamp
     res.set('ETag', false);
     res.set('Last-Modified', new Date().toUTCString());
+    res.set('X-Cache-Buster', CACHE_BUSTER.toString());
     res.set('X-Timestamp', Date.now().toString());
+    res.set('X-Force-Reload', 'true');
   },
   etag: false,
   lastModified: false
@@ -68,6 +73,25 @@ app.get('/healthz', (req, res) => {
 
 app.get('/ping', (req, res) => {
   res.status(200).send('pong');
+});
+
+// ENDPOINT ESPECIAL - Invalidar cache de EasyPanel
+app.get('/api/cache-bust', (req, res) => {
+  // Actualizar cache buster global
+  CACHE_BUSTER = Date.now();
+  
+  res.set('Cache-Control', 'no-cache, no-store, must-revalidate, max-age=0');
+  res.set('Pragma', 'no-cache');
+  res.set('Expires', 'Thu, 01 Jan 1970 00:00:00 GMT');
+  res.set('X-Cache-Buster', CACHE_BUSTER.toString());
+  res.set('X-Force-Reload', 'true');
+  
+  res.json({
+    message: 'Cache invalidated - EasyPanel should serve fresh files',
+    cacheBuster: CACHE_BUSTER,
+    timestamp: new Date().toISOString(),
+    action: 'FORCE_RELOAD_ALL_STATIC_FILES'
+  });
 });
 
 // API para obtener datos del dashboard
@@ -270,11 +294,13 @@ app.get('*', (req, res) => {
   }
   
   // For all other routes, serve index.html (SPA fallback) - FORCE NO CACHE
-  res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+  res.set('Cache-Control', 'no-cache, no-store, must-revalidate, max-age=0');
   res.set('Pragma', 'no-cache');
-  res.set('Expires', '0');
+  res.set('Expires', 'Thu, 01 Jan 1970 00:00:00 GMT');
   res.set('ETag', false);
+  res.set('X-Cache-Buster', CACHE_BUSTER.toString());
   res.set('X-Timestamp', Date.now().toString());
+  res.set('X-Force-Reload', 'true');
   res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
 });
 
