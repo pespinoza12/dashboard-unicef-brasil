@@ -432,7 +432,7 @@ const UnicefKanbanDashboard = () => {
   const [kanbanData, setKanbanData] = useState(() => {
     const saved = localStorage.getItem('unicef-kanban-data');
     const version = localStorage.getItem('unicef-kanban-version');
-    const currentVersion = '2025-07-30-v4'; // Version post-reunión 30/07 (Catchup Semanal - Operações Normalizadas)
+    const currentVersion = '2025-07-30-v5'; // Version post-reunión 30/07 (Catchup Semanal - FORÇAR ATUALIZAÇÃO)
     
     // Si no hay version guardada o es antigua, usar datos actualizados
     if (!version || version !== currentVersion) {
@@ -602,7 +602,7 @@ const UnicefKanbanDashboard = () => {
               <div className="text-right flex items-center space-x-4">
                 <button
                   onClick={() => {
-                    localStorage.setItem('unicef-kanban-version', '2025-07-23-v3');
+                    localStorage.setItem('unicef-kanban-version', '2025-07-30-v5');
                     localStorage.setItem('unicef-kanban-data', JSON.stringify(initialKanbanData));
                     setKanbanData(initialKanbanData);
                   }}
