@@ -29,14 +29,20 @@ const authenticateAPI = (req, res, next) => {
   next();
 };
 
-// Servir archivos estáticos del frontend build - SIN CACHE
+// Servir archivos estáticos del frontend build - SIN CACHE + BUST CACHE AGRESIVO
 app.use(express.static(path.join(__dirname, '../frontend/dist'), {
   setHeaders: (res, path, stat) => {
     // Deshabilitar cache para todos los archivos
     res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
     res.set('Pragma', 'no-cache');
     res.set('Expires', '0');
-  }
+    // Bust cache agresivo con timestamp
+    res.set('ETag', false);
+    res.set('Last-Modified', new Date().toUTCString());
+    res.set('X-Timestamp', Date.now().toString());
+  },
+  etag: false,
+  lastModified: false
 }));
 
 // Health check endpoints
@@ -263,7 +269,12 @@ app.get('*', (req, res) => {
     return res.status(404).send('Asset not found');
   }
   
-  // For all other routes, serve index.html (SPA fallback)
+  // For all other routes, serve index.html (SPA fallback) - FORCE NO CACHE
+  res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+  res.set('Pragma', 'no-cache');
+  res.set('Expires', '0');
+  res.set('ETag', false);
+  res.set('X-Timestamp', Date.now().toString());
   res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
 });
 

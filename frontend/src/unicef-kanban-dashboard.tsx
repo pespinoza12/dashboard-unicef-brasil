@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import { AlertTriangle, Clock, CheckCircle, Calendar, User, MessageSquare, Phone, Target, Settings, Plus, ChevronRight, Edit2, Save, X, Trash2 } from 'lucide-react';
 
+// Cache buster: Build timestamp to force new JS bundle
+const BUILD_TIMESTAMP = '2025-07-30T13:53:00Z';
+
 // Componente para editar cards
 const EditCardForm = ({ cardId, kanbanData, onSave, onCancel }) => {
   const [formData, setFormData] = useState(() => {
@@ -430,7 +433,7 @@ const UnicefKanbanDashboard = () => {
 
   // Estado mutable del Kanban con localStorage y version control
   const [kanbanData, setKanbanData] = useState(() => {
-    const currentVersion = '2025-07-30-v6'; // Version post-reunión 30/07 (FORÇAR DADOS SEMPRE)
+    const currentVersion = '2025-07-30-v7-force-cache-bust'; // Version post-reunión 30/07 + Force Cache Bust
     
     // SEMPRE usar dados atualizados - ignorar localStorage temporariamente
     localStorage.clear(); // Limpar todo localStorage
