@@ -202,19 +202,6 @@ const UnicefKanbanDashboard = () => {
           author: "Giovanni",
           updateText: "Middleware é solução definitiva + necessário adicionar owner field para assignment",
           actionRequired: "Priorizar desenvolvimento middleware + implementar owner field API"
-        },
-        {
-          id: 5,
-          title: "✅ Backoffices Sobrecarregadas RESOLVIDO",
-          description: "Equipe não realiza mais trabalho manual - verificando alterações na Vind através da plataforma Seias FC",
-          impact: "Middleware Vind Sales Force resolvido - operação automatizada",
-          responsible: "Deisilany + Ana UNICEF",
-          deadline: "✅ RESOLVIDO - 30/07/2025",
-          priority: "high",
-          lastUpdate: "30/07/2025",
-          author: "Deisilany Santos",
-          updateText: "Backoffices fazendo duplicação manual na VIND - cancelamentos, reversões, aumentos",
-          actionRequired: "Implementar API VIND para ações massivas + redistribuir cargas"
         }
       ]
     },
@@ -223,20 +210,6 @@ const UnicefKanbanDashboard = () => {
       color: "bg-yellow-50 border-yellow-200",
       headerColor: "bg-yellow-600",
       items: [
-        {
-          id: 6,
-          title: "✅ Migração Partner COMPLETADA",
-          description: "Avanços na plataforma Partner para canal digital e WhatsApp - Saurav ajudou ajustar vários problemas",
-          impact: "Sistema Partner operacional - equipe técnica Carol e Saurav trabalhando juntos",
-          responsible: "Giovanni",
-          deadline: "✅ COMPLETADO - 21/07/2025",
-          priority: "high",
-          lastUpdate: "21/07/2025",
-          author: "Giovanni",
-          updateText: "✅ Migração concluída com solução provisória. Sistema operacional.",
-          actionRequired: "Planejar implementação da solução definitiva",
-          completed: true
-        },
         {
           id: 7,
           title: "⚠️ Bot WhatsApp Intrometendo - Proposta WA",
@@ -249,33 +222,6 @@ const UnicefKanbanDashboard = () => {
           author: "Pedro + Carol",
           updateText: "Decisão reunião: bot com mensagem temporária direcionando para 0800 até correções",
           actionRequired: "Carol criar conteúdo mensagem + Saurav implementar hoje"
-        },
-        {
-          id: 8,
-          title: "🚀 Campanha Elétrica - 30 Sucessos",
-          description: "30 sucessos de reativação em um mês - bases enriquecidas funcionando bem",
-          impact: "Aumento significativo de sucessos com bases enriquecidas intercaladas",
-          responsible: "Deisilany + Equipe Vindi",
-          deadline: "✅ ATIVO - 30/07/2025",
-          priority: "high",
-          lastUpdate: "30/07/2025",
-          author: "Deisilany Santos",
-          updateText: "✅ Saving rodando bem, meninas conseguindo contato e batendo resultados com 3 últimos pagamentos VIND",
-          actionRequired: "Continuar monitoramento performance",
-          completed: true
-        },
-        {
-          id: 9,
-          title: "✅ Geração de Recibos FUNCIONANDO",
-          description: "Geração e envio de recibos ajustados e funcionando perfeitamente via Partner",
-          impact: "Recibos anuais e pontuais sendo enviados corretamente aos donadores",
-          responsible: "Saurav + Luciana",
-          deadline: "✅ RESOLVIDO - 30/07/2025",
-          priority: "high",
-          lastUpdate: "30/07/2025",
-          author: "Daisy + Carol",
-          updateText: "Calendário sumiu para alguns usuários + botão envio email não aparece",
-          actionRequired: "Verificar permissões + corrigir interface geração recibos"
         },
         {
           id: 10,
@@ -323,20 +269,6 @@ const UnicefKanbanDashboard = () => {
       color: "bg-green-50 border-green-200", 
       headerColor: "bg-green-600",
       items: [
-        {
-          id: 13,
-          title: "✅ Search Functionality RESOLVIDO",
-          description: "Busca por CPF/nome funcionando corretamente no sistema",
-          impact: "Equipe pode localizar donadores eficientemente",
-          responsible: "Saurav + Team",
-          deadline: "✅ RESOLVIDO - 30/07/2025",
-          priority: "high",
-          lastUpdate: "30/07/2025",
-          author: "Saurav",
-          updateText: "✅ Funcionalidade busca testada e funcionando durante reunião Partner Community",
-          actionRequired: "Monitorar funcionamento contínuo",
-          completed: true
-        },
         {
           id: 14,
           title: "Status Cases Assignment Rules",
@@ -416,19 +348,6 @@ const UnicefKanbanDashboard = () => {
           actionRequired: "Finalizar validação números consolidados com operadores"
         },
         {
-          id: 17,
-          title: "✅ Integração 4 Novatos CONCLUÍDA",
-          description: "4 novatos bem integrados ao sistema Partner - avaliação positiva nos primeiros 45 dias",
-          impact: "Equipe reforçada - novatos operando normalmente no Partner",
-          responsible: "Deisilany + Giovanni + RH",
-          deadline: "✅ CONCLUÍDO - 30/07/2025",
-          priority: "high",
-          lastUpdate: "30/07/2025",
-          author: "Deisilany Santos",
-          updateText: "4 pessoas muito boas contratadas mas ainda não operando por integração pendente",
-          actionRequired: "Acelerar treinamento Partner + liberar para operação"
-        },
-        {
           id: 18,
           title: "Status Upgrade Campaign Base",
           description: "Verificar se chegou base dados para campanha upgrade - operadoras ociosas",
@@ -466,6 +385,158 @@ const UnicefKanbanDashboard = () => {
           author: "Ana UNICEF",
           updateText: "Acompanhar viabilidade técnica e cronograma de recuperação",
           actionRequired: "Definir escopo e prazo para recuperação do histórico"
+        }
+      ]
+    },
+    completadas: {
+      title: "✅ COMPLETADAS/RESUELTAS",
+      color: "bg-gray-50 border-gray-200",
+      headerColor: "bg-gray-600",
+      items: [
+        {
+          id: 100,
+          title: "✅ Migração Partner COMPLETADA",
+          description: "Avanços na plataforma Partner para canal digital e WhatsApp - Saurav ajudou ajustar vários problemas",
+          impact: "Sistema Partner operacional - equipe técnica Carol e Saurav trabalhando juntos",
+          responsible: "Giovanni + Saurav + Carol",
+          deadline: "✅ COMPLETADO - 21/07/2025",
+          priority: "high",
+          lastUpdate: "30/07/2025",
+          completedDate: "30/07/2025",
+          movedToCompleted: "30/07/2025"
+        },
+        {
+          id: 101,
+          title: "✅ Backoffices Sobrecarregadas RESOLVIDO",
+          description: "Equipe não realiza mais trabalho manual - verificando alterações na Vind através da plataforma Seias FC",
+          impact: "Middleware Vind Sales Force resolvido - operação automatizada",
+          responsible: "Deisilany + Ana UNICEF",
+          deadline: "✅ RESOLVIDO - 30/07/2025",
+          priority: "high",
+          lastUpdate: "30/07/2025",
+          completedDate: "30/07/2025",
+          movedToCompleted: "30/07/2025"
+        },
+        {
+          id: 102,
+          title: "✅ Geração de Recibos FUNCIONANDO",
+          description: "Geração e envio de recibos ajustados e funcionando perfeitamente via Partner",
+          impact: "Recibos anuais e pontuais sendo enviados corretamente aos donadores",
+          responsible: "Saurav + Luciana",
+          deadline: "✅ RESOLVIDO - 30/07/2025",
+          priority: "high",
+          lastUpdate: "30/07/2025",
+          completedDate: "30/07/2025",
+          movedToCompleted: "30/07/2025"
+        },
+        {
+          id: 103,
+          title: "✅ Search Functionality RESOLVIDO",
+          description: "Busca por CPF/nome funcionando corretamente no sistema",
+          impact: "Equipe pode localizar donadores eficientemente",
+          responsible: "Saurav + Team",
+          deadline: "✅ RESOLVIDO - 30/07/2025",
+          priority: "high",
+          lastUpdate: "30/07/2025",
+          completedDate: "30/07/2025",
+          movedToCompleted: "30/07/2025"
+        },
+        {
+          id: 104,
+          title: "✅ Integração 4 Novatos CONCLUÍDA",
+          description: "4 novatos bem integrados ao sistema Partner - avaliação positiva nos primeiros 45 dias",
+          impact: "Equipe reforçada - novatos operando normalmente no Partner",
+          responsible: "Deisilany + Giovanni + RH",
+          deadline: "✅ CONCLUÍDO - 30/07/2025",
+          priority: "high",
+          lastUpdate: "30/07/2025",
+          completedDate: "30/07/2025",
+          movedToCompleted: "30/07/2025"
+        },
+        {
+          id: 105,
+          title: "✅ Campanha Elétrica - 30 Sucessos",
+          description: "30 sucessos de reativação em um mês - bases enriquecidas funcionando bem",
+          impact: "Aumento significativo de sucessos com bases enriquecidas intercaladas",
+          responsible: "Deisilany + Equipe Vindi",
+          deadline: "✅ ATIVO - 30/07/2025",
+          priority: "high",
+          lastUpdate: "30/07/2025",
+          completedDate: "30/07/2025",
+          movedToCompleted: "30/07/2025"
+        }
+      ]
+    },
+    metricas: {
+      title: "📊 MÉTRICAS/INDICADORES", 
+      color: "bg-blue-50 border-blue-200",
+      headerColor: "bg-blue-600",
+      items: [
+        {
+          id: 200,
+          title: "📈 Performance Receptivo",
+          description: "36,31% (30/07) - TMA: 7min - 9 operadores (5 manhã + 4 tarde)",
+          impact: "Volume controlado com mesmo número de operadores - foco em retenção",
+          responsible: "Deisilany + Equipe Receptivo",
+          deadline: "MONITORAMENTO CONTÍNUO",
+          priority: "medium",
+          lastUpdate: "30/07/2025",
+          metricType: "operational"
+        },
+        {
+          id: 201,
+          title: "📱 WhatsApp Performance",
+          description: "37,4% (30/07) - Mensagem temporária reduzindo volume diário",
+          impact: "Doadores direcionados para 0800 - aumento ligações telefônicas",
+          responsible: "Carol + Saurav",
+          deadline: "AGUARDANDO DECISÃO WA",
+          priority: "high",
+          lastUpdate: "30/07/2025",
+          metricType: "operational"
+        },
+        {
+          id: 202,
+          title: "📧 E-mail Performance",
+          description: "46,34% (30/07) - Recibos funcionando perfeitamente via Partner",
+          impact: "Recibos anuais e pontuais enviados corretamente",
+          responsible: "Saurav + Luciana",
+          deadline: "OPERACIONAL",
+          priority: "low",
+          lastUpdate: "30/07/2025",
+          metricType: "operational"
+        },
+        {
+          id: 203,
+          title: "👥 Equipe & Novatos",
+          description: "4 novatos integrados + novata digital evoluindo + 8 colaboradores upgrade",
+          impact: "Equipe reforçada - capacidade operacional ampliada",
+          responsible: "Deisilany + RH",
+          deadline: "INTEGRAÇÃO CONTÍNUA",
+          priority: "medium",
+          lastUpdate: "30/07/2025",
+          metricType: "rh"
+        },
+        {
+          id: 204,
+          title: "🎯 Campanhas Ativas",
+          description: "Campanha Elétrica: 30 sucessos/mês - Upgrade: 8 colaboradores - Bases enriquecidas",
+          impact: "Resultados significativos com bases intercaladas",
+          responsible: "Deisilany + Equipe Vindi",
+          deadline: "EM ANDAMENTO",
+          priority: "high",
+          lastUpdate: "30/07/2025",
+          metricType: "commercial"
+        },
+        {
+          id: 205,
+          title: "🔧 Ferramentas & Controle",
+          description: "Relatório Bugs Ana estruturado - FTP Estilo implementado - BI em reestruturação",
+          impact: "Controle melhorado de issues e comunicação mais segura",
+          responsible: "Ana + Pedro + Equipe TI",
+          deadline: "FERRAMENTAS ATIVAS",
+          priority: "medium",
+          lastUpdate: "30/07/2025",
+          metricType: "tools"
         }
       ]
     }
@@ -688,7 +759,7 @@ const UnicefKanbanDashboard = () => {
         </div>
 
         {/* Kanban Board */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
           {Object.entries(kanbanData).map(([columnKey, column]) => (
             <div key={columnKey} className="bg-white rounded-xl shadow-lg border overflow-hidden">
               {/* Column Header */}
