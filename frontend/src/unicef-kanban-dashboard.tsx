@@ -466,79 +466,6 @@ const UnicefKanbanDashboard = () => {
           movedToCompleted: "30/07/2025"
         }
       ]
-    },
-    metricas: {
-      title: "📊 MÉTRICAS/INDICADORES", 
-      color: "bg-blue-50 border-blue-200",
-      headerColor: "bg-blue-600",
-      items: [
-        {
-          id: 200,
-          title: "📈 Performance Receptivo",
-          description: "36,31% (30/07) - TMA: 7min - 9 operadores (5 manhã + 4 tarde)",
-          impact: "Volume controlado com mesmo número de operadores - foco em retenção",
-          responsible: "Deisilany + Equipe Receptivo",
-          deadline: "MONITORAMENTO CONTÍNUO",
-          priority: "medium",
-          lastUpdate: "30/07/2025",
-          metricType: "operational"
-        },
-        {
-          id: 201,
-          title: "📱 WhatsApp Performance",
-          description: "37,4% (30/07) - Mensagem temporária reduzindo volume diário",
-          impact: "Doadores direcionados para 0800 - aumento ligações telefônicas",
-          responsible: "Carol + Saurav",
-          deadline: "AGUARDANDO DECISÃO WA",
-          priority: "high",
-          lastUpdate: "30/07/2025",
-          metricType: "operational"
-        },
-        {
-          id: 202,
-          title: "📧 E-mail Performance",
-          description: "46,34% (30/07) - Recibos funcionando perfeitamente via Partner",
-          impact: "Recibos anuais e pontuais enviados corretamente",
-          responsible: "Saurav + Luciana",
-          deadline: "OPERACIONAL",
-          priority: "low",
-          lastUpdate: "30/07/2025",
-          metricType: "operational"
-        },
-        {
-          id: 203,
-          title: "👥 Equipe & Novatos",
-          description: "4 novatos integrados + novata digital evoluindo + 8 colaboradores upgrade",
-          impact: "Equipe reforçada - capacidade operacional ampliada",
-          responsible: "Deisilany + RH",
-          deadline: "INTEGRAÇÃO CONTÍNUA",
-          priority: "medium",
-          lastUpdate: "30/07/2025",
-          metricType: "rh"
-        },
-        {
-          id: 204,
-          title: "🎯 Campanhas Ativas",
-          description: "Campanha Elétrica: 30 sucessos/mês - Upgrade: 8 colaboradores - Bases enriquecidas",
-          impact: "Resultados significativos com bases intercaladas",
-          responsible: "Deisilany + Equipe Vindi",
-          deadline: "EM ANDAMENTO",
-          priority: "high",
-          lastUpdate: "30/07/2025",
-          metricType: "commercial"
-        },
-        {
-          id: 205,
-          title: "🔧 Ferramentas & Controle",
-          description: "Relatório Bugs Ana estruturado - FTP Estilo implementado - BI em reestruturação",
-          impact: "Controle melhorado de issues e comunicação mais segura",
-          responsible: "Ana + Pedro + Equipe TI",
-          deadline: "FERRAMENTAS ATIVAS",
-          priority: "medium",
-          lastUpdate: "30/07/2025",
-          metricType: "tools"
-        }
-      ]
     }
   };
 
@@ -759,7 +686,7 @@ const UnicefKanbanDashboard = () => {
         </div>
 
         {/* Kanban Board */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4">
           {Object.entries(kanbanData).map(([columnKey, column]) => (
             <div key={columnKey} className="bg-white rounded-xl shadow-lg border overflow-hidden">
               {/* Column Header */}
