@@ -159,7 +159,7 @@ const UnicefKanbanDashboard = () => {
           responsible: "Saurav + Luciana + Giovanni",
           deadline: "URGENTE - 24/07/2025",
           priority: "urgent",
-          lastUpdate: "23/07/2025",
+          lastUpdate: "30/07/2025",
           author: "Carol + Luciana",
           updateText: "Identificado na reunião Partner Community - casos não sendo criados para mensagens WhatsApp",
           actionRequired: "Corrigir API para criar cases automaticamente para retention e digital"
@@ -172,7 +172,7 @@ const UnicefKanbanDashboard = () => {
           responsible: "Saurav + Giovanni",
           deadline: "URGENTE - 24/07/2025",
           priority: "urgent",
-          lastUpdate: "23/07/2025",
+          lastUpdate: "30/07/2025",
           author: "Luciana + Giovanni",
           updateText: "API não tem campo owner, casos vão para user integração sem acesso equipes",
           actionRequired: "Adicionar owner field na API + mapear queue IDs corretos"
@@ -185,7 +185,7 @@ const UnicefKanbanDashboard = () => {
           responsible: "Saurav + Partner Community Team",
           deadline: "URGENTE - 24/07/2025",
           priority: "urgent",
-          lastUpdate: "23/07/2025",
+          lastUpdate: "30/07/2025",
           author: "Daisy + Carol",
           updateText: "Templates sumiram após atualização - campo resposta desabilitado",
           actionRequired: "Recuperar templates junho + verificar permissões Partner Community"
@@ -198,20 +198,20 @@ const UnicefKanbanDashboard = () => {
           responsible: "Giovanni + Equipe TI",
           deadline: "25/07/2025",
           priority: "urgent",
-          lastUpdate: "23/07/2025",
+          lastUpdate: "30/07/2025",
           author: "Giovanni",
           updateText: "Middleware é solução definitiva + necessário adicionar owner field para assignment",
           actionRequired: "Priorizar desenvolvimento middleware + implementar owner field API"
         },
         {
           id: 5,
-          title: "Backoffices Sobrecarregadas",
-          description: "Backoffices com sobrecarga crítica + problemas manuais duplicação donadores",
-          impact: "Operação manual comprometida + sistema duplicação não funciona",
+          title: "✅ Backoffices Sobrecarregadas RESOLVIDO",
+          description: "Equipe não realiza mais trabalho manual - verificando alterações na Vind através da plataforma Seias FC",
+          impact: "Middleware Vind Sales Force resolvido - operação automatizada",
           responsible: "Deisilany + Ana UNICEF",
-          deadline: "HOJE - 23/07/2025",
-          priority: "urgent",
-          lastUpdate: "23/07/2025",
+          deadline: "✅ RESOLVIDO - 30/07/2025",
+          priority: "high",
+          lastUpdate: "30/07/2025",
           author: "Deisilany Santos",
           updateText: "Backoffices fazendo duplicação manual na VIND - cancelamentos, reversões, aumentos",
           actionRequired: "Implementar API VIND para ações massivas + redistribuir cargas"
@@ -226,8 +226,8 @@ const UnicefKanbanDashboard = () => {
         {
           id: 6,
           title: "✅ Migração Partner COMPLETADA",
-          description: "Solução provisória de Giovanni implementada com sucesso",
-          impact: "Sistema Partner funcionando com solução temporária",
+          description: "Avanços na plataforma Partner para canal digital e WhatsApp - Saurav ajudou ajustar vários problemas",
+          impact: "Sistema Partner operacional - equipe técnica Carol e Saurav trabalhando juntos",
           responsible: "Giovanni",
           deadline: "✅ COMPLETADO - 21/07/2025",
           priority: "high",
@@ -239,26 +239,26 @@ const UnicefKanbanDashboard = () => {
         },
         {
           id: 7,
-          title: "Solução Temporária Bot WhatsApp",
-          description: "Implementar mensagem automática direcionando donadores para 0800",
-          impact: "Reduzir irritação donadores + evitar cancelamentos por problemas bot",
-          responsible: "Saurav + Carol (conteúdo mensagem)",
-          deadline: "HOJE - 23/07/2025",
+          title: "⚠️ Bot WhatsApp Intrometendo - Proposta WA",
+          description: "Bot não para quando atendente inicia - Lívia considerando parar WhatsApp. WA propôs solução em 15 dias sem custo",
+          impact: "Pedro enviou proposta agressiva: tratamento demandas iniciais + API em 60 dias",
+          responsible: "WA Contact Center + Pedro",
+          deadline: "AGUARDANDO DECISÃO - Lívia e Carolzinha",
           priority: "urgent",
-          lastUpdate: "23/07/2025",
+          lastUpdate: "30/07/2025",
           author: "Pedro + Carol",
           updateText: "Decisão reunião: bot com mensagem temporária direcionando para 0800 até correções",
           actionRequired: "Carol criar conteúdo mensagem + Saurav implementar hoje"
         },
         {
           id: 8,
-          title: "✅ Campanha Saving FUNCIONANDO",
-          description: "Reativada com dados Vindi - usando 3 últimos pagamentos como base",
-          impact: "Operação saving normalizada com dados corretos",
+          title: "🚀 Campanha Elétrica - 30 Sucessos",
+          description: "30 sucessos de reativação em um mês - bases enriquecidas funcionando bem",
+          impact: "Aumento significativo de sucessos com bases enriquecidas intercaladas",
           responsible: "Deisilany + Equipe Vindi",
-          deadline: "✅ ATIVO - 23/07/2025",
+          deadline: "✅ ATIVO - 30/07/2025",
           priority: "high",
-          lastUpdate: "23/07/2025",
+          lastUpdate: "30/07/2025",
           author: "Deisilany Santos",
           updateText: "✅ Saving rodando bem, meninas conseguindo contato e batendo resultados com 3 últimos pagamentos VIND",
           actionRequired: "Continuar monitoramento performance",
@@ -266,13 +266,13 @@ const UnicefKanbanDashboard = () => {
         },
         {
           id: 9,
-          title: "Problemas Receipt Generation/Envio",
-          description: "Múltiplos problemas: calendário não aparece para Daisy, não consegue enviar recibos",
-          impact: "Donadores não recebem recibos mesmo após pagamento - insatisfação",
+          title: "✅ Geração de Recibos FUNCIONANDO",
+          description: "Geração e envio de recibos ajustados e funcionando perfeitamente via Partner",
+          impact: "Recibos anuais e pontuais sendo enviados corretamente aos donadores",
           responsible: "Saurav + Luciana",
-          deadline: "25/07/2025",
+          deadline: "✅ RESOLVIDO - 30/07/2025",
           priority: "high",
-          lastUpdate: "23/07/2025",
+          lastUpdate: "30/07/2025",
           author: "Daisy + Carol",
           updateText: "Calendário sumiu para alguns usuários + botão envio email não aparece",
           actionRequired: "Verificar permissões + corrigir interface geração recibos"
@@ -285,7 +285,7 @@ const UnicefKanbanDashboard = () => {
           responsible: "Saurav + Bruno (database update)",
           deadline: "26/07/2025",
           priority: "medium",
-          lastUpdate: "23/07/2025",
+          lastUpdate: "30/07/2025",
           author: "Saurav",
           updateText: "Fórmula backend não copia corretamente customer mobile number field",
           actionRequired: "Bruno atualizar database + corrigir fórmula backend"
@@ -329,9 +329,9 @@ const UnicefKanbanDashboard = () => {
           description: "Busca por CPF/nome funcionando corretamente no sistema",
           impact: "Equipe pode localizar donadores eficientemente",
           responsible: "Saurav + Team",
-          deadline: "✅ RESOLVIDO - 23/07/2025",
+          deadline: "✅ RESOLVIDO - 30/07/2025",
           priority: "high",
-          lastUpdate: "23/07/2025",
+          lastUpdate: "30/07/2025",
           author: "Saurav",
           updateText: "✅ Funcionalidade busca testada e funcionando durante reunião Partner Community",
           actionRequired: "Monitorar funcionamento contínuo",
@@ -345,7 +345,7 @@ const UnicefKanbanDashboard = () => {
           responsible: "Saurav + Giovanni + Luciana",
           deadline: "30/07/2025",
           priority: "high",
-          lastUpdate: "23/07/2025",
+          lastUpdate: "30/07/2025",
           author: "Luciana + Giovanni",
           updateText: "Aguardando confirmação implementação owner field + teste assignment rules",
           actionRequired: "Testar cases escalados chegando WA queue + não Azure Integration User"
@@ -358,7 +358,7 @@ const UnicefKanbanDashboard = () => {
           responsible: "Jenny + Yolima + Equipe",
           deadline: "30/07/2025",
           priority: "high",
-          lastUpdate: "23/07/2025",
+          lastUpdate: "30/07/2025",
           author: "Carol + Jenny",
           updateText: "Necessário organizar casos concretos donadores reais com CPF para identificação",
           actionRequired: "Criar Excel com CPF, problema, situação para equipe global abordar"
@@ -371,20 +371,59 @@ const UnicefKanbanDashboard = () => {
           responsible: "Saurav + Carol + Deisilany",
           deadline: "30/07/2025",
           priority: "high",
-          lastUpdate: "23/07/2025",
+          lastUpdate: "30/07/2025",
           author: "Pedro + Carol",
           updateText: "Implementar mensagem direcionando para 0800 até bot funcionar 100%",
           actionRequired: "Coletar feedback donadores + métricas cancelamento receptivo"
         },
         {
-          id: 17,
-          title: "Integração 4 Novatos - Sistema Partner",
-          description: "4 novatos muito bons ainda não começaram atender - integração urgente",
-          impact: "Reforço operacional necessário para demanda atual",
-          responsible: "Deisilany + Giovanni + RH",
-          deadline: "30/07/2025",
+          id: 20,
+          title: "📋 Relatório de Bugs Organizado Ana",
+          description: "Equipe utilizando relatório organizado pela Ana - inclui número do caso, doador, prints e URLs",
+          impact: "Facilita identificação e resolução de problemas - controle mais eficiente",
+          responsible: "Ana + Equipe Operacional",
+          deadline: "✅ ATIVO - 30/07/2025",
+          priority: "medium",
+          lastUpdate: "30/07/2025",
+          author: "Deisilany Santos",
+          updateText: "Relatório estruturado melhora rastreamento de issues",
+          actionRequired: "Manter uso do relatório para todos os casos"
+        },
+        {
+          id: 21,
+          title: "⚖️ Campanha Upgrade - 8 Colaboradores",
+          description: "Campanha de upgrade funcionando há 2 dias com 8 colaboradores - solicitar verificação parâmetros base",
+          impact: "Recuperação do investimento - operadoras devem reportar inconsistências",
+          responsible: "Deisilany + 8 Colaboradores",
+          deadline: "EM ANDAMENTO - 30/07/2025",
           priority: "high",
-          lastUpdate: "23/07/2025",
+          lastUpdate: "30/07/2025",
+          author: "Deisilany Santos",
+          updateText: "Verificar parâmetros base upgrade para limpeza e segmentação correta",
+          actionRequired: "Operadoras reportarem inconsistências para limpeza dados"
+        },
+        {
+          id: 22,
+          title: "🔄 Histórico BI - Divisão em Dois Links",
+          description: "Histórico do BI será dividido: um link para dados passados e novo link para dados futuros",
+          impact: "Melhor organização dados históricos - ainda ajustando validação números consolidados",
+          responsible: "Pedro + Equipe BI",
+          deadline: "EM DESENVOLVIMENTO - 30/07/2025",
+          priority: "medium",
+          lastUpdate: "30/07/2025",
+          author: "Pedro Espinoza",
+          updateText: "Reestruturação necessária para melhor performance e organização",
+          actionRequired: "Finalizar validação números consolidados com operadores"
+        },
+        {
+          id: 17,
+          title: "✅ Integração 4 Novatos CONCLUÍDA",
+          description: "4 novatos bem integrados ao sistema Partner - avaliação positiva nos primeiros 45 dias",
+          impact: "Equipe reforçada - novatos operando normalmente no Partner",
+          responsible: "Deisilany + Giovanni + RH",
+          deadline: "✅ CONCLUÍDO - 30/07/2025",
+          priority: "high",
+          lastUpdate: "30/07/2025",
           author: "Deisilany Santos",
           updateText: "4 pessoas muito boas contratadas mas ainda não operando por integração pendente",
           actionRequired: "Acelerar treinamento Partner + liberar para operação"
@@ -397,7 +436,7 @@ const UnicefKanbanDashboard = () => {
           responsible: "Deisilany + UNICEF",
           deadline: "30/07/2025",
           priority: "medium",
-          lastUpdate: "23/07/2025",
+          lastUpdate: "30/07/2025",
           author: "Deisilany Santos",
           updateText: "Operadoras upgrade fazendo apenas treinamento reciclagem - sem base dados",
           actionRequired: "Verificar status base upgrade ou realocar operadoras para saving/receptivo"
@@ -410,7 +449,7 @@ const UnicefKanbanDashboard = () => {
           responsible: "Giovanni + Equipe TI",
           deadline: "30/07/2025",
           priority: "high",
-          lastUpdate: "23/07/2025",
+          lastUpdate: "30/07/2025",
           author: "Giovanni",
           updateText: "Middleware + owner field são soluções definitivas para múltiplos problemas",
           actionRequired: "Verificar cronograma desenvolvimento + possíveis bloqueios"
@@ -596,7 +635,7 @@ const UnicefKanbanDashboard = () => {
                 </div>
                 <div>
                   <h1 className="text-4xl font-bold bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-                    🚨 EASYPANEL DEBUG - COMMIT TEST 30/07 14:30 🚨
+                    PAINEL KANBAN UNICEF BRASIL
                   </h1>
                   <p className="text-blue-100 text-xl font-medium">
                     Acompanhamento Executivo • Reuniões Deisilany Santos
@@ -623,21 +662,25 @@ const UnicefKanbanDashboard = () => {
             </div>
 
             {/* Status Bar */}
-            <div className="mt-6 grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-5 gap-4">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-2xl font-bold text-white">40,31%</div>
-                <div className="text-blue-200 text-sm">Receptivo (23/07)</div>
+                <div className="text-2xl font-bold text-white">36,31%</div>
+                <div className="text-blue-200 text-sm">Receptivo (30/07)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-2xl font-bold text-white">37,67%</div>
-                <div className="text-blue-200 text-sm">WhatsApp (23/07)</div>
+                <div className="text-2xl font-bold text-white">37,4%</div>
+                <div className="text-blue-200 text-sm">WhatsApp (30/07)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-2xl font-bold text-white">55,17%</div>
-                <div className="text-blue-200 text-sm">E-mail (23/07)</div>
+                <div className="text-2xl font-bold text-white">46,34%</div>
+                <div className="text-blue-200 text-sm">E-mail (30/07)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-lg font-bold text-white">30/07/2025</div>
+                <div className="text-lg font-bold text-white">7min</div>
+                <div className="text-blue-200 text-sm">TMA Receptivo</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
+                <div className="text-lg font-bold text-white">06/08/2025</div>
                 <div className="text-blue-200 text-sm">Próxima Reunião</div>
               </div>
             </div>
@@ -777,7 +820,7 @@ const UnicefKanbanDashboard = () => {
             <p className="text-sm font-medium">Dashboard UNICEF Brasil - WA Contact Center</p>
           </div>
           <p className="text-xs">💝 Base: 100,000+ doadores | 👩‍💼 Gerente: Deisilany Santos | 🏢 Brasília</p>
-          <p className="text-xs text-gray-400 mt-1">Atualizado: 23/07/2025 | Powered by Claude Code Agent</p>
+          <p className="text-xs text-gray-400 mt-1">Atualizado: 30/07/2025 | Powered by Claude Code Agent</p>
         </div>
       </div>
 
