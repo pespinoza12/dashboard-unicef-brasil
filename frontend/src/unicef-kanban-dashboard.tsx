@@ -430,18 +430,13 @@ const UnicefKanbanDashboard = () => {
 
   // Estado mutable del Kanban con localStorage y version control
   const [kanbanData, setKanbanData] = useState(() => {
-    const saved = localStorage.getItem('unicef-kanban-data');
-    const version = localStorage.getItem('unicef-kanban-version');
-    const currentVersion = '2025-07-30-v5'; // Version post-reunión 30/07 (Catchup Semanal - FORÇAR ATUALIZAÇÃO)
+    const currentVersion = '2025-07-30-v6'; // Version post-reunión 30/07 (FORÇAR DADOS SEMPRE)
     
-    // Si no hay version guardada o es antigua, usar datos actualizados
-    if (!version || version !== currentVersion) {
-      localStorage.setItem('unicef-kanban-version', currentVersion);
-      localStorage.setItem('unicef-kanban-data', JSON.stringify(initialKanbanData));
-      return initialKanbanData;
-    }
-    
-    return saved ? JSON.parse(saved) : initialKanbanData;
+    // SEMPRE usar dados atualizados - ignorar localStorage temporariamente
+    localStorage.clear(); // Limpar todo localStorage
+    localStorage.setItem('unicef-kanban-version', currentVersion);
+    localStorage.setItem('unicef-kanban-data', JSON.stringify(initialKanbanData));
+    return initialKanbanData;
   });
 
   // Guardar en localStorage cuando cambien los datos
@@ -602,7 +597,7 @@ const UnicefKanbanDashboard = () => {
               <div className="text-right flex items-center space-x-4">
                 <button
                   onClick={() => {
-                    localStorage.setItem('unicef-kanban-version', '2025-07-30-v5');
+                    localStorage.setItem('unicef-kanban-version', '2025-07-30-v6');
                     localStorage.setItem('unicef-kanban-data', JSON.stringify(initialKanbanData));
                     setKanbanData(initialKanbanData);
                   }}
