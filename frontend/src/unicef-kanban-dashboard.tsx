@@ -596,7 +596,7 @@ const UnicefKanbanDashboard = () => {
                 </div>
                 <div>
                   <h1 className="text-4xl font-bold bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-                    PAINEL KANBAN UNICEF BRASIL
+                    🚨 EASYPANEL DEBUG - COMMIT TEST 30/07 14:30 🚨
                   </h1>
                   <p className="text-blue-100 text-xl font-medium">
                     Acompanhamento Executivo • Reuniões Deisilany Santos
