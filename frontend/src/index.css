@@ -1,18 +1,26 @@
 @import "tailwindcss";
 
-/* Custom CSS for enhanced styling */
+/* UNICEF Whimsy & Delight - Custom Animations & Interactions */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color-scheme: light;
+  color: #1e293b;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  
+  /* UNICEF Brand Colors */
+  --unicef-blue: #1CABE2;
+  --unicef-dark-blue: #00AEEF;
+  --unicef-light-blue: #69DBFF;
+  --hope-green: #80BD41;
+  --joy-yellow: #FFC72C;
+  --care-pink: #F77FBE;
+  --celebration: #FF6B9D;
 }
 
 body {
@@ -21,7 +29,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background: #f8fafc;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f8fafc 100%);
+  overflow-x: hidden;
 }
 
 #root {
@@ -29,20 +38,435 @@ body {
   margin: 0;
 }
 
-/* Enhanced scrollbar */
+/* ===== MAGICAL SCROLLBAR ===== */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: linear-gradient(180deg, #e0f2fe 0%, #f0f9ff 100%);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 3px;
+  background: linear-gradient(180deg, var(--unicef-blue) 0%, var(--unicef-dark-blue) 100%);
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+  background: linear-gradient(180deg, var(--unicef-dark-blue) 0%, var(--unicef-blue) 100%);
+  transform: scale(1.1);
+}
+
+/* ===== CELEBRATION ANIMATIONS ===== */
+@keyframes celebration-bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  40%, 43% {
+    transform: translate3d(0, -15px, 0) scale(1.1);
+  }
+  70% {
+    transform: translate3d(0, -8px, 0) scale(1.05);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0) scale(1.02);
+  }
+}
+
+@keyframes heart-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes gentle-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(28, 171, 226, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(28, 171, 226, 0.6), 0 0 30px rgba(28, 171, 226, 0.4);
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-joy {
+  0% {
+    transform: translateX(-100%) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(10%) scale(1.05);
+  }
+  100% {
+    transform: translateX(0%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes progress-celebration {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.1) rotate(-5deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(5deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* ===== DELIGHTFUL INTERACTIONS ===== */
+.unicef-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.unicef-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(28, 171, 226, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.unicef-card:hover::before {
+  left: 100%;
+}
+
+.unicef-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(28, 171, 226, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.celebration-active {
+  animation: celebration-bounce 0.8s ease-in-out;
+}
+
+.heart-beat {
+  animation: heart-pulse 1.5s infinite;
+}
+
+.gentle-glow {
+  animation: gentle-glow 2s infinite;
+}
+
+.float-animation {
+  animation: float-gentle 3s ease-in-out infinite;
+}
+
+/* ===== BUTTON MAGIC ===== */
+.unicef-button {
+  position: relative;
+  background: linear-gradient(135deg, var(--unicef-blue) 0%, var(--unicef-dark-blue) 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.unicef-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: all 0.6s;
+  transform: translate(-50%, -50%);
+}
+
+.unicef-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.unicef-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(28, 171, 226, 0.4);
+}
+
+.unicef-button:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* ===== PRIORITY BADGES WITH PERSONALITY ===== */
+.priority-urgent {
+  background: linear-gradient(135deg, #FF6B9D 0%, #FF8E9B 100%);
+  animation: gentle-glow 2s infinite;
+}
+
+.priority-high {
+  background: linear-gradient(135deg, var(--unicef-blue) 0%, var(--unicef-light-blue) 100%);
+}
+
+.priority-medium {
+  background: linear-gradient(135deg, var(--joy-yellow) 0%, #FDD835 100%);
+}
+
+.priority-low {
+  background: linear-gradient(135deg, var(--hope-green) 0%, #A5D6A7 100%);
+}
+
+/* ===== CONFETTI SYSTEM ===== */
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: var(--celebration);
+  animation: confetti-fall 3s linear forwards;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.confetti:nth-child(odd) {
+  background: var(--joy-yellow);
+  border-radius: 50%;
+}
+
+.confetti:nth-child(even) {
+  background: var(--hope-green);
+  transform: rotate(45deg);
+}
+
+/* ===== LOADING STATES WITH JOY ===== */
+.unicef-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--unicef-blue);
+  font-weight: 500;
+}
+
+.loading-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--unicef-blue);
+  border-radius: 50%;
+  animation: loading-bounce 1.4s infinite ease-in-out both;
+}
+
+.loading-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes loading-bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+/* ===== EMPTY STATES WITH ENCOURAGEMENT ===== */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #64748b;
+}
+
+.empty-state-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  animation: float-gentle 3s ease-in-out infinite;
+}
+
+/* ===== TOAST NOTIFICATIONS ===== */
+.unicef-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid var(--unicef-blue);
+  animation: slide-in-joy 0.5s ease-out;
+  z-index: 1000;
+  max-width: 400px;
+}
+
+.toast-success {
+  border-left-color: var(--hope-green);
+}
+
+.toast-celebration {
+  border-left-color: var(--celebration);
+  animation: celebration-bounce 0.8s ease-in-out;
+}
+
+/* ===== PROGRESS INDICATORS WITH HOPE ===== */
+.progress-bar {
+  background: #e2e8f0;
+  border-radius: 10px;
+  height: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, var(--unicef-blue) 0%, var(--hope-green) 100%);
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ===== DRAG AND DROP DELIGHT ===== */
+.drag-active {
+  transform: rotate(5deg) scale(1.05);
+  box-shadow: 0 20px 40px rgba(28, 171, 226, 0.3);
+  z-index: 1000;
+}
+
+.drop-zone-active {
+  background: linear-gradient(135deg, rgba(28, 171, 226, 0.1) 0%, rgba(128, 189, 65, 0.1) 100%);
+  border: 2px dashed var(--unicef-blue);
+  animation: gentle-glow 1s infinite;
+}
+
+/* ===== ACCESSIBILITY & REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== RESPONSIVE MAGIC ===== */
+@media (max-width: 768px) {
+  .unicef-card:hover {
+    transform: none;
+  }
+  
+  .unicef-button:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* ===== CHRISTMAS MAGIC (Seasonal) ===== */
+.seasonal-sparkle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--joy-yellow);
+  animation: sparkle 2s infinite;
+  pointer-events: none;
+}
+
+/* ===== SUCCESS CELEBRATION ===== */
+.success-celebration {
+  position: relative;
+  overflow: visible;
+}
+
+.success-celebration::after {
+  content: '🎉';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 20px;
+  animation: celebration-bounce 1s ease-in-out;
+}
+
+/* ===== INSPIRATIONAL QUOTES STYLING ===== */
+.quote-container {
+  position: relative;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(28, 171, 226, 0.05) 0%, rgba(128, 189, 65, 0.05) 100%);
+  border-radius: 12px;
+  border-left: 4px solid var(--unicef-blue);
+  margin: 16px 0;
+}
+
+.quote-container::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 40px;
+  color: var(--unicef-blue);
+  font-family: serif;
 }

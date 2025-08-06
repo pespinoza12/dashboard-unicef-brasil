@@ -1,9 +1,24 @@
-import { useState, useEffect } from 'react';
-import { AlertTriangle, Clock, CheckCircle, Calendar, User, MessageSquare, Phone, Target, Settings, Plus, ChevronRight, Edit2, Save, X, Trash2 } from 'lucide-react';
+import { useState, useEffect, useCallback } from 'react';
+import { AlertTriangle, Clock, CheckCircle, Calendar, User, MessageSquare, Phone, Target, Settings, Plus, ChevronRight, Edit2, Save, X, Trash2, Heart, Star, Sparkles, Award, Zap, Smile } from 'lucide-react';
+import { 
+  ToastNotification, 
+  DelightfulLoader, 
+  ProgressCelebration, 
+  FloatingHearts, 
+  UnicefLogoMagic, 
+  InspirationMoment, 
+  useCardHover, 
+  useCelebrations,
+  MotivationalEmptyState,
+  PriorityBadge,
+  ConfettiParticle,
+  CELEBRATION_MESSAGES,
+  LOADING_MESSAGES
+} from './unicef-delight-components';
 
 // Cache buster: Build timestamp to force new JS bundle
-const BUILD_TIMESTAMP = '2025-07-30T14:15:00Z-FORCE-EASYPANEL-RELOAD';
-const FORCE_RELOAD_VERSION = 'v8-easypanel-cache-killer';
+const BUILD_TIMESTAMP = '2025-08-06T12:00:00Z-REUNION-DEISILANY';
+const FORCE_RELOAD_VERSION = 'v9-update-06-08-2025';
 
 // Componente para editar cards
 const EditCardForm = ({ cardId, kanbanData, onSave, onCancel }) => {
@@ -143,6 +158,17 @@ const UnicefKanbanDashboard = () => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [editingCard, setEditingCard] = useState(null);
   const [draggedCard, setDraggedCard] = useState(null);
+  
+  // Delight system states
+  const [showToast, setShowToast] = useState(null);
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [showHearts, setShowHearts] = useState(false);
+  const [showInspiration, setShowInspiration] = useState(false);
+  const [loading, setLoading] = useState(false);
+  
+  // Celebration hooks
+  const { triggerCelebration } = useCelebrations();
+  const { hoveredCard, handleMouseEnter, handleMouseLeave } = useCardHover();
 
   // Dados iniciais das reuniões organizados em formato Kanban
   const initialKanbanData = {
@@ -179,29 +205,55 @@ const UnicefKanbanDashboard = () => {
         },
         {
           id: 3,
-          title: "Templates WhatsApp Junho Sumidos",
-          description: "Templates de junho não aparecem no Partner Community - impossível responder conversas",
-          impact: "Operação WhatsApp parada - não consegue responder donadores dentro 24h",
-          responsible: "Saurav + Partner Community Team",
-          deadline: "URGENTE - 24/07/2025",
+          title: "Segmentação Partner - Contatos Duplicados",
+          description: "Sistema Partner causando recorrência contatos mesmo doadores - gerando irritação",
+          impact: "Operadores registrando ligações repetidas - lista imensa doadores já contatados",
+          responsible: "Giovanni + Equipe Segmentação",
+          deadline: "URGENTE - 10/08/2025",
           priority: "urgent",
-          lastUpdate: "30/07/2025",
-          author: "Daisy + Carol",
-          updateText: "Templates sumiram após atualização - campo resposta desabilitado",
-          actionRequired: "Recuperar templates junho + verificar permissões Partner Community"
+          lastUpdate: "06/08/2025",
+          author: "Deisilany Santos",
+          updateText: "Necessário ajustes na segmentação antes continuar - evitar irritação doadores",
+          actionRequired: "Corrigir segmentação dados Partner + limpar listas duplicadas"
         },
         {
           id: 4,
-          title: "Middleware Vindi-Salesforce",
-          description: "Necessário para correção definitiva dos problemas de integração + owner field API",
-          impact: "Sem isso, problemas de duplicação e sincronização continuam + casos perdidos",
-          responsible: "Giovanni + Equipe TI",
-          deadline: "25/07/2025",
+          title: "API Lenta - Demora Carregamento Donadores",
+          description: "API demora até 1 minuto para carregar informações donadores",
+          impact: "Operadores precisam 'enrolar' apresentação inicial para ter tempo chamar doador pelo nome",
+          responsible: "Giovanni + Equipe API",
+          deadline: "12/08/2025",
           priority: "urgent",
-          lastUpdate: "30/07/2025",
-          author: "Giovanni",
-          updateText: "Middleware é solução definitiva + necessário adicionar owner field para assignment",
-          actionRequired: "Priorizar desenvolvimento middleware + implementar owner field API"
+          lastUpdate: "06/08/2025",
+          author: "Deisilany Santos",
+          updateText: "Giovanni atribuiu lentidão ao tempo resposta da API",
+          actionRequired: "Otimizar tempo resposta API para carregamento dados doadores"
+        },
+        {
+          id: 5,
+          title: "Bot WhatsApp Intromissão Não Para",
+          description: "Botão para impedir intromissão bot não funciona - pode enviar mensagens indevidas",
+          impact: "Doadora cancelou doação após receber mensagem indevida do bot",
+          responsible: "Carol + Saurav",
+          deadline: "08/08/2025",
+          priority: "urgent",
+          lastUpdate: "06/08/2025",
+          author: "Deisilany Santos",
+          updateText: "Carol ficou verificar mas problema ainda não resolvido",
+          actionRequired: "Corrigir botão anti-intromissão bot WhatsApp urgentemente"
+        },
+        {
+          id: 6,
+          title: "Campanhas Save/Upgrade - Doadores Repetidos",
+          description: "Mesmos doadores contactados mês anterior sendo acionados novamente",
+          impact: "Campanha Upgrade suspensa por Lívia devido repetição contatos",
+          responsible: "Ana + Giovanni",
+          deadline: "09/08/2025",
+          priority: "urgent",
+          lastUpdate: "06/08/2025",
+          author: "Deisilany Santos",
+          updateText: "Ana abriu chamado mas campanha liberada mesmo assim",
+          actionRequired: "Corrigir lógica campanhas evitar contatos repetidos"
         }
       ]
     },
@@ -455,15 +507,51 @@ const UnicefKanbanDashboard = () => {
         },
         {
           id: 105,
-          title: "✅ Campanha Elétrica - 30 Sucessos",
-          description: "30 sucessos de reativação em um mês - bases enriquecidas funcionando bem",
-          impact: "Aumento significativo de sucessos com bases enriquecidas intercaladas",
+          title: "✅ Campanha Elétrica - 6 Sucessos Agosto",
+          description: "6 sucessos reativação elétrica desde início mês agosto - performance mantida",
+          impact: "Campanha Legados 14,06% sucesso - bases enriquecidas funcionando bem",
           responsible: "Deisilany + Equipe Vindi",
-          deadline: "✅ ATIVO - 30/07/2025",
+          deadline: "✅ EM ANDAMENTO - 06/08/2025",
           priority: "high",
-          lastUpdate: "30/07/2025",
-          completedDate: "30/07/2025",
-          movedToCompleted: "30/07/2025"
+          lastUpdate: "06/08/2025",
+          completedDate: "06/08/2025",
+          movedToCompleted: "06/08/2025"
+        },
+        {
+          id: 106,
+          title: "✅ Templates WhatsApp Recuperados",
+          description: "Templates WhatsApp que haviam desaparecido foram recuperados",
+          impact: "Operação WhatsApp normalizada - templates funcionando corretamente",
+          responsible: "Saurav + Carol",
+          deadline: "✅ RESOLVIDO - 06/08/2025",
+          priority: "high",
+          lastUpdate: "06/08/2025",
+          completedDate: "06/08/2025",
+          movedToCompleted: "06/08/2025"
+        },
+        {
+          id: 107,
+          title: "✅ Cases Escalados - Fila Específica",
+          description: "Giovanni lançou atualização direcionando cases escalados para fila específica",
+          impact: "Backoffs podem tratar casos escalados - resolvendo pendência assignment",
+          responsible: "Giovanni + Luciana",
+          deadline: "✅ RESOLVIDO - 06/08/2025",
+          priority: "high",
+          lastUpdate: "06/08/2025",
+          completedDate: "06/08/2025",
+          movedToCompleted: "06/08/2025"
+        },
+        {
+          id: 108,
+          title: "✅ Middleware Salesforce Funcionando",
+          description: "Middleware Salesforce tem funcionado bem após ajustes",
+          impact: "Integração Salesforce estabilizada - fluxo de dados normalizado",
+          responsible: "Giovanni + Saurav",
+          deadline: "✅ RESOLVIDO - 06/08/2025",
+          priority: "high",
+          lastUpdate: "06/08/2025",
+          completedDate: "06/08/2025",
+          movedToCompleted: "06/08/2025"
         }
       ]
     }
@@ -606,20 +694,54 @@ const UnicefKanbanDashboard = () => {
 
   const getPriorityIcon = (priority) => {
     const icons = {
-      urgent: <AlertTriangle className="w-4 h-4" />,
+      urgent: <Zap className="w-4 h-4 animate-pulse" />,
       blocked: <Clock className="w-4 h-4" />,
-      high: <Target className="w-4 h-4" />,
-      medium: <Calendar className="w-4 h-4" />,
-      low: <CheckCircle className="w-4 h-4" />
+      high: <Target className="w-4 h-4 animate-bounce" />,
+      medium: <Star className="w-4 h-4 animate-spin" style={{ animationDuration: '3s' }} />,
+      low: <Heart className="w-4 h-4 heart-beat" />
     };
-    return icons[priority] || <Calendar className="w-4 h-4" />;
+    return icons[priority] || <Sparkles className="w-4 h-4" />;
   };
 
   const getItemCount = (column) => kanbanData[column].items.length;
   const getUrgentCount = () => kanbanData.critico.items.filter(item => item.priority === 'urgent').length;
 
+  // Celebration trigger function
+  const handleCelebration = useCallback((type = 'success', message) => {
+    const celebration = triggerCelebration(type, message);
+    
+    // Show toast notification
+    setShowToast({
+      type: celebration.type,
+      message: celebration.message
+    });
+    
+    // Show confetti for major celebrations
+    if (celebration.showConfetti) {
+      setShowConfetti(true);
+      setTimeout(() => setShowConfetti(false), 3000);
+    }
+    
+    // Show hearts for special moments
+    if (celebration.showHearts) {
+      setShowHearts(true);
+    }
+  }, [triggerCelebration]);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 relative overflow-hidden">
+      {/* Background sparkles */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="seasonal-sparkle" style={{ top: '10%', left: '5%' }}>
+          <Sparkles className="w-4 h-4 text-blue-300 opacity-30" />
+        </div>
+        <div className="seasonal-sparkle" style={{ top: '20%', right: '8%', animationDelay: '1s' }}>
+          <Heart className="w-3 h-3 text-pink-300 opacity-20" />
+        </div>
+        <div className="seasonal-sparkle" style={{ bottom: '15%', left: '10%', animationDelay: '2s' }}>
+          <Star className="w-4 h-4 text-yellow-300 opacity-25" />
+        </div>
+      </div>
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
         {/* Header */}
@@ -662,23 +784,23 @@ const UnicefKanbanDashboard = () => {
             {/* Status Bar */}
             <div className="mt-6 grid grid-cols-1 md:grid-cols-5 gap-4">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-2xl font-bold text-white">36,31%</div>
-                <div className="text-blue-200 text-sm">Receptivo (30/07)</div>
+                <div className="text-2xl font-bold text-white">40.79%</div>
+                <div className="text-blue-200 text-sm">Receptivo (06/08)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-2xl font-bold text-white">37,4%</div>
-                <div className="text-blue-200 text-sm">WhatsApp (30/07)</div>
+                <div className="text-2xl font-bold text-white">50%</div>
+                <div className="text-blue-200 text-sm">WhatsApp (06/08)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-2xl font-bold text-white">46,34%</div>
-                <div className="text-blue-200 text-sm">E-mail (30/07)</div>
+                <div className="text-2xl font-bold text-white">33.33%</div>
+                <div className="text-blue-200 text-sm">E-mail (06/08)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
                 <div className="text-lg font-bold text-white">7min</div>
                 <div className="text-blue-200 text-sm">TMA Receptivo</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-lg font-bold text-white">06/08/2025</div>
+                <div className="text-lg font-bold text-white">13/08/2025</div>
                 <div className="text-blue-200 text-sm">Próxima Reunião</div>
               </div>
             </div>
@@ -818,7 +940,7 @@ const UnicefKanbanDashboard = () => {
             <p className="text-sm font-medium">Dashboard UNICEF Brasil - WA Contact Center</p>
           </div>
           <p className="text-xs">💝 Base: 100,000+ doadores | 👩‍💼 Gerente: Deisilany Santos | 🏢 Brasília</p>
-          <p className="text-xs text-gray-400 mt-1">Atualizado: 30/07/2025 | Powered by Claude Code Agent</p>
+          <p className="text-xs text-gray-400 mt-1">Atualizado: 06/08/2025 | Powered by Claude Code Agent</p>
         </div>
       </div>
 
@@ -905,6 +1027,59 @@ const UnicefKanbanDashboard = () => {
           </div>
         </div>
       )}
+      
+      {/* ===== UNICEF DELIGHT SYSTEM COMPONENTS ===== */}
+      
+      {/* Toast Notifications */}
+      {showToast && (
+        <ToastNotification 
+          message={showToast.message}
+          type={showToast.type}
+          onClose={() => setShowToast(null)}
+        />
+      )}
+      
+      {/* Confetti Celebration */}
+      {showConfetti && (
+        <div className="fixed inset-0 pointer-events-none z-50">
+          {[...Array(50)].map((_, i) => (
+            <ConfettiParticle 
+              key={i} 
+              color={['#1CABE2', '#80BD41', '#FFC72C', '#F77FBE'][i % 4]} 
+              delay={Math.random() * 3}
+            />
+          ))}
+        </div>
+      )}
+      
+      {/* Floating Hearts for Special Moments */}
+      <FloatingHearts 
+        show={showHearts} 
+        onComplete={() => setShowHearts(false)}
+      />
+      
+      {/* Inspirational Moments */}
+      <InspirationMoment 
+        show={showInspiration}
+        onClose={() => setShowInspiration(false)}
+      />
+      
+      {/* Loading Overlay with Delight */}
+      {loading && (
+        <div className="fixed inset-0 bg-black bg-opacity-20 flex items-center justify-center z-50">
+          <div className="bg-white rounded-2xl p-8 shadow-2xl max-w-sm mx-4">
+            <DelightfulLoader />
+          </div>
+        </div>
+      )}
+      
+      {/* Background ambient elements */}
+      <div className="fixed bottom-4 right-4 pointer-events-none z-10">
+        <div className="text-xs text-blue-400 opacity-50 animate-pulse">
+          ✨ Fazendo a diferença para as crianças do Brasil ✨
+        </div>
+      </div>
+      
     </div>
   );
 };

@@ -1,0 +1,59 @@
+6 de ago. de 2025
+
+## Catchup Semanal Unicef
+
+Convidados [Daniela Cardoso Belmock](mailto:daniela.cardoso@wacontactcenter.com.br) [Pedro Espinoza](mailto:pespinoza@wacontactcenter.com.br) [Deisilany Santos](mailto:deisilany.santos@wacontactcenter.com.br)
+
+Anexos [Catchup Semanal Unicef](https://www.google.com/calendar/event?eid=NDM3dnNiMXNidTFiaGN2dW9maGtxNWhuYjhfMjAyNTA4MDZUMTIwMDAwWiBwZXNwaW5vemFAd2Fjb250YWN0Y2VudGVyLmNvbS5icg) 
+
+Registros da reunião [Transcrição](?tab=t.c5gdzelt8de9) 
+
+### Resumo
+
+Deisilany Santos apresentou os resultados diários e semanais, expressou preocupação com a queda de 3% e reportou problemas nas campanhas de Save e Upgrade, na segmentação de dados do sistema Partner, em e-mails indevidos para doadores e na comunicação, bem como em casos do receptivo e no botão do bot de WhatsApp. Pedro Espinoza e Deisilany Santos revisaram o painel de críticas imediatas e discutiram a demora na resposta da API e a negociação do SFTP da UNICEF, enquanto Daniela Cardoso Belmock questionou sobre os e-mails indevidos e abordou a regulamentação do horário intermediário e a análise de desligamentos. Os principais pontos discutidos foram a necessidade de reorganização dos processos internos, a resolução de problemas sistêmicos, a gestão de campanhas e a otimização da comunicação com os doadores.
+
+### Detalhes
+
+* **Resultados Diários e Semanais** Deisilany Santos apresentou os resultados do receptivo até o dia anterior, que estava em 40.79%, e expressou preocupação com a queda de 3% em uma semana, o que pode impactar o resultado geral ([00:00:55](?tab=t.c5gdzelt8de9#heading=h.oicmrc9srh36)). Ela também compartilhou os resultados de WhatsApp (50%) e e-mail (33.33%), além de detalhar o desempenho das campanhas de reativação elétrica, que tiveram seis sucessos desde o início do mês, e das campanhas de legados, com 14,06% de sucesso ([00:02:09](?tab=t.c5gdzelt8de9#heading=h.7m963vr3yzsd)).
+
+* **Problemas nas Campanhas de Save e Upgrade** Deisilany Santos relatou problemas nas campanhas de Save e Upgrade, onde os mesmos doadores contatados no mês anterior estão sendo acionados novamente. Ela comunicou a situação à Ana, que supostamente abriu um chamado, mas a campanha de Upgrade foi liberada mesmo assim, resultando na suspensão pela Lívia devido à repetição de contatos ([00:02:09](?tab=t.c5gdzelt8de9#heading=h.7m963vr3yzsd)).
+
+* **Segmentação de Dados no Partner** Deisilany Santos expressou sua insatisfação com a segmentação de dados no sistema Partner, que tem causado a recorrência de contatos com os mesmos doadores, gerando irritação e confusão. Ela mencionou que os operadores estão registrando as ligações repetidas, e a lista de doadores já contatados anteriormente é "imensa", indicando a necessidade de ajustes na segmentação antes de continuar ([00:04:32](?tab=t.c5gdzelt8de9#heading=h.je9wxoriipb9)).
+
+* **Emails Indevidos e Comunicação com Doadores** Pedro Espinoza relatou ter recebido e-mails indevidos de "legados" como doador, o que Deisilany Santos considerou importante sinalizar à Carol ([00:04:32](?tab=t.c5gdzelt8de9#heading=h.je9wxoriipb9)). Daniela Cardoso Belmock questionou se as funcionárias da UNICEF também recebiam esses e-mails, o que as alertaria sobre a "régua de relacionamento toda cagada", com doadores recebendo informações que não deveriam e avisos incorretos sobre doações ([00:05:52](?tab=t.c5gdzelt8de9#heading=h.kmos0i5hsifr)).
+
+* **Reorganização de Processos Internos** Deisilany Santos enfatizou que a situação atual, com doadores recebendo comunicações indesejadas e informações inconsistentes, demonstra uma "bagunça" na relação com o doador. Ela destacou a necessidade de uma reorganização completa dos processos internos, pois, apesar dos esforços da equipe em resolver as pendências, o sistema ainda não está funcionando adequadamente ([00:05:52](?tab=t.c5gdzelt8de9#heading=h.kmos0i5hsifr)) ([00:08:25](?tab=t.c5gdzelt8de9#heading=h.1huoj7742qgt)).
+
+* **Resolução de Casos Escalados e Integração de Sistemas** Pedro Espinoza e Deisilany Santos revisaram o painel de críticas imediatas, abordando a resolução dos casos de status escalados. Deisilany Santos confirmou que o Geovani lançou uma atualização que direciona esses casos para uma fila específica, permitindo que as backoffs os tratem, resolvendo a pendência, embora ainda haja um problema com a atribuição de casos fora do escopo, como estornos de débito em conta ([00:10:36](?tab=t.c5gdzelt8de9#heading=h.ypk2p8xvx3g8)).
+
+* **Problemas com Cases no Receptivo e Template de WhatsApp** Deisilany Santos informou que as "cases" criadas no receptivo não estão aparecendo no contato do doador, o que levou Bruno a abrir um chamado técnico, pois o problema pode ser um bloqueio no perfil. Além disso, os templates de WhatsApp que haviam desaparecido foram recuperados e o middleware Salesforce tem funcionado bem ([00:12:11](?tab=t.c5gdzelt8de9#heading=h.xu76bpql7fjw)).
+
+* **Intrusão do Bot no WhatsApp** Deisilany Santos explicou que o botão para impedir a intromissão do bot durante as conversas com doadores no WhatsApp não está funcionando corretamente, pois, ao ser desativado, pode enviar mensagens indevidas ao doador, como ocorreu com uma doadora que havia cancelado a doação ([00:13:37](?tab=t.c5gdzelt8de9#heading=h.ur90goskkzvl)). A Carol ficou de verificar, mas o problema ainda não foi resolvido ([00:15:00](?tab=t.c5gdzelt8de9#heading=h.6007xpgkixj5)).
+
+* **Demora na Resposta da API** A demora na resposta da API para o carregamento das informações dos doadores está impactando a operação, com Pedro Espinoza questionando a lentidão ([00:15:00](?tab=t.c5gdzelt8de9#heading=h.6007xpgkixj5)). Deisilany Santos confirmou que as informações de um doador podem levar até um minuto para aparecer, o que obriga os operadores a "enrolar" na apresentação inicial para ter tempo de chamar o doador pelo nome ([00:16:09](?tab=t.c5gdzelt8de9#heading=h.w7d4i3da2s54)). Ela já havia sinalizado o problema ao Giovani, que atribuiu a lentidão ao tempo de resposta da API ([00:17:23](?tab=t.c5gdzelt8de9#heading=h.zdl55ws8opaw)).
+
+* **Gerenciamento de Férias e Pendências do Giovani** Deisilany Santos está evitando acionar Giovani, que está de férias, a menos que seja uma urgência que paralise a operação, como problemas com a URA. Ela mantém uma lista de pendências com quase 13 itens solicitados pela UNICEF para resolver quando ele retornar, e já comunicou ao cliente que ele está trabalhando apenas nas urgências ([00:18:27](?tab=t.c5gdzelt8de9#heading=h.fftr3563vrvg)).
+
+* **Problemas com Formato de Contatos no WhatsApp e Templates da Meta** Deisilany Santos relatou que a equipe não consegue enviar mensagens para contatos fora da janela de 24 horas no WhatsApp, e descartaram que o problema seja o número ou o formato ([00:19:46](?tab=t.c5gdzelt8de9#heading=h.9so47lo8y19a)). Parece estar relacionado aos templates registrados na Meta, que podem ter sido registrados incorretamente ou não foram separados adequadamente dentro do sistema, causando problemas nas conversas ([00:21:14](?tab=t.c5gdzelt8de9#heading=h.tovt38wswcn1)).
+
+* **Negociação de SFTP da UNICEF e Gestão de Arquivos** Pedro Espinoza questionou sobre a negociação do SFTP da UNICEF para troca de arquivos, e Deisilany Santos explicou que o Bruno enviou um e-mail solicitando dados, provavelmente do Giovani, que é responsável pelo fechamento da base ([00:22:24](?tab=t.c5gdzelt8de9#heading=h.mpwn363sj5wp)). Deisilany Santos mencionou que o William a ajudou a aprender a fazer as cargas de arquivos, o que tem sido uma evolução para ela ([00:25:01](?tab=t.c5gdzelt8de9#heading=h.jglc6kl227mi)).
+
+* **Relatório de Erros e Duplicidade de Cadastros** Deisilany Santos e Pedro Espinoza discutiram a existência de uma planilha compartilhada onde a equipe registra erros e ocorrências. Deisilany Santos destacou um problema grave: a API está retornando cadastros inativos e criando cadastros vazios e duplicados no sistema, com o mesmo CPF, o que gera confusão e dificulta a comunicação com o doador ([00:26:19](?tab=t.c5gdzelt8de9#heading=h.i4svoa20ip6v)).
+
+* **Campanha Elétrica e Planejamento de Campanhas Futuras** Deisilany Santos confirmou que a campanha elétrica está em andamento, com seis sucessos desde o início do mês, e será mantida até o dia 15\. Ela informou que, no próximo mês, a campanha será reduzida para uma colaboradora devido às férias de uma delas, e que a operadora fará um período intermediário, a menos que haja problemas em outras campanhas ([00:30:26](?tab=t.c5gdzelt8de9#heading=h.tllluf8ql4zo)).
+
+* **Regulamentação de Horário Intermediário** Daniela Cardoso Belmock alertou Deisilany Santos sobre a necessidade de obter o consentimento por escrito da colaboradora para a movimentação de horário intermediário, pois a empresa só pode movimentar até duas horas sem essa autorização ([00:32:05](?tab=t.c5gdzelt8de9#heading=h.j0oxg0lsmp5i)). Ela enfatizou a importância do consentimento escrito para evitar problemas trabalhistas, especialmente com o aumento de processos no Brasil ([00:33:14](?tab=t.c5gdzelt8de9#heading=h.urwwbul7i4wm)).
+
+* **Análise de Desligamentos e Desempenho da Equipe** Daniela Cardoso Belmock questionou a possibilidade de fechar o mês de agosto sem desligamentos por iniciativa da empresa, e Deisilany Santos expressou otimismo, apesar dos problemas com atestados do Jonathan ([00:34:32](?tab=t.c5gdzelt8de9#heading=h.ibb7zoqpi5x2)). Deisilany Santos relatou ter dado feedback ao Jonathan sobre sua comunicação e comportamento, especialmente em relação a atestados, e que ele concordou em melhorar ([00:35:51](?tab=t.c5gdzelt8de9#heading=h.3qfg1aqzwvit)).
+
+* **Desenvolvimento de Colaboradores Mais Velhos** Deisilany Santos mencionou uma colaboradora "mais senhorinha" que apresenta dificuldades com o sistema, mas é muito boa nas ligações. Ela destacou a importância de intensificar os treinamentos para desenvolver as habilidades da colaboradora com o sistema, com o objetivo de equipará-la às demais e evitar um possível desligamento, pois já teve experiência com pessoas idosas em telemarketing que superaram essa dificuldade ([00:36:54](?tab=t.c5gdzelt8de9#heading=h.nsjxz1pua1qk)).
+
+* **Sistema de Orientações Operacionais** Deisilany Santos pediu a Pedro Espinoza para ajudar a desenvolver um sistema para armazenar e consultar orientações operacionais para os operadores, permitindo que a gestão insira, exclua e atualize as informações de forma eficiente ([00:39:08](?tab=t.c5gdzelt8de9#heading=h.mkif5stnz11b)). Ela explicou que as orientações mudam constantemente e que a planilha atual está se tornando obsoleta ([00:42:01](?tab=t.c5gdzelt8de9#heading=h.22e154ssr7pa)).
+
+* **Sugestão de Bot para Orientações Operacionais** Pedro Espinoza sugeriu que o bot do Don Love poderia ser adaptado para se tornar um especialista em orientações operacionais da UNICEF ([00:39:08](?tab=t.c5gdzelt8de9#heading=h.mkif5stnz11b)). Ele explicou que o bot poderia ter acesso a um documento, como um Google Docs, com todas as informações, e que ele seria atualizado automaticamente sempre que o documento fosse modificado, garantindo que as respostas do bot fossem sempre precisas e baseadas nas informações fornecidas ([00:42:01](?tab=t.c5gdzelt8de9#heading=h.22e154ssr7pa)).
+
+* **Campanhas de Incentivo e Premiações** Daniela Cardoso Belmock e Deisilany Santos discutiram as campanhas de incentivo, com Daniela sugerindo prêmios antecipados e comprados pela WA, sem gift card,
+
+*Revise as anotações do Gemini para checar se estão corretas. [Confira dicas e saiba como o Gemini faz anotações](https://support.google.com/meet/answer/14754931)*
+
+*Envie feedback sobre o uso do Gemini para criar notas [breve pesquisa.](https://google.qualtrics.com/jfe/form/SV_9vK3UZEaIQKKE7A?confid=OHulsOBTMstGmrlmQLs6DxIVOAIIigIgABgFCA&detailid=unspecified)*
