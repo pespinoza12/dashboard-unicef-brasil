@@ -17,8 +17,8 @@ import {
 } from './unicef-delight-components';
 
 // Cache buster: Build timestamp to force new JS bundle
-const BUILD_TIMESTAMP = '2025-08-06T12:00:00Z-REUNION-DEISILANY';
-const FORCE_RELOAD_VERSION = 'v9-update-06-08-2025';
+const BUILD_TIMESTAMP = '2025-08-11T13:47:00Z-CATCH-UP-WA';
+const FORCE_RELOAD_VERSION = 'v10-update-11-08-2025';
 
 // Componente para editar cards
 const EditCardForm = ({ cardId, kanbanData, onSave, onCancel }) => {
@@ -245,15 +245,28 @@ const UnicefKanbanDashboard = () => {
         {
           id: 6,
           title: "Campanhas Save/Upgrade - Doadores Repetidos",
-          description: "Mesmos doadores contactados mês anterior sendo acionados novamente",
-          impact: "Campanha Upgrade suspensa por Lívia devido repetição contatos",
-          responsible: "Ana + Giovanni",
-          deadline: "09/08/2025",
+          description: "Bases de saving prejudicadas - acúmulo bases meses anteriores. Apenas 3.000 de 17.000 eram novos",
+          impact: "Campanha Upgrade imediatamente parada por Lívia - problema formalizado por email",
+          responsible: "Ana + Giovanni + Lívia",
+          deadline: "URGENTE - 18/08/2025",
           priority: "urgent",
-          lastUpdate: "06/08/2025",
+          lastUpdate: "11/08/2025",
           author: "Deisilany Santos",
-          updateText: "Ana abriu chamado mas campanha liberada mesmo assim",
-          actionRequired: "Corrigir lógica campanhas evitar contatos repetidos"
+          updateText: "Saving prejudicado por acúmulo bases anteriores. Upgrade parado imediatamente pedido Lívia",
+          actionRequired: "Ana retorna 18/08 - corrigir lógica campanhas + limpar bases acumuladas"
+        },
+        {
+          id: 7,
+          title: "API Retorna Cadastro Vazio - Duplicidade Crítica",
+          description: "API retorna apenas cadastro vazio para operador - impossível identificar doadores já cadastrados",
+          impact: "Contatos duplicados especialmente 'carrinhos abandonados' - operadores não conseguem evitar duplicidade",
+          responsible: "Carolina UNICEF + Equipe Técnica",
+          deadline: "URGENTE - 18/08/2025",
+          priority: "urgent",
+          lastUpdate: "11/08/2025",
+          author: "Deisilany Santos",
+          updateText: "Grande regressão - Carolina UNICEF trabalhando em parceria para corrigir situação crítica",
+          actionRequired: "Corrigir API para retornar dados completos doadores + evitar carrinhos abandonados duplicados"
         }
       ]
     },
@@ -303,16 +316,16 @@ const UnicefKanbanDashboard = () => {
         },
         {
           id: 12,
-          title: "Negociação SFTP UNICEF-Stilo-WA",
-          description: "Negociação para SFTP comum entre as três entidades",
-          impact: "Melhorar integração e fluxo de dados entre sistemas",
-          responsible: "Deisilany + Parceiros",
-          deadline: "31/07/2025",
-          priority: "medium",
-          lastUpdate: "22/07/2025",
+          title: "Retorno Ana UNICEF + Mudanças Tabulações",
+          description: "Ana retorna 18/08 após férias. Solicitações equipe UNICEF mudanças estrutura tabulações",
+          impact: "Possível desagrupamento tabulações - mudanças estruturais necessárias",
+          responsible: "Ana UNICEF + Giovanni + Deisilany",
+          deadline: "18/08/2025",
+          priority: "high",
+          lastUpdate: "11/08/2025",
           author: "Deisilany Santos",
-          updateText: "Iniciando negociações para estabelecer SFTP comum entre UNICEF-Stilo-WA",
-          actionRequired: "Coordenar reunião com todas as partes envolvidas"
+          updateText: "Aguardando retorno Ana para definir alterações tabulações - Giovanni precisa solução melhor",
+          actionRequired: "Definir escopo mudanças tabulações + implementar alterações estruturais"
         }
       ]
     },
@@ -784,24 +797,24 @@ const UnicefKanbanDashboard = () => {
             {/* Status Bar */}
             <div className="mt-6 grid grid-cols-1 md:grid-cols-5 gap-4">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-2xl font-bold text-white">40.79%</div>
-                <div className="text-blue-200 text-sm">Receptivo (06/08)</div>
+                <div className="text-2xl font-bold text-white">40,74%</div>
+                <div className="text-blue-200 text-sm">Receptivo (11/08)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-2xl font-bold text-white">50%</div>
-                <div className="text-blue-200 text-sm">WhatsApp (06/08)</div>
+                <div className="text-2xl font-bold text-white">54,55%</div>
+                <div className="text-blue-200 text-sm">WhatsApp (11/08)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-2xl font-bold text-white">33.33%</div>
-                <div className="text-blue-200 text-sm">E-mail (06/08)</div>
+                <div className="text-2xl font-bold text-white">42,86%</div>
+                <div className="text-blue-200 text-sm">E-mail (11/08)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-lg font-bold text-white">7min</div>
-                <div className="text-blue-200 text-sm">TMA Receptivo</div>
+                <div className="text-lg font-bold text-white">37</div>
+                <div className="text-blue-200 text-sm">Cadastros UNICEF</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-lg font-bold text-white">13/08/2025</div>
-                <div className="text-blue-200 text-sm">Próxima Reunião</div>
+                <div className="text-lg font-bold text-white">18/08/2025</div>
+                <div className="text-blue-200 text-sm">Retorno Ana UNICEF</div>
               </div>
             </div>
           </div>
@@ -940,7 +953,7 @@ const UnicefKanbanDashboard = () => {
             <p className="text-sm font-medium">Dashboard UNICEF Brasil - WA Contact Center</p>
           </div>
           <p className="text-xs">💝 Base: 100,000+ doadores | 👩‍💼 Gerente: Deisilany Santos | 🏢 Brasília</p>
-          <p className="text-xs text-gray-400 mt-1">Atualizado: 06/08/2025 | Powered by Claude Code Agent</p>
+          <p className="text-xs text-gray-400 mt-1">Atualizado: 11/08/2025 - Catch Up WA | Powered by Claude Code Agent</p>
         </div>
       </div>
 
