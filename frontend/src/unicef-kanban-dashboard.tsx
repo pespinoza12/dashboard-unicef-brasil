@@ -17,8 +17,8 @@ import {
 } from './unicef-delight-components';
 
 // Cache buster: Build timestamp to force new JS bundle
-const BUILD_TIMESTAMP = '2025-08-11T13:47:00Z-CATCH-UP-WA';
-const FORCE_RELOAD_VERSION = 'v10-update-11-08-2025';
+const BUILD_TIMESTAMP = '2025-08-13T13:56:00Z-CATCHUP-UNICEF';
+const FORCE_RELOAD_VERSION = 'v11-update-13-08-2025';
 
 // Componente para editar cards
 const EditCardForm = ({ cardId, kanbanData, onSave, onCancel }) => {
@@ -258,15 +258,41 @@ const UnicefKanbanDashboard = () => {
         {
           id: 7,
           title: "API Retorna Cadastro Vazio - Duplicidade Crítica",
-          description: "API retorna apenas cadastro vazio para operador - impossível identificar doadores já cadastrados",
-          impact: "Contatos duplicados especialmente 'carrinhos abandonados' - operadores não conseguem evitar duplicidade",
-          responsible: "Carolina UNICEF + Equipe Técnica",
+          description: "API retorna apenas único cadastro para operador - impossível identificar doadores cadastrados. Problema confirmado reunião 13/08",
+          impact: "Contatos duplicados críticos especialmente 'carrinhos abandonados' - operadores não conseguem identificar duplicidade",
+          responsible: "Carolina UNICEF + Lívia + Jane",
           deadline: "URGENTE - 18/08/2025",
           priority: "urgent",
-          lastUpdate: "11/08/2025",
+          lastUpdate: "13/08/2025",
           author: "Deisilany Santos",
-          updateText: "Grande regressão - Carolina UNICEF trabalhando em parceria para corrigir situação crítica",
-          actionRequired: "Corrigir API para retornar dados completos doadores + evitar carrinhos abandonados duplicados"
+          updateText: "Deisilany comunicou Lívia - prometeu conversar Jane. Carolina UNICEF trabalhando parceria para corrigir situação crítica",
+          actionRequired: "Jane + Carolina UNICEF: corrigir API para retornar dados completos doadores cadastrados"
+        },
+        {
+          id: 8,
+          title: "Nagarro Intermediação - Segmentações Incorretas",
+          description: "Equipe saving/upgrade parada - segmentações incorretas fornecidas pela Nagarro. Sistema automático não funciona",
+          impact: "Campanha upgrade parou - apenas 3.000 de 17.000 eram novos contatos. Bases acumuladas meses anteriores",
+          responsible: "Nagarro + Giovanni + Ana UNICEF",
+          deadline: "URGENTE - 18/08/2025",
+          priority: "urgent",
+          lastUpdate: "13/08/2025",
+          author: "Deisilany Santos",
+          updateText: "Nagarro responsável tudo automático - mas segmentação errada causou acúmulo bases anteriores",
+          actionRequired: "Ana retorna 18/08 - corrigir lógica Nagarro + limpar bases acumuladas"
+        },
+        {
+          id: 9,
+          title: "Intermediação Nagarro - Lentidão API Crítica",
+          description: "Lentidão API devido conexão SalesForce via Nagarro - demora até 1 minuto carregar donadores",
+          impact: "Operadoras precisam 'enrolar' apresentação inicial para ter tempo chamar doador pelo nome - experiência ruim",
+          responsible: "Nagarro + SalesForce + Giovanni",
+          deadline: "URGENTE - 15/08/2025",
+          priority: "urgent",
+          lastUpdate: "13/08/2025",
+          author: "Pedro Espinoza + Deisilany Santos",
+          updateText: "Pedro explica: Nagarro camada segurança exigida UNICEF para SalesForce - mas comunicação muito lenta",
+          actionRequired: "Otimizar integração Nagarro-SalesForce ou revisar arquitetura intermediação"
         }
       ]
     },
@@ -303,29 +329,94 @@ const UnicefKanbanDashboard = () => {
         },
         {
           id: 11,
-          title: "Recuperação Histórico BI",
-          description: "Ana UNICEF pedindo recuperação de dados dos anos anteriores",
-          impact: "Necessário para análises históricas e comparativas",
-          responsible: "Giovanni + Ana UNICEF",
-          deadline: "30/07/2025",
-          priority: "medium",
-          lastUpdate: "22/07/2025",
-          author: "Ana UNICEF",
-          updateText: "Solicitação formal para recuperação de histórico BI anos anteriores",
-          actionRequired: "Avaliar viabilidade técnica e cronograma de recuperação"
+          title: "📊 Histórico BI - Recuperação & Reestruturação COMPLETA",
+          description: "Pedro + Giovanni trabalham no BI completo: recuperação dados passados + divisão dois links + validação números",
+          impact: "BI dividido: link dados passados + link futuros. Pedro compromete histórico pronto segunda-feira com Giovanni",
+          responsible: "Pedro Espinoza + Giovanni",
+          deadline: "18/08/2025 - Segunda-feira",
+          priority: "high",
+          lastUpdate: "13/08/2025",
+          author: "Pedro Espinoza + Deisilany Santos",
+          updateText: "Pedro se compromete: histórico BI pronto até segunda com Giovanni. Divisão dois links + validação consolidados",
+          actionRequired: "Pedro: finalizar histórico BI segunda-feira + Giovanni: validar números consolidados operadores"
         },
         {
           id: 12,
-          title: "Retorno Ana UNICEF + Mudanças Tabulações",
-          description: "Ana retorna 18/08 após férias. Solicitações equipe UNICEF mudanças estrutura tabulações",
-          impact: "Possível desagrupamento tabulações - mudanças estruturais necessárias",
-          responsible: "Ana UNICEF + Giovanni + Deisilany",
+          title: "📋 Tabulações - Criação & Desagrupamento",
+          description: "Deisilany verificará quais tabulações criar em outras campanhas para remover agrupamento",
+          impact: "Receptivo ficará apenas com tabulações próprias para e-mail e WhatsApp - melhor organização",
+          responsible: "Deisilany Santos + Giovanni",
           deadline: "18/08/2025",
           priority: "high",
-          lastUpdate: "11/08/2025",
+          lastUpdate: "13/08/2025",
           author: "Deisilany Santos",
-          updateText: "Aguardando retorno Ana para definir alterações tabulações - Giovanni precisa solução melhor",
-          actionRequired: "Definir escopo mudanças tabulações + implementar alterações estruturais"
+          updateText: "Próximas etapas reunião: criar tabulações campanhas + deixar receptivo apenas e-mail/WhatsApp",
+          actionRequired: "Deisilany: verificar tabulações necessárias + Giovanni: implementar desagrupamento"
+        },
+        {
+          id: 13,
+          title: "💰 Estornos - Direcionamento Pasta Backoffices",
+          description: "Deisilany conversar Luciana para entender resultado sistema direcionar estornos pasta correta",
+          impact: "Estornos que deveriam ser escalados não chegam pasta correta - todos devem ir equipe WA",
+          responsible: "Deisilany Santos + Luciana + Giovanni",
+          deadline: "18/08/2025",
+          priority: "high",
+          lastUpdate: "13/08/2025",
+          author: "Deisilany Santos",
+          updateText: "Procedimento acordado: estornos para equipe WA, valores >R$2.000 ou débito conta exige aprovação",
+          actionRequired: "Luciana: definir resultado sistema + Giovanni: implementar direcionamento pasta decopses"
+        },
+        {
+          id: 14,
+          title: "🔄 Estorno Parcial - Teste Atualização Vind",
+          description: "Deisilany verificar se estorno parcial atualiza na vind - realizar teste outro cadastro",
+          impact: "Verificar funcionamento estorno parcial para confirmar integração Vind",
+          responsible: "Deisilany Santos + Giovanni",
+          deadline: "18/08/2025",
+          priority: "medium",
+          lastUpdate: "13/08/2025",
+          author: "Deisilany Santos",
+          updateText: "Próxima etapa: testar estorno parcial em cadastro diferente para validar atualização Vind",
+          actionRequired: "Deisilany: executar teste estorno parcial + Giovanni: verificar integração Vind"
+        },
+        {
+          id: 15,
+          title: "👩‍⚕️ Eliane - Direito Plano Saúde INSS",
+          description: "Deisilany verificar com convenção se Eliane tem direito plano saúde caso afastada INSS",
+          impact: "Definir direitos trabalhistas de Eliane em caso de afastamento INSS",
+          responsible: "Deisilany Santos + RH/Convenção",
+          deadline: "20/08/2025",
+          priority: "low",
+          lastUpdate: "13/08/2025",
+          author: "Deisilany Santos",
+          updateText: "Verificar direitos convenção coletiva para afastamento INSS - plano saúde Eliane",
+          actionRequired: "Consultar convenção trabalhista + definir direitos afastamento INSS"
+        },
+        {
+          id: 16,
+          title: "🎬 Cinema Smurfs - Escala Equipe Tarde",
+          description: "Organizar escala equipe tarde usar convites cinema segunda-quarta sem impactar faturamento",
+          impact: "UNICEF disponibilizou convites Smurfs - restrição período gerou insatisfação turno tarde",
+          responsible: "Deisilany Santos + Equipe",
+          deadline: "20/08/2025",
+          priority: "medium",
+          lastUpdate: "13/08/2025",
+          author: "Deisilany Santos",
+          updateText: "Pedro concorda escala especialmente colaboradores saving/upgrade ociosos sem base trabalhar",
+          actionRequired: "Criar escala compensação funcionários usarem convites sem impactar operações"
+        },
+        {
+          id: 17,
+          title: "📋 Ana Caremã - Decisão Atestado Comparecimento",
+          description: "Decisão sobre abonar atestado Ana Caremã - histórico atestados comparecimento",
+          impact: "Embora empresa possa abonar funcionários alta performance, Ana Caremã não se enquadra no perfil",
+          responsible: "Daniela Cardoso + Deisilany Santos",
+          deadline: "18/08/2025",
+          priority: "medium",
+          lastUpdate: "13/08/2025",
+          author: "Daniela Cardoso + Deisilany Santos",
+          updateText: "Decisão cabe equipe: atestado não abonado terá impacto significativo salário Ana Caremã",
+          actionRequired: "Definir política abono atestados + comunicar decisão Ana Caremã"
         }
       ]
     },
@@ -387,45 +478,6 @@ const UnicefKanbanDashboard = () => {
           actionRequired: "Manter uso do relatório para todos os casos"
         },
         {
-          id: 21,
-          title: "⚖️ Campanha Upgrade - 8 Colaboradores",
-          description: "Campanha de upgrade funcionando há 2 dias com 8 colaboradores - solicitar verificação parâmetros base",
-          impact: "Recuperação do investimento - operadoras devem reportar inconsistências",
-          responsible: "Deisilany + 8 Colaboradores",
-          deadline: "EM ANDAMENTO - 30/07/2025",
-          priority: "high",
-          lastUpdate: "30/07/2025",
-          author: "Deisilany Santos",
-          updateText: "Verificar parâmetros base upgrade para limpeza e segmentação correta",
-          actionRequired: "Operadoras reportarem inconsistências para limpeza dados"
-        },
-        {
-          id: 22,
-          title: "🔄 Histórico BI - Divisão em Dois Links",
-          description: "Histórico do BI será dividido: um link para dados passados e novo link para dados futuros",
-          impact: "Melhor organização dados históricos - ainda ajustando validação números consolidados",
-          responsible: "Pedro + Equipe BI",
-          deadline: "EM DESENVOLVIMENTO - 30/07/2025",
-          priority: "medium",
-          lastUpdate: "30/07/2025",
-          author: "Pedro Espinoza",
-          updateText: "Reestruturação necessária para melhor performance e organização",
-          actionRequired: "Finalizar validação números consolidados com operadores"
-        },
-        {
-          id: 18,
-          title: "Status Upgrade Campaign Base",
-          description: "Verificar se chegou base dados para campanha upgrade - operadoras ociosas",
-          impact: "Operadoras upgrade sem trabalho - ociosidade operacional",
-          responsible: "Deisilany + UNICEF",
-          deadline: "30/07/2025",
-          priority: "medium",
-          lastUpdate: "30/07/2025",
-          author: "Deisilany Santos",
-          updateText: "Operadoras upgrade fazendo apenas treinamento reciclagem - sem base dados",
-          actionRequired: "Verificar status base upgrade ou realocar operadoras para saving/receptivo"
-        },
-        {
           id: 19,
           title: "Status Middleware Vindi-Salesforce",
           description: "Acompanhar desenvolvimento da solução definitiva + owner field API",
@@ -438,19 +490,6 @@ const UnicefKanbanDashboard = () => {
           updateText: "Middleware + owner field são soluções definitivas para múltiplos problemas",
           actionRequired: "Verificar cronograma desenvolvimento + possíveis bloqueios"
         },
-        {
-          id: 20,
-          title: "Status Recuperação Histórico BI",
-          description: "Acompanhar progresso da recuperação solicitada pela Ana UNICEF",
-          impact: "Importante para análises históricas comparativas",
-          responsible: "Giovanni + Ana UNICEF",
-          deadline: "30/07/2025",
-          priority: "medium",
-          lastUpdate: "22/07/2025",
-          author: "Ana UNICEF",
-          updateText: "Acompanhar viabilidade técnica e cronograma de recuperação",
-          actionRequired: "Definir escopo e prazo para recuperação do histórico"
-        }
       ]
     },
     completadas: {
@@ -565,6 +604,34 @@ const UnicefKanbanDashboard = () => {
           lastUpdate: "06/08/2025",
           completedDate: "06/08/2025",
           movedToCompleted: "06/08/2025"
+        },
+        {
+          id: 109,
+          title: "⚖️ Campanha Upgrade - PARADA por Segmentação",
+          description: "Campanha upgrade parada por Lívia - apenas 3.000 de 17.000 eram novos. Bases acumuladas problema Nagarro",
+          impact: "Operadoras upgrade ociosas - campanha parada até Ana retornar 18/08 e corrigir segmentação",
+          responsible: "Lívia + Ana UNICEF + Nagarro",
+          deadline: "⚠️ PARADA - 13/08/2025",
+          priority: "blocked",
+          lastUpdate: "13/08/2025",
+          completedDate: "13/08/2025",
+          movedToCompleted: "13/08/2025",
+          author: "Deisilany Santos",
+          updateText: "Campanha oficialmente parada por Lívia após identificar bases duplicadas Nagarro"
+        },
+        {
+          id: 110,
+          title: "🤖 Bot WhatsApp - Solução Temporária Implementada", 
+          description: "Implementada mensagem temporária direcionando para 0800 até bot funcionar 100%",
+          impact: "Reduzindo irritação donadores durante correções - solução temporária funcionando",
+          responsible: "Saurav + Carol + Pedro",
+          deadline: "✅ IMPLEMENTADO - 06/08/2025",
+          priority: "high",
+          lastUpdate: "13/08/2025",
+          completedDate: "06/08/2025",
+          movedToCompleted: "13/08/2025",
+          author: "Pedro + Deisilany Santos",
+          updateText: "Pedro: WA propôs solução 15 dias sem custo + API 60 dias. Aguardando decisão Lívia/Carolzinha"
         }
       ]
     }
@@ -797,16 +864,16 @@ const UnicefKanbanDashboard = () => {
             {/* Status Bar */}
             <div className="mt-6 grid grid-cols-1 md:grid-cols-5 gap-4">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-2xl font-bold text-white">40,74%</div>
-                <div className="text-blue-200 text-sm">Receptivo (11/08)</div>
+                <div className="text-2xl font-bold text-white">40,55%</div>
+                <div className="text-blue-200 text-sm">Receptivo (13/08)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-2xl font-bold text-white">54,55%</div>
-                <div className="text-blue-200 text-sm">WhatsApp (11/08)</div>
+                <div className="text-2xl font-bold text-white">42,15%</div>
+                <div className="text-blue-200 text-sm">WhatsApp (13/08)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-2xl font-bold text-white">42,86%</div>
-                <div className="text-blue-200 text-sm">E-mail (11/08)</div>
+                <div className="text-2xl font-bold text-white">34,78%</div>
+                <div className="text-blue-200 text-sm">E-mail (13/08)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
                 <div className="text-lg font-bold text-white">37</div>
@@ -953,7 +1020,7 @@ const UnicefKanbanDashboard = () => {
             <p className="text-sm font-medium">Dashboard UNICEF Brasil - WA Contact Center</p>
           </div>
           <p className="text-xs">💝 Base: 100,000+ doadores | 👩‍💼 Gerente: Deisilany Santos | 🏢 Brasília</p>
-          <p className="text-xs text-gray-400 mt-1">Atualizado: 11/08/2025 - Catch Up WA | Powered by Claude Code Agent</p>
+          <p className="text-xs text-gray-400 mt-1">Atualizado: 13/08/2025 - Catchup Semanal UNICEF | Powered by Claude Code Agent</p>
         </div>
       </div>
 
