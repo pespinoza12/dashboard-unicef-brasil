@@ -17,8 +17,8 @@ import {
 } from './unicef-delight-components';
 
 // Cache buster: Build timestamp to force new JS bundle
-const BUILD_TIMESTAMP = '2025-08-13T13:56:00Z-CATCHUP-UNICEF';
-const FORCE_RELOAD_VERSION = 'v11-update-13-08-2025';
+const BUILD_TIMESTAMP = '2025-08-26T13:57:00Z-CATCHUP-UNICEF-UPDATED';
+const FORCE_RELOAD_VERSION = 'v12-update-26-08-2025-report-streamlined';
 
 // Componente para editar cards
 const EditCardForm = ({ cardId, kanbanData, onSave, onCancel }) => {
@@ -192,16 +192,16 @@ const UnicefKanbanDashboard = () => {
         },
         {
           id: 2,
-          title: "Azure Integration User Bloqueando Cases",
-          description: "Cases escalados sendo assignados para Azure Integration User (não está em nenhuma fila)",
-          impact: "Equipe WA não consegue acessar casos escalados - bloqueio operacional total",
+          title: "Azuri Integration User Bloqueando Cases",
+          description: "Cases escalados sendo assignados para Azuri Integration User (não está em nenhuma fila) - CONFIRMADO 13/08",
+          impact: "Equipe WA não consegue acessar casos escalados - bloqueio operacional total confirmado reunião 13/08",
           responsible: "Saurav + Giovanni",
-          deadline: "URGENTE - 24/07/2025",
+          deadline: "URGENTE - 18/08/2025",
           priority: "urgent",
-          lastUpdate: "30/07/2025",
-          author: "Luciana + Giovanni",
-          updateText: "API não tem campo owner, casos vão para user integração sem acesso equipes",
-          actionRequired: "Adicionar owner field na API + mapear queue IDs corretos"
+          lastUpdate: "13/08/2025",
+          author: "Deisilany Santos",
+          updateText: "CONFIRMADO 13/08: Azuri Integration User bloqueia casos, tabulações escaladas vão pasta errada",
+          actionRequired: "Adicionar owner field na API + mapear queue IDs corretos para WA queue"
         },
         {
           id: 3,
@@ -293,6 +293,19 @@ const UnicefKanbanDashboard = () => {
           author: "Pedro Espinoza + Deisilany Santos",
           updateText: "Pedro explica: Nagarro camada segurança exigida UNICEF para SalesForce - mas comunicação muito lenta",
           actionRequired: "Otimizar integração Nagarro-SalesForce ou revisar arquitetura intermediação"
+        },
+        {
+          id: 10,
+          title: "Estornos Mal Direcionados - Pasta Incorreta",
+          description: "Estornos escalados não chegam pasta correta 'decopses' - equipe WA gastando tempo buscando informações",
+          impact: "Procedimento acordado falha: estornos >R$ 2.000 ou débito conta não chegam aprovação correta",
+          responsible: "Luciana + Giovanni + Deisilany",
+          deadline: "URGENTE - 18/08/2025",
+          priority: "urgent",
+          lastUpdate: "13/08/2025",
+          author: "Deisilany Santos",
+          updateText: "CONFIRMADO 13/08: estornos deveriam ir equipe WA mas vão pasta errada - problema negócio crítico",
+          actionRequired: "Luciana definir resultado sistema + Giovanni implementar direcionamento pasta decopses"
         }
       ]
     },
@@ -1020,7 +1033,7 @@ const UnicefKanbanDashboard = () => {
             <p className="text-sm font-medium">Dashboard UNICEF Brasil - WA Contact Center</p>
           </div>
           <p className="text-xs">💝 Base: 100,000+ doadores | 👩‍💼 Gerente: Deisilany Santos | 🏢 Brasília</p>
-          <p className="text-xs text-gray-400 mt-1">Atualizado: 13/08/2025 - Catchup Semanal UNICEF | Powered by Claude Code Agent</p>
+          <p className="text-xs text-gray-400 mt-1">Atualizado: 26/08/2025 - Reporte Reunión Actualizado | Powered by Claude Code Agent</p>
         </div>
       </div>
 
