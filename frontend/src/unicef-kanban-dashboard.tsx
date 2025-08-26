@@ -17,8 +17,8 @@ import {
 } from './unicef-delight-components';
 
 // Cache buster: Build timestamp to force new JS bundle
-const BUILD_TIMESTAMP = '2025-08-26T16:30:00Z-CATCHUP-SEMANAL-UPDATED';
-const FORCE_RELOAD_VERSION = 'v14-catchup-26-08-2025-completed-items';
+const BUILD_TIMESTAMP = '2025-08-26T16:35:00Z-ITEMS-COMPLETADOS-LIMPOS';
+const FORCE_RELOAD_VERSION = 'v15-dashboard-limpio-items-completados';
 
 // Componente para editar cards
 const EditCardForm = ({ cardId, kanbanData, onSave, onCancel }) => {
@@ -393,45 +393,6 @@ const UnicefKanbanDashboard = () => {
           updateText: "Próxima etapa: testar estorno parcial em cadastro diferente para validar atualização Vind",
           actionRequired: "Deisilany: executar teste estorno parcial + Giovanni: verificar integração Vind"
         },
-        {
-          id: 15,
-          title: "👩‍⚕️ Eliane - Direito Plano Saúde INSS",
-          description: "Deisilany verificar com convenção se Eliane tem direito plano saúde caso afastada INSS",
-          impact: "Definir direitos trabalhistas de Eliane em caso de afastamento INSS",
-          responsible: "Deisilany Santos + RH/Convenção",
-          deadline: "20/08/2025",
-          priority: "low",
-          lastUpdate: "13/08/2025",
-          author: "Deisilany Santos",
-          updateText: "Verificar direitos convenção coletiva para afastamento INSS - plano saúde Eliane",
-          actionRequired: "Consultar convenção trabalhista + definir direitos afastamento INSS"
-        },
-        {
-          id: 16,
-          title: "🎬 Cinema Smurfs - Escala Equipe Tarde",
-          description: "Organizar escala equipe tarde usar convites cinema segunda-quarta sem impactar faturamento",
-          impact: "UNICEF disponibilizou convites Smurfs - restrição período gerou insatisfação turno tarde",
-          responsible: "Deisilany Santos + Equipe",
-          deadline: "20/08/2025",
-          priority: "medium",
-          lastUpdate: "13/08/2025",
-          author: "Deisilany Santos",
-          updateText: "Pedro concorda escala especialmente colaboradores saving/upgrade ociosos sem base trabalhar",
-          actionRequired: "Criar escala compensação funcionários usarem convites sem impactar operações"
-        },
-        {
-          id: 17,
-          title: "📋 Ana Caremã - Decisão Atestado Comparecimento",
-          description: "Decisão sobre abonar atestado Ana Caremã - histórico atestados comparecimento",
-          impact: "Embora empresa possa abonar funcionários alta performance, Ana Caremã não se enquadra no perfil",
-          responsible: "Daniela Cardoso + Deisilany Santos",
-          deadline: "18/08/2025",
-          priority: "medium",
-          lastUpdate: "13/08/2025",
-          author: "Daniela Cardoso + Deisilany Santos",
-          updateText: "Decisão cabe equipe: atestado não abonado terá impacto significativo salário Ana Caremã",
-          actionRequired: "Definir política abono atestados + comunicar decisão Ana Caremã"
-        }
       ]
     },
     proxima_reuniao: {
@@ -688,6 +649,62 @@ const UnicefKanbanDashboard = () => {
           movedToCompleted: "26/08/2025",
           author: "Deisilany Santos + Giovanni",
           updateText: "FUNCIONANDO 26/08: CNPJs criados corretamente, Giovanni identificou erro refresh como falha visual"
+        },
+        {
+          id: 115,
+          title: "✅ Situação Eliane - DESLIGAMENTO ACORDADO",
+          description: "Decisão final sobre Eliane: desligamento acordado devido problemas saúde + mudança estado",
+          impact: "Colaboradora histórico bom desempenho - decisão humana considerando saúde familiar",
+          responsible: "Daniela Cardoso + Deisilany",
+          deadline: "✅ DECIDIDO - 26/08/2025",
+          priority: "medium",
+          lastUpdate: "26/08/2025",
+          completedDate: "26/08/2025",
+          movedToCompleted: "26/08/2025",
+          author: "Daniela Cardoso + Deisilany Santos",
+          updateText: "FINAL 26/08: Eliane deseja mudar estado para cuidados família - rescisão R$3,5k + FGTS R$4k"
+        },
+        {
+          id: 116,
+          title: "✅ Processo Seletivo RH - 5 CANDIDATOS APROVADOS",
+          description: "RH concluído: 5 candidatos aprovados com turmas seleção até quinta-feira para vagas",
+          impact: "Equipe fortalecida - Ana supervisora informada sobre contratações em andamento",
+          responsible: "Daniela Cardoso + RH",
+          deadline: "✅ CONCLUÍDO - 26/08/2025",
+          priority: "high",
+          lastUpdate: "26/08/2025",
+          completedDate: "26/08/2025",
+          movedToCompleted: "26/08/2025",
+          author: "Daniela Cardoso + Deisilany Santos",
+          updateText: "SUCCESS 26/08: 5 aprovados processo + Ana supervisora ciente contratações seguindo"
+        },
+        {
+          id: 117,
+          title: "✅ Planilha Erros - SISTEMA MAIS EFICIENTE",
+          description: "Planilha erros diminuindo significativamente - apenas casos cancelamento pendentes",
+          impact: "Sistema funcionando mais eficientemente - operação estabilizada",
+          responsible: "Deisilany Santos + Giovanni",
+          deadline: "✅ MELHORADO - 26/08/2025",
+          priority: "medium",
+          lastUpdate: "26/08/2025",
+          completedDate: "26/08/2025",
+          movedToCompleted: "26/08/2025",
+          author: "Deisilany Santos",
+          updateText: "MELHORIA 26/08: Planilha erros diminuindo - sistema mais eficiente operacionalmente"
+        },
+        {
+          id: 118,
+          title: "✅ Ana Caremã - Atestado NÃO ABONADO",
+          description: "Decisão tomada: atestado comparecimento Ana Caremã não será abonado devido histórico",
+          impact: "Política definida - evitar precedente que impacte equipe geral",
+          responsible: "Daniela Cardoso + Deisilany",
+          deadline: "✅ DECIDIDO - 26/08/2025",
+          priority: "low",
+          lastUpdate: "26/08/2025",
+          completedDate: "26/08/2025",
+          movedToCompleted: "26/08/2025",
+          author: "Daniela Cardoso + Deisilany Santos",
+          updateText: "DEFINIDO 26/08: Atestado não abonado - colaborador entra férias, situação monitorada"
         }
       ]
     }
