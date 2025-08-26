@@ -17,8 +17,8 @@ import {
 } from './unicef-delight-components';
 
 // Cache buster: Build timestamp to force new JS bundle
-const BUILD_TIMESTAMP = '2025-08-26T14:01:00Z-CACHE-FIX-APPLIED';
-const FORCE_RELOAD_VERSION = 'v13-cache-fix-intelligent-versioning';
+const BUILD_TIMESTAMP = '2025-08-26T16:30:00Z-CATCHUP-SEMANAL-UPDATED';
+const FORCE_RELOAD_VERSION = 'v14-catchup-26-08-2025-completed-items';
 
 // Componente para editar cards
 const EditCardForm = ({ cardId, kanbanData, onSave, onCancel }) => {
@@ -302,10 +302,23 @@ const UnicefKanbanDashboard = () => {
           responsible: "Luciana + Giovanni + Deisilany",
           deadline: "URGENTE - 18/08/2025",
           priority: "urgent",
-          lastUpdate: "13/08/2025",
+          lastUpdate: "26/08/2025",
           author: "Deisilany Santos",
-          updateText: "CONFIRMADO 13/08: estornos deveriam ir equipe WA mas vão pasta errada - problema negócio crítico",
+          updateText: "ATUALIZAÇÃO 26/08: Problema persiste - processando estornos manualmente via relatoria para evitar problemas maiores",
           actionRequired: "Luciana definir resultado sistema + Giovanni implementar direcionamento pasta decopses"
+        },
+        {
+          id: 11,
+          title: "🚨 CRÍTICO - Cancelamentos Não Funcionam",
+          description: "Sistema não cancela cadastros mesmo após comando - 10 cadastros acumulados pendentes cancelamento",
+          impact: "Problemas operacionais críticos + insatisfação doadores - comando cancelamento deveria ter prioridade",
+          responsible: "Giovanni + UNICEF + Saurav",
+          deadline: "URGENTE - 30/08/2025",
+          priority: "urgent",
+          lastUpdate: "26/08/2025",
+          author: "Deisilany Santos + Giovanni",
+          updateText: "CRÍTICO 26/08: Sistema não cancela após comando. Sinalizado para UNICEF - aguardando solução urgente",
+          actionRequired: "UNICEF resolver falha cancelamento + Giovanni investigar causa raíz comando"
         }
       ]
     },
@@ -341,30 +354,18 @@ const UnicefKanbanDashboard = () => {
           actionRequired: "Bruno atualizar database + corrigir fórmula backend"
         },
         {
-          id: 11,
-          title: "📊 Histórico BI - Recuperação & Reestruturação COMPLETA",
-          description: "Pedro + Giovanni trabalham no BI completo: recuperação dados passados + divisão dois links + validação números",
-          impact: "BI dividido: link dados passados + link futuros. Pedro compromete histórico pronto segunda-feira com Giovanni",
-          responsible: "Pedro Espinoza + Giovanni",
-          deadline: "18/08/2025 - Segunda-feira",
+          id: 111,
+          title: "✅ BI - Filtro Tabulação Corrigido",
+          description: "Giovanni ajustou filtro para mostrar apenas conversões e conversões alt no BI",
+          impact: "Pedro agora tem campos necessários para preparar estrutura BI - visualização correta",
+          responsible: "Giovanni + Pedro",
+          deadline: "✅ RESOLVIDO - 26/08/2025",
           priority: "high",
-          lastUpdate: "13/08/2025",
-          author: "Pedro Espinoza + Deisilany Santos",
-          updateText: "Pedro se compromete: histórico BI pronto até segunda com Giovanni. Divisão dois links + validação consolidados",
-          actionRequired: "Pedro: finalizar histórico BI segunda-feira + Giovanni: validar números consolidados operadores"
-        },
-        {
-          id: 12,
-          title: "📋 Tabulações - Criação & Desagrupamento",
-          description: "Deisilany verificará quais tabulações criar em outras campanhas para remover agrupamento",
-          impact: "Receptivo ficará apenas com tabulações próprias para e-mail e WhatsApp - melhor organização",
-          responsible: "Deisilany Santos + Giovanni",
-          deadline: "18/08/2025",
-          priority: "high",
-          lastUpdate: "13/08/2025",
-          author: "Deisilany Santos",
-          updateText: "Próximas etapas reunião: criar tabulações campanhas + deixar receptivo apenas e-mail/WhatsApp",
-          actionRequired: "Deisilany: verificar tabulações necessárias + Giovanni: implementar desagrupamento"
+          lastUpdate: "26/08/2025",
+          completedDate: "26/08/2025",
+          movedToCompleted: "26/08/2025",
+          author: "Pedro Espinoza + Giovanni",
+          updateText: "Giovanni: precisa ajustar filtro tabulação mostrar apenas conversões. Ajustes finos serão posteriores"
         },
         {
           id: 13,
@@ -645,6 +646,48 @@ const UnicefKanbanDashboard = () => {
           movedToCompleted: "13/08/2025",
           author: "Pedro + Deisilany Santos",
           updateText: "Pedro: WA propôs solução 15 dias sem custo + API 60 dias. Aguardando decisão Lívia/Carolzinha"
+        },
+        {
+          id: 112,
+          title: "✅ Tabulações - Reestruturação CANCELADA por Carol",
+          description: "Carol acordou não expandir de 160 para 400+ tabulações - estrutura atual atende necessidades",
+          impact: "Decisão final: não prosseguir expansão tabulações - sistema atual suficiente",
+          responsible: "Carol + Deisilany",
+          deadline: "✅ CANCELADO - 26/08/2025",
+          priority: "high",
+          lastUpdate: "26/08/2025",
+          completedDate: "26/08/2025",
+          movedToCompleted: "26/08/2025",
+          author: "Deisilany Santos + Carol",
+          updateText: "FINAL 26/08: Carol concordou não prosseguir expansão para 400+ tabulações - estrutura atual atende"
+        },
+        {
+          id: 113,
+          title: "✅ Fila Receptivo Separada - CRIADA",
+          description: "Fila por receptivo criada conforme solicitado - Saurav configurou visualização tabulações separadas",
+          impact: "Organização melhor das filas - visualização separada para receptivo funcionando",
+          responsible: "Saurav + Deisilany",
+          deadline: "✅ IMPLEMENTADO - 26/08/2025",
+          priority: "high",
+          lastUpdate: "26/08/2025",
+          completedDate: "26/08/2025",
+          movedToCompleted: "26/08/2025",
+          author: "Deisilany Santos",
+          updateText: "CONCLUÍDO 26/08: Fila receptivo criada e Saurav configurou visualização tabulações separadas"
+        },
+        {
+          id: 114,
+          title: "✅ CNPJ Creation - FUNCIONANDO",
+          description: "Criação de CNPJs agora funciona corretamente - apenas erro visual no refresh da tela final",
+          impact: "Funcionalidade CNPJ operacional - apenas erro estético na finalização",
+          responsible: "Giovanni",
+          deadline: "✅ RESOLVIDO - 26/08/2025",
+          priority: "medium",
+          lastUpdate: "26/08/2025",
+          completedDate: "26/08/2025",
+          movedToCompleted: "26/08/2025",
+          author: "Deisilany Santos + Giovanni",
+          updateText: "FUNCIONANDO 26/08: CNPJs criados corretamente, Giovanni identificou erro refresh como falha visual"
         }
       ]
     }
@@ -899,20 +942,24 @@ const UnicefKanbanDashboard = () => {
             {/* Status Bar */}
             <div className="mt-6 grid grid-cols-1 md:grid-cols-5 gap-4">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-2xl font-bold text-white">40,55%</div>
-                <div className="text-blue-200 text-sm">Receptivo (13/08)</div>
+                <div className="text-2xl font-bold text-red-300">39,21%</div>
+                <div className="text-blue-200 text-sm">Receptivo (26/08)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-2xl font-bold text-white">42,15%</div>
-                <div className="text-blue-200 text-sm">WhatsApp (13/08)</div>
+                <div className="text-2xl font-bold text-green-300">49,1%</div>
+                <div className="text-blue-200 text-sm">WhatsApp (26/08)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-2xl font-bold text-white">34,78%</div>
-                <div className="text-blue-200 text-sm">E-mail (13/08)</div>
+                <div className="text-2xl font-bold text-yellow-300">39,47%</div>
+                <div className="text-blue-200 text-sm">E-mail (26/08)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
                 <div className="text-lg font-bold text-white">37</div>
                 <div className="text-blue-200 text-sm">Cadastros UNICEF</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
+                <div className="text-lg font-bold text-orange-300">2,85%</div>
+                <div className="text-blue-200 text-sm">Saving Diário</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
                 <div className="text-lg font-bold text-white">18/08/2025</div>
@@ -1055,7 +1102,7 @@ const UnicefKanbanDashboard = () => {
             <p className="text-sm font-medium">Dashboard UNICEF Brasil - WA Contact Center</p>
           </div>
           <p className="text-xs">💝 Base: 100,000+ doadores | 👩‍💼 Gerente: Deisilany Santos | 🏢 Brasília</p>
-          <p className="text-xs text-gray-400 mt-1">Atualizado: 26/08/2025 - Reporte Reunión Actualizado | Powered by Claude Code Agent</p>
+          <p className="text-xs text-gray-400 mt-1">Atualizado: 26/08/2025 - Catchup Semanal 16:25 CAT | Powered by Claude Code Agent</p>
         </div>
       </div>
 

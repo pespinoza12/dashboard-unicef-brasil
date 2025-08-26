@@ -5,13 +5,14 @@
 **Estado:** ✅ DASHBOARD KANBAN OPERATIVO
 
 ## 🚀 DEPLOY AUTOMÁTICO EASYPANEL
-**Endpoint para redeploy automático:** 
+**Endpoint para redeploy automático ACTUALIZADO:** 
 ```
-http://38.242.207.133:3000/api/deploy/e6d642b6ec232307b9ad89520cec49b73fd6668deaa2589f
+http://38.242.207.133:3000/api/deploy/7d5159ac081ad69f304f74ed95df74a096af2c908c9bf112
 ```
 - Claude puede usar este endpoint para hacer redeploy automático
-- No requiere acceso manual a EasyPanel
+- Token actualizado y verificado funcionando
 - Activa después de cada push a GitHub
+- **IMPORTANTE**: Eliminar token anterior desactualizado
 
 ## 📋 RESUMEN DEL PROYECTO
 - **Nombre:** Dashboard Manager para UNICEF Brasil - Supporter Service
@@ -64,11 +65,27 @@ npm run build           # Construye frontend
 npm start              # Inicia servidor en puerto 3000
 ```
 
-### Deploy en EasyPanel
-1. Hacer cambios en código
-2. `git add . && git commit -m "descripción"`
-3. `git push`
-4. En EasyPanel: botón "Deploy" o "Redeploy"
+### Deploy AUTOMATIZADO en EasyPanel
+```bash
+# Flujo completo automatizado
+1. git add frontend/src/unicef-kanban-dashboard.tsx
+2. git add "reuniones/[archivo-reunion].md"
+3. git commit -m "📊 ACTUALIZACIÓN DASHBOARD - [FECHA REUNION]"
+4. git push
+5. curl -X POST "http://38.242.207.133:3000/api/deploy/7d5159ac081ad69f304f74ed95df74a096af2c908c9bf112"
+```
+
+### Manejo de errores en deploy automático
+```bash
+# Si el deploy automático falla:
+if curl_response contains "Invalid Token" then
+  - Usar deploy manual en EasyPanel
+  - Verificar token actualizado
+  - Reportar a Pedro para token nuevo
+else
+  - Deploy exitoso ✅
+fi
+```
 
 ### Troubleshooting
 ```bash
@@ -166,31 +183,35 @@ dashboard-manager/
 - **Operación:** Lunes a viernes, Brasilia
 
 ---
-**Última actualización:** 2025-07-17 20:45 GMT
-**Estado del proyecto:** ✅ DASHBOARD UNICEF BRASIL EN PRODUCCIÓN CON DATOS REALES
-**URL en producción:** https://dashboard-unicef-brasil.tnrk2n.easypanel.host/
-**Próxima tarea:** Dashboard listo para uso operacional - monitorear reuniones semanales
+**Última actualización:** 2025-08-11 13:47 GMT - Catch Up WA
+**Estado del proyecto:** ✅ DASHBOARD UNICEF BRASIL ACTUALIZADO CON CATCH UP WA
+**URL en producción:** https://relatorios-unicef.tnrk2n.easypanel.host/
+**Deploy automático:** Token actualizado y funcionando
+**Próxima reunión clave:** 18/08/2025 - Retorno Ana UNICEF
+**Version actual:** v10-update-11-08-2025
 
-## 📊 ACTUALIZACIÓN CON DATOS REALES - JULIO 2025
+## 📊 ACTUALIZACIÓN CON DATOS REALES - AGOSTO 2025
 
-### 🎯 DATOS OPERACIONALES PROCESADOS:
-- **Reunión 09/07/2025**: Catchup semanal con Deisilany Santos
-- **Reunión 17/07/2025**: Status migración y problemas críticos
+### 🎯 ÚLTIMAS REUNIONES PROCESADAS:
+- **Reunión 30/07/2025**: Status migración y problemas críticos  
+- **Reunión 06/08/2025**: Actualización datos reunión Deisilany
+- **Catch Up WA 11/08/2025**: Actualización completa métricas y problemas
 
-### 📈 MÉTRICAS REALES IMPLEMENTADAS:
-- **Receptivo**: 43.12% (09/07) → 42.53% (17/07)
-- **Digital/WhatsApp**: 37.14% (09/07) → 39.06% (17/07)
-- **Equipo**: 37 colaboradores (número autorizado correcto)
-- **Campanha Elétricas**: 7 sucessos en 5 días operativos
+### 📈 MÉTRICAS ACTUALES (11/08/2025):
+- **Receptivo**: 40,74% (dificultad mantener arriba 40%)
+- **WhatsApp**: 54,55% 
+- **E-mail**: 42,86%
+- **Cadastros UNICEF**: 37 colaboradores
+- **Retorno Ana UNICEF**: 18/08/2025 (mudanças tabulações)
 
-### 🚨 PROBLEMAS CRÍTICOS DOCUMENTADOS:
-- Campanha Saving PARALIZADA por datos erróneos UNICEF
-- Duplicação masiva cadastros - riesgo cobranzas indebidas
-- Migración Infobip→Parting con múltiples desafíos
-- Power BI sin actualizar por problemas banco datos
+### 🚨 PROBLEMAS CRÍTICOS ACTUALIZADOS:
+- **API Cadastro Vazio**: API no permite identificar donadores cadastrados - duplicidad crítica
+- **Campanhas Save/Upgrade**: Solo 3,000 de 17,000 eran nuevos - bases acumuladas
+- **Migração Partner**: Plataforma no 100% preparada - "bote" irritando donadores
+- **Retorno Ana UNICEF**: 18/08 - solicitudes cambios estructura tabulaciones
 
-### 👥 INFORMACIÓN REAL DEL EQUIPO:
+### 👥 INFORMACIÓN ACTUALIZADA DEL EQUIPO:
 - **Gerente**: Deisilany Santos (Brasilia)
-- **Situación**: Mariana Ganda será desligada
-- **Novatos**: 4 personas muy buenas - aún no comenzaron atender
-- **Trabajo intensivo**: Deisilany 8:30-20:30 para acelerar soluciones
+- **Ana UNICEF**: Retorna 18/08 después férias
+- **Colaboradores UNICEF**: 37 cadastros confirmados
+- **Parceria Carolina UNICEF**: Trabajando correção API cadastro
