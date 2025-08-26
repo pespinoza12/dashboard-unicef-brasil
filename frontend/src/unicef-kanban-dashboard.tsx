@@ -17,8 +17,8 @@ import {
 } from './unicef-delight-components';
 
 // Cache buster: Build timestamp to force new JS bundle
-const BUILD_TIMESTAMP = '2025-08-26T13:57:00Z-CATCHUP-UNICEF-UPDATED';
-const FORCE_RELOAD_VERSION = 'v12-update-26-08-2025-report-streamlined';
+const BUILD_TIMESTAMP = '2025-08-26T14:01:00Z-CACHE-FIX-APPLIED';
+const FORCE_RELOAD_VERSION = 'v13-cache-fix-intelligent-versioning';
 
 // Componente para editar cards
 const EditCardForm = ({ cardId, kanbanData, onSave, onCancel }) => {
@@ -652,19 +652,35 @@ const UnicefKanbanDashboard = () => {
 
   // Estado mutable del Kanban con localStorage y version control
   const [kanbanData, setKanbanData] = useState(() => {
-    const currentVersion = FORCE_RELOAD_VERSION + '-' + BUILD_TIMESTAMP; // Version ULTIMATE CACHE KILLER
+    const currentVersion = FORCE_RELOAD_VERSION + '-' + BUILD_TIMESTAMP; // Version control
+    const savedVersion = localStorage.getItem('unicef-kanban-version');
     
-    // SEMPRE usar dados atualizados - ignorar localStorage temporariamente
-    localStorage.clear(); // Limpar todo localStorage
-    localStorage.setItem('unicef-kanban-version', currentVersion);
-    localStorage.setItem('unicef-kanban-data', JSON.stringify(initialKanbanData));
-    
-    // LOG VISIBLE PARA VERIFICAR VERSÃO CARREGADA
-    console.log('🚀 UNICEF DASHBOARD LOADED - VERSION:', currentVersion);
-    console.log('📅 BUILD TIMESTAMP:', BUILD_TIMESTAMP);
-    console.log('✅ DADOS DA REUNIÃO 30/07 CARREGADOS COM SUCESSO');
-    
-    return initialKanbanData;
+    // Solo limpiar si la versión cambió (sistema inteligente de cache)
+    if (savedVersion !== currentVersion) {
+      console.log('🔄 VERSION CHANGED - Clearing cache:', savedVersion, '->', currentVersion);
+      localStorage.removeItem('unicef-kanban-data');
+      localStorage.removeItem('unicef-kanban-version');
+      localStorage.setItem('unicef-kanban-version', currentVersion);
+      localStorage.setItem('unicef-kanban-data', JSON.stringify(initialKanbanData));
+      
+      // LOG VISIBLE PARA VERIFICAR VERSÃO CARREGADA
+      console.log('🚀 UNICEF DASHBOARD LOADED - NEW VERSION:', currentVersion);
+      console.log('📅 BUILD TIMESTAMP:', BUILD_TIMESTAMP);
+      console.log('✅ DADOS ATUALIZADOS COM NOVOS PROBLEMAS CRÍTICOS');
+      
+      return initialKanbanData;
+    } else {
+      // Usar datos guardados si la versión es la misma
+      const savedData = localStorage.getItem('unicef-kanban-data');
+      if (savedData) {
+        console.log('📊 USING SAVED DATA - VERSION:', currentVersion);
+        return JSON.parse(savedData);
+      } else {
+        // Fallback a datos iniciales
+        localStorage.setItem('unicef-kanban-data', JSON.stringify(initialKanbanData));
+        return initialKanbanData;
+      }
+    }
   });
 
   // Guardar en localStorage cuando cambien los datos
@@ -859,9 +875,15 @@ const UnicefKanbanDashboard = () => {
               <div className="text-right flex items-center space-x-4">
                 <button
                   onClick={() => {
-                    localStorage.setItem('unicef-kanban-version', '2025-07-30-v6');
+                    const currentVersion = FORCE_RELOAD_VERSION + '-' + BUILD_TIMESTAMP;
+                    console.log('🔄 FORCE REFRESH - Nueva versión:', currentVersion);
+                    localStorage.removeItem('unicef-kanban-data');
+                    localStorage.removeItem('unicef-kanban-version');
+                    localStorage.setItem('unicef-kanban-version', currentVersion);
                     localStorage.setItem('unicef-kanban-data', JSON.stringify(initialKanbanData));
                     setKanbanData(initialKanbanData);
+                    // Force page reload to ensure complete refresh
+                    window.location.reload();
                   }}
                   className="bg-white/10 hover:bg-white/20 border border-white/30 rounded-lg px-3 py-2 text-white text-sm font-medium transition-all"
                 >
