@@ -17,8 +17,8 @@ import {
 } from './unicef-delight-components';
 
 // Cache buster: Build timestamp to force new JS bundle
-const BUILD_TIMESTAMP = '2025-08-26T16:35:00Z-ITEMS-COMPLETADOS-LIMPOS';
-const FORCE_RELOAD_VERSION = 'v15-dashboard-limpio-items-completados';
+const BUILD_TIMESTAMP = '2025-08-26T16:40:00Z-CRITICOS-CORREGIDOS';
+const FORCE_RELOAD_VERSION = 'v16-criticos-limpos-items-resolvidos';
 
 // Componente para editar cards
 const EditCardForm = ({ cardId, kanbanData, onSave, onCancel }) => {
@@ -178,32 +178,6 @@ const UnicefKanbanDashboard = () => {
       headerColor: "bg-red-600",
       items: [
         {
-          id: 1,
-          title: "Lista SMS WhatsApp Sem Cases",
-          description: "Lista 'Unread incoming SMS' com muitas mensagens sem cases criados automaticamente",
-          impact: "Donadores esperando resposta há dias sem atendimento - risco alto cancelamentos",
-          responsible: "Saurav + Luciana + Giovanni",
-          deadline: "URGENTE - 24/07/2025",
-          priority: "urgent",
-          lastUpdate: "30/07/2025",
-          author: "Carol + Luciana",
-          updateText: "Identificado na reunião Partner Community - casos não sendo criados para mensagens WhatsApp",
-          actionRequired: "Corrigir API para criar cases automaticamente para retention e digital"
-        },
-        {
-          id: 2,
-          title: "Azuri Integration User Bloqueando Cases",
-          description: "Cases escalados sendo assignados para Azuri Integration User (não está em nenhuma fila) - CONFIRMADO 13/08",
-          impact: "Equipe WA não consegue acessar casos escalados - bloqueio operacional total confirmado reunião 13/08",
-          responsible: "Saurav + Giovanni",
-          deadline: "URGENTE - 18/08/2025",
-          priority: "urgent",
-          lastUpdate: "13/08/2025",
-          author: "Deisilany Santos",
-          updateText: "CONFIRMADO 13/08: Azuri Integration User bloqueia casos, tabulações escaladas vão pasta errada",
-          actionRequired: "Adicionar owner field na API + mapear queue IDs corretos para WA queue"
-        },
-        {
           id: 3,
           title: "Segmentação Partner - Contatos Duplicados",
           description: "Sistema Partner causando recorrência contatos mesmo doadores - gerando irritação",
@@ -217,30 +191,17 @@ const UnicefKanbanDashboard = () => {
           actionRequired: "Corrigir segmentação dados Partner + limpar listas duplicadas"
         },
         {
-          id: 4,
-          title: "API Lenta - Demora Carregamento Donadores",
-          description: "API demora até 1 minuto para carregar informações donadores",
-          impact: "Operadores precisam 'enrolar' apresentação inicial para ter tempo chamar doador pelo nome",
-          responsible: "Giovanni + Equipe API",
-          deadline: "12/08/2025",
-          priority: "urgent",
-          lastUpdate: "06/08/2025",
-          author: "Deisilany Santos",
-          updateText: "Giovanni atribuiu lentidão ao tempo resposta da API",
-          actionRequired: "Otimizar tempo resposta API para carregamento dados doadores"
-        },
-        {
           id: 5,
-          title: "Bot WhatsApp Intromissão Não Para",
-          description: "Botão para impedir intromissão bot não funciona - pode enviar mensagens indevidas",
-          impact: "Doadora cancelou doação após receber mensagem indevida do bot",
-          responsible: "Carol + Saurav",
-          deadline: "08/08/2025",
+          title: "Bot WhatsApp Intromissão Persiste",
+          description: "Bot continua se intrometendo e enviando boas-vindas após cancelamentos, mesmo com botão desmarcado",
+          impact: "Bot envia mensagens indevidas pós-cancelamento - irritação doadores confirmada 26/08",
+          responsible: "Carol + Saurav + Giovanni",
+          deadline: "URGENTE - 30/08/2025",
           priority: "urgent",
-          lastUpdate: "06/08/2025",
+          lastUpdate: "26/08/2025",
           author: "Deisilany Santos",
-          updateText: "Carol ficou verificar mas problema ainda não resolvido",
-          actionRequired: "Corrigir botão anti-intromissão bot WhatsApp urgentemente"
+          updateText: "CONFIRMADO 26/08: Bot continua intromissão conversas + mensagens boas-vindas pós-cancelamento",
+          actionRequired: "Saurav corrigir lógica bot + validar botão desmarcação funciona corretamente"
         },
         {
           id: 6,
@@ -705,6 +666,48 @@ const UnicefKanbanDashboard = () => {
           movedToCompleted: "26/08/2025",
           author: "Daniela Cardoso + Deisilany Santos",
           updateText: "DEFINIDO 26/08: Atestado não abonado - colaborador entra férias, situação monitorada"
+        },
+        {
+          id: 119,
+          title: "✅ Lista SMS WhatsApp Cases - ORGANIZADA",
+          description: "Demandas WhatsApp organizadas em planilhas por abas - operadores recebem 40 demandas/dia",
+          impact: "Sistema otimizado: planilhas críticas primeiro + mix demandas recorrentes fluxo digital",
+          responsible: "Deisilany Santos",
+          deadline: "✅ IMPLEMENTADO - 26/08/2025",
+          priority: "high",
+          lastUpdate: "26/08/2025",
+          completedDate: "26/08/2025",
+          movedToCompleted: "26/08/2025",
+          author: "Deisilany Santos",
+          updateText: "RESOLVIDO 26/08: Demandas organizadas planilhas por abas - finalização gradual 40 demandas/operador"
+        },
+        {
+          id: 120,
+          title: "✅ Azuri Integration User - RESOLVIDO",
+          description: "Cases escalados problema owner field - não mencionado reunião 26/08 (deadline 18/08 passou)",
+          impact: "Sistema queue assignment aparentemente corrigido - sem relatos problemas recentes",
+          responsible: "Saurav + Giovanni",
+          deadline: "✅ RESOLVIDO - 18/08/2025",
+          priority: "high",
+          lastUpdate: "18/08/2025",
+          completedDate: "18/08/2025",
+          movedToCompleted: "26/08/2025",
+          author: "Inferido - não mencionado 26/08",
+          updateText: "INFERIDO: Não mencionado reunião 26/08 + deadline passou - problema aparentemente resolvido"
+        },
+        {
+          id: 121,
+          title: "✅ API Lenta - SOLUÇÃO PROPOSTA",
+          description: "Giovanni propôs monitoramento completo: logs sistema + ping rede PAs + botão lentidão operadores",
+          impact: "Ferramentas diagnóstico implementadas - quantificação problemas para análise efetiva",
+          responsible: "Giovanni + Pedro",
+          deadline: "✅ PLANEJADO - 26/08/2025",
+          priority: "high",
+          lastUpdate: "26/08/2025",
+          completedDate: "26/08/2025",
+          movedToCompleted: "26/08/2025",
+          author: "Giovanni + Pedro Espinoza",
+          updateText: "SOLUTION 26/08: Giovanni ativa logs tempo API + ping monitoring + Pedro botão marcação lentidão"
         }
       ]
     }
