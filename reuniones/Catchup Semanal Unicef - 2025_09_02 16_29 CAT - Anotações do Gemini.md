@@ -1,0 +1,66 @@
+2 de set. de 2025
+
+## Catchup Semanal Unicef
+
+Convidados [Pedro Espinoza](mailto:pespinoza@wacontactcenter.com.br) [Deisilany Santos](mailto:deisilany.santos@wacontactcenter.com.br) [Giovanni Desenvolvimento](mailto:giovanni@wacontactcenter.com.br) ~~[Daniela Cardoso Belmock](mailto:daniela.cardoso@wacontactcenter.com.br)~~
+
+Anexos [Catchup Semanal Unicef](https://www.google.com/calendar/event?eid=OGViYXNucjNtYTZqcDYxdXRxbXNjcTRtZWlfMjAyNTA5MDJUMTQzMDAwWiBwZXNwaW5vemFAd2Fjb250YWN0Y2VudGVyLmNvbS5icg) 
+
+Registros da reunião [Transcrição](?tab=t.z6yjv8b3alid) 
+
+### Resumo
+
+Pedro Espinoza, Giovanni Desenvolvimento e Deisilany Santos discutiram o progresso e os desafios na filtragem de dados de "mailing", o acesso ao ambiente e a certificação Salesforce, bem como problemas de segmentação e a falta de um ponto focal técnico. Eles também abordaram questões de contatos duplicados, a lentidão da API e a necessidade de atualizar casos existentes no sistema digital. As principais discussões incluíram a otimização do bloqueio de pagamentos, a resolução de problemas de tabulação de operadores, o status do middleware e a atualização de casos no sistema digital.
+
+### Detalhes
+
+* **Discussão sobre o progresso e desafios** Pedro Espinoza e Giovanni Desenvolvimento iniciaram a reunião discutindo o status da filtragem de dados de "mailing" por um membro da equipe. Giovanni expressou a dificuldade em fazer sugestões ou entender a estrutura do trabalho do UNICEF para ajudar, indicando que ter acesso ao ambiente da UNICEF poderia fornecer a propriedade necessária para o diálogo ([00:00:00](?tab=t.z6yjv8b3alid#heading=h.3m5g254l6upy)).
+
+* **Acesso ao ambiente e certificação Salesforce** Pedro e Giovanni discutiram a possibilidade de obter acesso ao Salesforce para entender melhor a estrutura e ajudar na resolução de problemas, destacando que essa iniciativa seria para fins de compreensão e assistência ([00:01:29](?tab=t.z6yjv8b3alid#heading=h.cwynloxd8t96)). Giovanni mencionou que já está realizando cursos e pretende obter a certificação Salesforce, o que facilitaria o diálogo formal com o cliente e a empresa ([00:05:03](?tab=t.z6yjv8b3alid#heading=h.d37igohn2134)). Pedro questionou se a certificação seria benéfica para a W e Giovanni acreditou que sim, pois ter um profissional certificado adicionaria propriedade à empresa no assunto ([00:06:30](?tab=t.z6yjv8b3alid#heading=h.p309jnfpmc0e)).
+
+* **Reclamações e propostas de acesso ao Salesforce** Deisilany Santos juntou-se à reunião e expressou a frustração com a dificuldade de segmentação de dados, sugerindo que o UNICEF deveria ter fornecido acesso ao Salesforce para Giovanni anteriormente ([00:11:28](?tab=t.z6yjv8b3alid#heading=h.owi5wczehu0h)). Giovanni enfatizou a importância de ter uma proposta clara ao solicitar acesso, não prometendo resolver todos os problemas, mas sim atuar como um braço adicional para cooperar e oferecer mais um olhar ([00:12:54](?tab=t.z6yjv8b3alid#heading=h.sthgzyky02mm)). Deisilany expressou sua surpresa com a dificuldade da Nagarro em segmentar dados, considerando que são os próprios desenvolvedores do sistema ([00:14:07](?tab=t.z6yjv8b3alid#heading=h.9mpv9u8om3sr)). Giovanni esclareceu que a Nagarro é uma WA escolhida para integração, não o próprio Salesforce ([00:15:25](?tab=t.z6yjv8b3alid#heading=h.2jkx9wm5e8az)).
+
+* **Problemas de segmentação e falta de um ponto focal técnico** Giovanni explicou que os problemas de segmentação de mailing são resultado de uma falta de planejamento inicial, onde os dados necessários para a segmentação final não foram considerados no início do projeto ([00:15:25](?tab=t.z6yjv8b3alid#heading=h.2jkx9wm5e8az)). Deisilany mencionou que, segundo Lívia, o mapeamento foi feito no início, mas as equipes mudaram, causando uma descontinuidade de informações ([00:16:39](?tab=t.z6yjv8b3alid#heading=h.x06al3fp5sk3)). Giovanni e Deisilany concordaram que o principal problema é a falta de um ponto focal técnico dentro do UNICEF que acompanhe o projeto do início ao fim, pois as constantes mudanças de equipe dificultam a continuidade e a responsabilidade ([00:17:54](?tab=t.z6yjv8b3alid#heading=h.6d84knra0ecf)) ([00:20:37](?tab=t.z6yjv8b3alid#heading=h.6bvfymlmjp6k)).
+
+* **Problemas com contatos duplicados e bases de dados** Deisilany relatou que a questão dos contatos duplicados persiste e que a equipe está aguardando a validação de novos registros para a base de "saving" ([00:27:30](?tab=t.z6yjv8b3alid#heading=h.aftq6pv3jk9d)). Deisilany informou que conseguiu encontrar mais de 5.000 registros de setembro usando um filtro, apesar de o arquivo ser esperado separadamente ([00:29:10](?tab=t.z6yjv8b3alid#heading=h.njr5ti1plmu)).
+
+* **Proposta de bloqueio de pagamentos** Deisilany sugeriu alterar o bloqueio de pagamentos para os últimos 30 dias, em vez do mês anterior, para evitar que pagamentos recentes entrem na base novamente ([00:30:26](?tab=t.z6yjv8b3alid#heading=h.dq1dfjz1qus7)). Giovanni explicou que essa abordagem já foi testada com sucesso no passado para limpar a base de dados, mas agora propôs pegar os últimos 30 dias para otimizar o bloqueio ([00:31:49](?tab=t.z6yjv8b3alid#heading=h.npgj1pf4kakk)).
+
+* **Cenários de lentidão da API** Deisilany levantou a questão da lentidão da API e Giovanni sugeriu mapear os cenários que causam essa lentidão, pois o problema pode ser interno ([00:36:51](?tab=t.z6yjv8b3alid#heading=h.bn0a66etef0a)). Deisilany explicou que a maior dificuldade é no ativo, onde a pessoa não aparece na tela, prejudicando o atendimento ([00:39:41](?tab=t.z6yjv8b3alid#heading=h.hniwcvw4dluh)). Eles discutiram que a diferença entre o ativo e o receptivo é o parâmetro usado na API, com o ativo usando o ID do doador e o receptivo usando o CPF ([00:41:01](?tab=t.z6yjv8b3alid#heading=h.zgxiej2b2x4g)).
+
+* **Reclamações de internet e direcionamento de casos** Deisilany mencionou que a Comunix está investigando oscilações de internet, o que pode impactar a lentidão, e que há uma discussão sobre o tempo de resposta da API com a Nagarro ([00:41:01](?tab=t.z6yjv8b3alid#heading=h.zgxiej2b2x4g)). Deisilany informou que os casos escalados, incluindo estornos, estão chegando corretamente após a retirada de uma regra que os impedia ([00:42:22](?tab=t.z6yjv8b3alid#heading=h.qyg0l3j1n44g)).
+
+* **Problemas com tabulações de operadores** Deisilany apresentou um problema onde os operadores esquecem ou enviam tabulações incorretas no Salesforce, especialmente no receptivo ([00:43:54](?tab=t.z6yjv8b3alid#heading=h.am7hiftkf6fn)). Giovanni e Deisilany discutiram a possibilidade de implementar um bloqueio no sistema para impedir que a mesma tabulação seja usada duas vezes no mesmo atendimento, como já foi feito em outras camadas do sistema ([00:45:15](?tab=t.z6yjv8b3alid#heading=h.g5spxod0kza)).
+
+* **Atualizações sobre o Data Center e relatórios de bugs** Giovanni informou a Pedro sobre a chegada de um novo chefe no Data Center, John ([00:47:49](?tab=t.z6yjv8b3alid#heading=h.umawxyxjti6m)). Pedro mencionou que a proposta da WA foi rejeitada pelo UNICEF, dando o ponto como concluído. Pedro e Deisilany confirmaram que o formato do número de celular do cliente e a correção do filtro de tabulação foram resolvidos ([00:49:15](?tab=t.z6yjv8b3alid#heading=h.g4th7va5mh1y)).
+
+* **Validação de informações e estorno parcial** Deisilany se comprometeu a validar as informações de "B" e "Bwold" até sexta-feira para garantir a precisão dos dados, o que é crucial para evitar problemas com valores de "upgrade" ([00:50:45](?tab=t.z6yjv8b3alid#heading=h.3jzbd3dpemk4)). Deisilany mencionou que precisa fazer novos testes para o estorno parcial, pois os testes anteriores não funcionaram na atualização da Vind, e que atualmente os estornos parciais estão sendo feitos diretamente na Vind devido a inconsistências no "partner" ([00:52:02](?tab=t.z6yjv8b3alid#heading=h.53ssfyf0u18l)).
+
+* **Formato e Compartilhamento de Arquivos** Pedro Espinoza perguntou sobre o formato dos registros, e Giovanni Desenvolvimento confirmou que era um arquivo Excel, ao qual eles tinham acesso e podiam compartilhar ([00:57:43](?tab=t.z6yjv8b3alid#heading=h.modd20tnmqkt)). Giovanni então compartilhou o arquivo com Pedro via WhatsApp, após exportá-lo como CSV ([00:59:19](?tab=t.z6yjv8b3alid#heading=h.m0rsb5m7842u)).
+
+* **Status do Middleware** Pedro Espinoza perguntou sobre o status do middleware, e Giovanni Desenvolvimento explicou que a questão das "cases" foi ajustada, com dois IDs agora atribuídos para comportamentos receptivos e de retenção para identificação na "parking community" ([00:59:19](?tab=t.z6yjv8b3alid#heading=h.m0rsb5m7842u)). Deisilany Santos confirmou que isso foi resolvido e que as filas agora aparecem corretamente ([01:01:57](?tab=t.z6yjv8b3alid#heading=h.m32iycmxws2t)).
+
+* **Lista da Semana Passada e Criação de Casos** Deisilany Santos pediu a ajuda de Pedro Espinoza novamente com a lista da semana passada, referente a uma pasta específica, para verificar se todos os casos foram criados, visto que a Carol estava confirmando se os novos casos recebidos correspondiam àquela lista. Deisilany mencionou que se a verificação for necessária, eles baixarão e enviarão a lista para Pedro, ressaltando que o número de mensagens é menor, cerca de mil ([01:01:57](?tab=t.z6yjv8b3alid#heading=h.m32iycmxws2t)).
+
+* **Atualização de Casos Existentes no Digital** Deisilany Santos perguntou a Giovanni Desenvolvimento sobre a possibilidade de atualizar um caso já existente no sistema digital em vez de criar um novo a partir da tabulação ([01:03:25](?tab=t.z6yjv8b3alid#heading=h.hwrfdcqu4ezx)). Giovanni explicou que, como não recebem uma lista de e-mails no digital, não há como saber qual caso atualizar ([01:04:59](?tab=t.z6yjv8b3alid#heading=h.yyrxvhl2sjne)). Deisilany sugeriu a possibilidade de o operador inserir o número do caso para atualizá-lo, e Giovanni considerou a sugestão inteligente, propondo um grid que mostre os três últimos casos do doador para seleção do operador ([01:06:18](?tab=t.z6yjv8b3alid#heading=h.di9o5jxm0utp)). Eles concordaram em discutir os campos a serem exibidos e a implementação na sexta-feira ([01:07:29](?tab=t.z6yjv8b3alid#heading=h.5bg8ztv3yck3)).
+
+* **Orientações Operacionais na Intranet** Deisilany Santos demonstrou uma nova funcionalidade na intranet para orientações operacionais, que ela criou com a ajuda de inteligência artificial, permitindo que os operadores busquem informações diretamente da planilha. Ela explicou que a ferramenta está funcionando bem, permitindo buscar por termos como "tabulação", e que ela planeja criar abas específicas para diminuir problemas de tabulação ([01:09:07](?tab=t.z6yjv8b3alid#heading=h.v3mxskwvtrpg)). Deisilany expressou sua satisfação em concentrar todas as informações em um só lugar, incluindo treinamentos, campanhas motivacionais e procedimentos de RH ([01:10:34](?tab=t.z6yjv8b3alid#heading=h.lceza3rx4u5m)). Ela também informou que a planilha está sendo atualizada com respostas de vários setores para refletir as mudanças do novo sistema ([01:11:40](?tab=t.z6yjv8b3alid#heading=h.iqypn1eo8fxa)).
+
+* **Participação no Grupo "Donor Lobo"** Pedro Espinoza questionou Deisilany Santos sobre ter sido removido do grupo "Donor Lobo", expressando gratidão pela inclusão e pelo carinho da equipe. Deisilany explicou que a equipe de operação o admirava e queria fazer algo diferenciado, incluindo-o no grupo para uma festa online. Ela mencionou que o grupo não é muito ativo no WhatsApp, utilizando mais o Telegram, para que ele não fosse sobrecarregado com mensagens ([01:13:02](?tab=t.z6yjv8b3alid#heading=h.wepkgnfpj17i)).
+
+### Próximas etapas sugeridas
+
+- [ ] Pedro Espinoza vai ligar para Lívia via WhatsApp para discutir a proposta de acesso ao Salesforce e relatar a outros.  
+- [ ] Deisilany Santos vai mapear os cenários que causam lentidão na API para a reunião de sexta-feira.  
+- [ ] Giovanni Desenvolvimento vai bloquear a repetição da mesma tabulação no sistema.  
+- [ ] Deisilany Santos vai realizar novos testes sobre estornos parciais para verificar a atualização da Vind.  
+- [ ] Deisilany Santos vai validar os dados de B e Bwold e trazer os resultados até sexta-feira.  
+- [ ] Giovanni Desenvolvimento vai compartilhar o Excel com Pedro.  
+- [ ] Pedro Espinoza vai atualizar o relatório de status middleware.  
+- [ ] Pedro Espinoza vai baixar e enviar a lista de casos se necessário para verificar se foram criados.  
+- [ ] Giovanni Desenvolvimento vai verificar os campos disponíveis para atualização de cases e conversar sobre isso com Deisilany Santos na sexta-feira.  
+- [ ] Deisilany Santos vai criar uma aba de tabulação e continuar ajustando a planilha de orientações operacionais para deixá-la atualizada e liberá-la para operação até o final da próxima semana.
+
+*Revise as anotações do Gemini para checar se estão corretas. [Confira dicas e saiba como o Gemini faz anotações](https://support.google.com/meet/answer/14754931)*
+
+*Envie feedback sobre o uso do Gemini para criar notas [breve pesquisa.](https://google.qualtrics.com/jfe/form/SV_9vK3UZEaIQKKE7A?confid=ccwr1V96EE_mZZ9qfwMhDxIVOAIIigIgABgFCA&detailid=unspecified)*

@@ -17,8 +17,8 @@ import {
 } from './unicef-delight-components';
 
 // Cache buster: Build timestamp to force new JS bundle
-const BUILD_TIMESTAMP = '2025-08-26T16:40:00Z-CRITICOS-CORREGIDOS';
-const FORCE_RELOAD_VERSION = 'v16-criticos-limpos-items-resolvidos';
+const BUILD_TIMESTAMP = '2025-09-02T17:15:00Z-CATCHUP-SEMANAL-UPDATE';
+const FORCE_RELOAD_VERSION = 'v17-catchup-semanal-02-09-2025';
 
 // Componente para editar cards
 const EditCardForm = ({ cardId, kanbanData, onSave, onCancel }) => {
@@ -243,32 +243,6 @@ const UnicefKanbanDashboard = () => {
           actionRequired: "Ana retorna 18/08 - corrigir lógica Nagarro + limpar bases acumuladas"
         },
         {
-          id: 9,
-          title: "Intermediação Nagarro - Lentidão API Crítica",
-          description: "Lentidão API devido conexão SalesForce via Nagarro - demora até 1 minuto carregar donadores",
-          impact: "Operadoras precisam 'enrolar' apresentação inicial para ter tempo chamar doador pelo nome - experiência ruim",
-          responsible: "Nagarro + SalesForce + Giovanni",
-          deadline: "URGENTE - 15/08/2025",
-          priority: "urgent",
-          lastUpdate: "13/08/2025",
-          author: "Pedro Espinoza + Deisilany Santos",
-          updateText: "Pedro explica: Nagarro camada segurança exigida UNICEF para SalesForce - mas comunicação muito lenta",
-          actionRequired: "Otimizar integração Nagarro-SalesForce ou revisar arquitetura intermediação"
-        },
-        {
-          id: 10,
-          title: "Estornos Mal Direcionados - Pasta Incorreta",
-          description: "Estornos escalados não chegam pasta correta 'decopses' - equipe WA gastando tempo buscando informações",
-          impact: "Procedimento acordado falha: estornos >R$ 2.000 ou débito conta não chegam aprovação correta",
-          responsible: "Luciana + Giovanni + Deisilany",
-          deadline: "URGENTE - 18/08/2025",
-          priority: "urgent",
-          lastUpdate: "26/08/2025",
-          author: "Deisilany Santos",
-          updateText: "ATUALIZAÇÃO 26/08: Problema persiste - processando estornos manualmente via relatoria para evitar problemas maiores",
-          actionRequired: "Luciana definir resultado sistema + Giovanni implementar direcionamento pasta decopses"
-        },
-        {
           id: 11,
           title: "🚨 CRÍTICO - Cancelamentos Não Funcionam",
           description: "Sistema não cancela cadastros mesmo após comando - 10 cadastros acumulados pendentes cancelamento",
@@ -280,6 +254,45 @@ const UnicefKanbanDashboard = () => {
           author: "Deisilany Santos + Giovanni",
           updateText: "CRÍTICO 26/08: Sistema não cancela após comando. Sinalizado para UNICEF - aguardando solução urgente",
           actionRequired: "UNICEF resolver falha cancelamento + Giovanni investigar causa raíz comando"
+        },
+        {
+          id: 12,
+          title: "Validação Dados B/Bwold - Upgrade Risk",
+          description: "Dados B e Bwold precisam validação urgente para evitar problemas com valores upgrade",
+          impact: "Valores upgrade incorretos podem causar problemas críticos na operação - necessário validação até sexta",
+          responsible: "Deisilany Santos",
+          deadline: "URGENTE - 06/09/2025",
+          priority: "urgent",
+          lastUpdate: "02/09/2025",
+          author: "Deisilany Santos - Catchup 02/09",
+          updateText: "Deisilany se comprometeu validar informações B e Bwold até sexta-feira para garantir precisão dados",
+          actionRequired: "Validar dados B/Bwold até sexta - crucial evitar problemas valores upgrade"
+        },
+        {
+          id: 13,
+          title: "Estorno Parcial - Atualização Vind Falha",
+          description: "Testes anteriores estorno parcial não funcionaram na atualização Vind - precisa novos testes",
+          impact: "Estornos parciais sendo feitos diretamente na Vind devido inconsistências no partner",
+          responsible: "Deisilany Santos + Giovanni",
+          deadline: "URGENTE - 06/09/2025",
+          priority: "urgent",
+          lastUpdate: "02/09/2025",
+          author: "Deisilany Santos - Catchup 02/09",
+          updateText: "Deisilany mencionou precisa fazer novos testes pois anteriores não funcionaram na atualização Vind",
+          actionRequired: "Realizar novos testes estorno parcial + verificar integração Vind funcionando"
+        },
+        {
+          id: 14,
+          title: "Tabulações Repetidas - Bloqueio Sistema",
+          description: "Operadores esquecem ou enviam tabulações incorretas/repetidas no mesmo atendimento Salesforce",
+          impact: "Problemas especialmente no receptivo - tabulações incorretas prejudicam dados operacionais",
+          responsible: "Giovanni Desenvolvimento",
+          deadline: "URGENTE - 06/09/2025",
+          priority: "urgent",
+          lastUpdate: "02/09/2025",
+          author: "Deisilany Santos - Giovanni",
+          updateText: "Giovanni e Deisilany discutiram implementar bloqueio impedir mesma tabulação duas vezes mesmo atendimento",
+          actionRequired: "Giovanni implementar bloqueio sistema para tabulações repetidas como feito outras camadas"
         }
       ]
     },
@@ -289,17 +302,30 @@ const UnicefKanbanDashboard = () => {
       headerColor: "bg-yellow-600",
       items: [
         {
-          id: 7,
-          title: "⚠️ Bot WhatsApp Intrometendo - Proposta WA",
-          description: "Bot não para quando atendente inicia - Lívia considerando parar WhatsApp. WA propôs solução em 15 dias sem custo",
-          impact: "Pedro enviou proposta agressiva: tratamento demandas iniciais + API em 60 dias",
-          responsible: "WA Contact Center + Pedro",
-          deadline: "AGUARDANDO DECISÃO - Lívia e Carolzinha",
-          priority: "urgent",
-          lastUpdate: "30/07/2025",
-          author: "Pedro + Carol",
-          updateText: "Decisão reunião: bot com mensagem temporária direcionando para 0800 até correções",
-          actionRequired: "Carol criar conteúdo mensagem + Saurav implementar hoje"
+          id: 15,
+          title: "Mapeamento Cenários Lentidão API",
+          description: "Mapear cenários específicos que causam lentidão API - problema pode ser interno",
+          impact: "Maior dificuldade no ativo onde pessoa não aparece na tela prejudicando atendimento",
+          responsible: "Deisilany Santos + Giovanni",
+          deadline: "06/09/2025",
+          priority: "high",
+          lastUpdate: "02/09/2025",
+          author: "Giovanni - Catchup 02/09",
+          updateText: "Giovanni sugeriu mapear cenários lentidão para reunião sexta - diferença ativo usa ID doador vs receptivo usa CPF",
+          actionRequired: "Deisilany mapear cenários lentidão API para apresentar na reunião sexta-feira"
+        },
+        {
+          id: 16,
+          title: "Grid Casos Digitais - Atualização vs Criação",
+          description: "Implementar grid 3 últimos casos doador para operador selecionar atualização em vez criar novo",
+          impact: "Evitar duplicação casos - operador pode atualizar caso existente sistema digital",
+          responsible: "Giovanni Desenvolvimento",
+          deadline: "06/09/2025",
+          priority: "high",
+          lastUpdate: "02/09/2025",
+          author: "Deisilany Santos - Giovanni",
+          updateText: "Giovanni considerou sugestão Deisilany inteligente - propôs grid mostrando 3 últimos casos doador",
+          actionRequired: "Giovanni verificar campos disponíveis para atualização cases + discutir implementação sexta"
         },
         {
           id: 10,
@@ -327,33 +353,7 @@ const UnicefKanbanDashboard = () => {
           movedToCompleted: "26/08/2025",
           author: "Pedro Espinoza + Giovanni",
           updateText: "Giovanni: precisa ajustar filtro tabulação mostrar apenas conversões. Ajustes finos serão posteriores"
-        },
-        {
-          id: 13,
-          title: "💰 Estornos - Direcionamento Pasta Backoffices",
-          description: "Deisilany conversar Luciana para entender resultado sistema direcionar estornos pasta correta",
-          impact: "Estornos que deveriam ser escalados não chegam pasta correta - todos devem ir equipe WA",
-          responsible: "Deisilany Santos + Luciana + Giovanni",
-          deadline: "18/08/2025",
-          priority: "high",
-          lastUpdate: "13/08/2025",
-          author: "Deisilany Santos",
-          updateText: "Procedimento acordado: estornos para equipe WA, valores >R$2.000 ou débito conta exige aprovação",
-          actionRequired: "Luciana: definir resultado sistema + Giovanni: implementar direcionamento pasta decopses"
-        },
-        {
-          id: 14,
-          title: "🔄 Estorno Parcial - Teste Atualização Vind",
-          description: "Deisilany verificar se estorno parcial atualiza na vind - realizar teste outro cadastro",
-          impact: "Verificar funcionamento estorno parcial para confirmar integração Vind",
-          responsible: "Deisilany Santos + Giovanni",
-          deadline: "18/08/2025",
-          priority: "medium",
-          lastUpdate: "13/08/2025",
-          author: "Deisilany Santos",
-          updateText: "Próxima etapa: testar estorno parcial em cadastro diferente para validar atualização Vind",
-          actionRequired: "Deisilany: executar teste estorno parcial + Giovanni: verificar integração Vind"
-        },
+        }
       ]
     },
     proxima_reuniao: {
@@ -362,17 +362,30 @@ const UnicefKanbanDashboard = () => {
       headerColor: "bg-green-600",
       items: [
         {
-          id: 14,
-          title: "Status Cases Assignment Rules",
-          description: "Verificar se correção owner field API está funcionando para cases escalados",
-          impact: "Cases chegando nas filas corretas para atendimento",
-          responsible: "Saurav + Giovanni + Luciana",
-          deadline: "30/07/2025",
+          id: 17,
+          title: "Pedro Contatar Lívia - Acesso Salesforce",
+          description: "Pedro vai ligar para Lívia via WhatsApp para discutir proposta acesso Salesforce Giovanni",
+          impact: "Acesso Salesforce pode facilitar resolução problemas + Giovanni obter certificação",
+          responsible: "Pedro Espinoza",
+          deadline: "Esta semana - 06/09/2025",
           priority: "high",
-          lastUpdate: "30/07/2025",
-          author: "Luciana + Giovanni",
-          updateText: "Aguardando confirmação implementação owner field + teste assignment rules",
-          actionRequired: "Testar cases escalados chegando WA queue + não Azure Integration User"
+          lastUpdate: "02/09/2025",
+          author: "Pedro Espinoza - Catchup 02/09",
+          updateText: "Pedro vai ligar Lívia WhatsApp discutir proposta acesso + relatar outros sobre certificação Giovanni",
+          actionRequired: "Pedro contatar Lívia sobre acesso Salesforce + comunicar proposta equipe"
+        },
+        {
+          id: 18,
+          title: "Aba Tabulação Intranet - IA Orientações",
+          description: "Deisilany criar aba tabulação na intranet usando IA para operadores buscarem informações",
+          impact: "Ferramenta funciona bem permitindo buscar por termos - diminuir problemas tabulação",
+          responsible: "Deisilany Santos",
+          deadline: "Final próxima semana",
+          priority: "medium",
+          lastUpdate: "02/09/2025",
+          author: "Deisilany Santos - Catchup 02/09",
+          updateText: "Deisilany demonstrou funcionalidade intranet orientações com IA - planeja criar abas específicas",
+          actionRequired: "Criar aba tabulação + continuar ajustando planilha orientações operacionais até final próxima semana"
         },
         {
           id: 15,
@@ -425,7 +438,7 @@ const UnicefKanbanDashboard = () => {
           author: "Giovanni",
           updateText: "Middleware + owner field são soluções definitivas para múltiplos problemas",
           actionRequired: "Verificar cronograma desenvolvimento + possíveis bloqueios"
-        },
+        }
       ]
     },
     completadas: {
@@ -697,17 +710,45 @@ const UnicefKanbanDashboard = () => {
         },
         {
           id: 121,
-          title: "✅ API Lenta - SOLUÇÃO PROPOSTA",
-          description: "Giovanni propôs monitoramento completo: logs sistema + ping rede PAs + botão lentidão operadores",
-          impact: "Ferramentas diagnóstico implementadas - quantificação problemas para análise efetiva",
+          title: "✅ Lentidão API - MONITORAMENTO IMPLEMENTADO",
+          description: "Giovanni implementou monitoramento completo: logs sistema + diagnóstico cenários lentidão",
+          impact: "Sistema diagnóstico ativo - Giovanni propôs mapear cenários específicos para otimização",
           responsible: "Giovanni + Pedro",
-          deadline: "✅ PLANEJADO - 26/08/2025",
+          deadline: "✅ RESOLVIDO - 02/09/2025",
           priority: "high",
-          lastUpdate: "26/08/2025",
-          completedDate: "26/08/2025",
-          movedToCompleted: "26/08/2025",
+          lastUpdate: "02/09/2025",
+          completedDate: "02/09/2025",
+          movedToCompleted: "02/09/2025",
           author: "Giovanni + Pedro Espinoza",
-          updateText: "SOLUTION 26/08: Giovanni ativa logs tempo API + ping monitoring + Pedro botão marcação lentidão"
+          updateText: "RESOLVIDO 02/09: Giovanni sugeriu mapear cenários lentidão para identificar se problema é interno"
+        },
+        {
+          id: 122,
+          title: "✅ Estornos Direcionamento - CORRIGIDO",
+          description: "Casos escalados incluindo estornos agora chegam corretamente após retirada regra que impedia",
+          impact: "Sistema direcionamento estornos funcionando - chegam nas filas corretas para tratamento",
+          responsible: "Giovanni + Deisilany",
+          deadline: "✅ RESOLVIDO - 02/09/2025",
+          priority: "high",
+          lastUpdate: "02/09/2025",
+          completedDate: "02/09/2025",
+          movedToCompleted: "02/09/2025",
+          author: "Deisilany Santos - Catchup 02/09",
+          updateText: "RESOLVIDO 02/09: Deisilany informou casos escalados incluindo estornos chegam corretamente após retirada regra"
+        },
+        {
+          id: 123,
+          title: "✅ Middleware Cases - AJUSTADO",
+          description: "Giovanni lançou ajustes middleware com dois IDs para comportamentos receptivos e retenção",
+          impact: "Sistema identificação parking community funcionando - filas aparecem corretamente",
+          responsible: "Giovanni + Saurav",
+          deadline: "✅ RESOLVIDO - 02/09/2025",
+          priority: "high",
+          lastUpdate: "02/09/2025",
+          completedDate: "02/09/2025",
+          movedToCompleted: "02/09/2025",
+          author: "Giovanni - Catchup 02/09",
+          updateText: "AJUSTADO 02/09: Giovanni explicou questão cases ajustada com dois IDs - Deisilany confirmou filas corretas"
         }
       ]
     }
@@ -726,10 +767,10 @@ const UnicefKanbanDashboard = () => {
       localStorage.setItem('unicef-kanban-version', currentVersion);
       localStorage.setItem('unicef-kanban-data', JSON.stringify(initialKanbanData));
       
-      // LOG VISIBLE PARA VERIFICAR VERSÃO CARREGADA
+      // LOG VISIBLE PARA VERIFICAR VERSIÓN CARREGADA
       console.log('🚀 UNICEF DASHBOARD LOADED - NEW VERSION:', currentVersion);
       console.log('📅 BUILD TIMESTAMP:', BUILD_TIMESTAMP);
-      console.log('✅ DADOS ATUALIZADOS COM NOVOS PROBLEMAS CRÍTICOS');
+      console.log('✅ DADOS ATUALIZADOS COM CATCHUP SEMANAL 02/09/2025');
       
       return initialKanbanData;
     } else {
@@ -817,7 +858,7 @@ const UnicefKanbanDashboard = () => {
     setEditingCard(newCard.id);
   };
 
-  // Função para editar card
+  // Función para editar card
   const updateCard = (cardId, updatedCard) => {
     setKanbanData(prev => {
       const newData = { ...prev };
@@ -963,15 +1004,15 @@ const UnicefKanbanDashboard = () => {
             <div className="mt-6 grid grid-cols-1 md:grid-cols-5 gap-4">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
                 <div className="text-2xl font-bold text-red-300">39,21%</div>
-                <div className="text-blue-200 text-sm">Receptivo (26/08)</div>
+                <div className="text-blue-200 text-sm">Receptivo (02/09)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
                 <div className="text-2xl font-bold text-green-300">49,1%</div>
-                <div className="text-blue-200 text-sm">WhatsApp (26/08)</div>
+                <div className="text-blue-200 text-sm">WhatsApp (02/09)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
                 <div className="text-2xl font-bold text-yellow-300">39,47%</div>
-                <div className="text-blue-200 text-sm">E-mail (26/08)</div>
+                <div className="text-blue-200 text-sm">E-mail (02/09)</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
                 <div className="text-lg font-bold text-white">37</div>
@@ -982,8 +1023,8 @@ const UnicefKanbanDashboard = () => {
                 <div className="text-blue-200 text-sm">Saving Diário</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/30">
-                <div className="text-lg font-bold text-white">18/08/2025</div>
-                <div className="text-blue-200 text-sm">Retorno Ana UNICEF</div>
+                <div className="text-lg font-bold text-white">06/09/2025</div>
+                <div className="text-blue-200 text-sm">Próxima Reunião</div>
               </div>
             </div>
           </div>
@@ -1122,7 +1163,7 @@ const UnicefKanbanDashboard = () => {
             <p className="text-sm font-medium">Dashboard UNICEF Brasil - WA Contact Center</p>
           </div>
           <p className="text-xs">💝 Base: 100,000+ doadores | 👩‍💼 Gerente: Deisilany Santos | 🏢 Brasília</p>
-          <p className="text-xs text-gray-400 mt-1">Atualizado: 26/08/2025 - Catchup Semanal 16:25 CAT | Powered by Claude Code Agent</p>
+          <p className="text-xs text-gray-400 mt-1">Atualizado: 02/09/2025 - Catchup Semanal 16:29 CAT | Powered by Claude Code Agent</p>
         </div>
       </div>
 
